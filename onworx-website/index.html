@@ -5,45 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Oneworx | Premium Coworking in Bhopal</title>
     
-    <!-- <script src="https://cdn.tailwindcss.com"></script> -->
-    <script>
-      tailwind.config = {
-        theme: {
-          // ADDED THIS: It globally forces perfect margins on all devices!
-          container: {
-            center: true,
-            padding: {
-              DEFAULT: '1.5rem', /* 24px margin for Mobile */
-              md: '3rem',        /* 48px margin for Tablets */
-              lg: '4rem',        /* 64px margin for Laptops */
-            },
-          },
-          // Your existing colors and fonts stay exactly the same
-          extend: {
-            colors: {
-              'cream': '#FDFBF7',
-              'ink': '#1A1A1A',
-              'green': '#afbe9d', 
-              'sage': '#E3E8E3',
-            },
-            fontFamily: {
-              serif: ['"Plantagenet"', 'serif'],
-              sans: ['"AzoSans"', 'sans-serif'],
-            },
-            animation: {
-                'spin-slow': 'spin 16s linear infinite', 
-                'scroll': 'scroll 40s linear infinite',
-            },
-            keyframes: {
-                scroll: {
-                    '0%': { transform: 'translateX(0)' },
-                    '100%': { transform: 'translateX(-50%)' },
-                }
-            }
-          }
-        }
-      }
-    </script>
+    <link rel="stylesheet" href="assets/css/output.css">
 
     <style>
         /* 1. REGISTER CUSTOM FONTS */
