@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Opening Puja of Oneworx – Fortue Arcade</title> 
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              'cream': '#FDFBF7',
+              'ink': '#1A1A1A',
+              'green': '#afbe9d', 
+              'sage': '#E3E8E3',
+            },
+            fontFamily: {
+              serif: ['"Plantagenet"', 'serif'],
+              sans: ['"AzoSans"', 'sans-serif'],
+            },
+            animation: {
+                'spin-slow': 'spin 16s linear infinite', 
+            }
+          }
+        }
+      }
+    </script>
+
+    <style>
+        /* FONTS */
+        @font-face { font-family: 'Plantagenet'; src: url('assets/fonts/plantagenet.ttf') format('truetype'); font-weight: normal; font-style: normal; }
+        @font-face { font-family: 'AzoSans'; src: url('assets/fonts/azosans.otf') format('opentype'); font-weight: normal; font-style: normal; }
+
+        body { font-family: 'AzoSans', sans-serif; background-color: #FDFBF7; color: #1A1A1A; }
+        h1, h2, h3, h4, h5, h6 { font-family: 'Plantagenet', serif; font-weight: 400; }
+        
+        /* Article specific typography */
+        article p { margin-bottom: 1.5rem; line-height: 1.8; font-size: 1.125rem; }
+        article h2 { font-size: 2.25rem; margin-top: 3rem; margin-bottom: 1.5rem; }
+        article h3 { font-size: 1.5rem; margin-top: 2rem; margin-bottom: 1rem; font-weight: bold; font-family: 'AzoSans', sans-serif; }
+        article blockquote { border-left: 4px solid #A7B68F; padding-left: 1.5rem; margin: 2rem 0; font-style: italic; color: #555; }
+     </style>
+</head>
+<body class="flex flex-col min-h-screen">
+
+    <nav class="bg-cream border-b border-ink sticky top-0 z-40 transition-all duration-300" id="navbar">
+    <div class="w-full px-8 lg:px-20 h-20 flex items-center justify-between">
+        
+        <a href="index.html" class="block flex-shrink-0">
+            <img src="assets/images/logo.png" alt="OneWorx" class="h-[19.3px] w-auto object-contain">
+        </a>
+        
+        <div class="hidden md:flex items-center space-x-4 lg:space-x-8 text-sm font-medium uppercase tracking-wide h-full">
+            <a href="about.html" class="hover:text-green transition-colors cursor-pointer whitespace-nowrap">About Us</a>
+
+            <div class="relative group h-full flex items-center">
+                <a href="offerings.html" class="hover:text-[#A7B68F] transition-colors cursor-pointer flex items-center gap-1 focus:outline-none uppercase h-full whitespace-nowrap">
+                    OFFERINGS
+                    <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                </a>
+                
+                <div class="absolute top-[60px] -left-4 w-72 bg-white border border-ink shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 transform group-hover:translate-y-0 translate-y-2 z-50 text-left">
+                    <div class="relative group/nested border-b border-gray-100">
+                        <div class="px-6 py-4 hover:bg-[#A7B68F] hover:text-white cursor-pointer flex justify-between items-center transition-colors">
+                            <span class="normal-case font-medium">Coworking Plans</span>
+                            <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+                        </div>
+                        <div class="absolute left-full top-[-1px] w-64 bg-white border border-ink shadow-xl opacity-0 invisible group-hover/nested:opacity-100 group-hover/nested:visible transition-all duration-200 z-50">
+                            <a href="dedicated-workspaces.html" class="block px-6 py-3 border-b border-gray-100 hover:bg-cream hover:text-green transition-colors normal-case font-medium"> Dedicated Open Workspaces</a>
+                            <a href="private-office.html" class="block px-6 py-3 border-b border-gray-100 hover:bg-cream hover:text-green transition-colors normal-case font-medium"> Private Office</a>
+                            <a href="private-cabins.html" class="block px-6 py-3 border-gray-100 hover:bg-cream hover:text-green transition-colors normal-case font-medium">Private Cabins</a>
+                        </div>
+                    </div>
+                    <a href="meeting-rooms.html" class="block px-6 py-4 border-b border-gray-100 hover:bg-cream hover:text-green transition-colors normal-case font-medium">Meeting Rooms</a>
+                    <a href="virtual-office.html" class="block px-6 py-4 border-b border-gray-100 hover:bg-cream hover:text-green transition-colors normal-case font-medium">Virtual Office</a>
+                    <a href="community.html" class="block px-6 py-4 hover:bg-cream hover:text-green transition-colors normal-case font-medium">Community & Spaces</a>
+                </div>
+            </div>
+
+            <div class="relative group h-full flex items-center">
+                <a href="locations.html" class="hover:text-green transition-colors cursor-pointer flex items-center gap-1 focus:outline-none uppercase h-full whitespace-nowrap">
+                    Locations
+                    <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                </a>
+                <div class="absolute top-[60px] -left-4 w-56 bg-white border border-ink shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 transform group-hover:translate-y-0 translate-y-2 z-50">
+                    <a href="location-arera.html" class="block px-6 py-3 border-b border-gray-100 hover:bg-cream hover:text-green transition-colors normal-case">Arera Colony</a>
+                    <a href="location-hoshangabad.html" class="block px-6 py-3 border-b border-gray-100 hover:bg-cream hover:text-green transition-colors normal-case">Hoshangabad Rd</a>
+                    <a href="location-10-no.html" class="block px-6 py-3 border-b border-gray-100 hover:bg-cream hover:text-green transition-colors normal-case">10 No. Market</a>
+                    <a href="location-fortune.html" class="block px-6 py-3 hover:bg-cream hover:text-green transition-colors normal-case">Fortune Arcade</a>
+                </div>
+            </div>
+            
+            <div class="relative group h-full flex items-center">
+                <button class="hover:text-green transition-colors cursor-pointer flex items-center gap-1 focus:outline-none uppercase whitespace-nowrap">
+                    MORE
+                    <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                </button>
+                <div class="absolute top-[60px] -left-4 w-48 bg-white border border-ink shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 transform group-hover:translate-y-0 translate-y-2 z-50">
+                    <a href="events.html" class="block px-6 py-3 border-b border-gray-100 hover:bg-cream hover:text-green transition-colors normal-case">Events</a>
+                    <a href="amenities-perks.html" class="block px-6 py-3 border-b border-gray-100 hover:bg-cream hover:text-green transition-colors normal-case">Amenities & Perks</a>
+                    <a href="blogs.html" class="block px-6 py-3 border-b border-gray-100 hover:bg-cream hover:text-green transition-colors normal-case">Blogs</a>
+                    <a href="gallery.html" class="block px-6 py-3 border-b border-gray-100 hover:bg-cream hover:text-green transition-colors normal-case">Gallery</a>
+                    <a href="faqs.html" class="block px-6 py-3 hover:bg-cream hover:text-green transition-colors normal-case">FAQs</a>
+                </div>
+            </div>
+
+            <a href="tel:+918989898040" class="border border-ink px-4 lg:px-6 py-2 hover:bg-ink hover:text-white transition-all text-center whitespace-nowrap">
+                Call Now
+            </a>
+        </div>
+        
+        <button id="mobile-menu-btn" class="md:hidden p-2">
+            <div class="w-8 h-0.5 bg-ink mb-1.5"></div>
+            <div class="w-8 h-0.5 bg-ink mb-1.5"></div>
+            <div class="w-8 h-0.5 bg-ink"></div>
+        </button>
+    </div>
+    
+    <div id="mobile-menu" class="hidden bg-cream border-t border-ink absolute w-full left-0 h-screen z-50 overflow-y-auto pb-20">
+        <div class="flex flex-col p-8 space-y-8 text-2xl font-serif">
+            <a href="about.html" class="block">About Us</a>
+            
+            <div class="w-full">
+                <details class="group">
+                    <summary class="flex justify-between items-center cursor-pointer list-none focus:outline-none">
+                        <span>Offerings</span>
+                        <svg class="w-4 h-4 transition-transform duration-300 group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                    </summary>
+                    
+                    <div class="pl-4 mt-4 space-y-4 font-sans text-lg text-gray-600 border-l-2 border-gray-200 ml-1">
+                        <details class="group/nested">
+                            <summary class="flex justify-between items-center cursor-pointer list-none py-2 px-3 rounded-md hover:bg-[#A7B68F] hover:text-white transition-colors focus:outline-none">
+                                <span>Coworking Plans</span>
+                                <svg class="w-3 h-3 transition-transform duration-300 group-open/nested:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                            </summary>
+                            <div class="pl-4 mt-2 space-y-3 text-base text-gray-500">
+                                <a href="dedicated-workspaces.html" class="block">Dedicated Workspaces</a>
+                                <a href="private-office.html" class="block">Private Office</a>
+                                <a href="private-cabins.html" class="block">Private Cabins</a>
+                            </div>
+                        </details>
+
+                        <a href="meeting-rooms.html" class="block px-3">Meeting Rooms</a>
+                        <a href="virtual-office.html" class="block px-3">Virtual Office</a>
+                        <a href="community.html" class="block px-3">Community & Spaces</a>
+                    </div>
+                </details>
+            </div>
+
+            <div class="w-full">
+                <details class="group">
+                    <summary class="flex justify-between items-center cursor-pointer list-none focus:outline-none">
+                        <span>Locations</span>
+                        <svg class="w-4 h-4 transition-transform duration-300 group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                    </summary>
+                    <div class="pl-4 mt-4 space-y-4 font-sans text-lg text-gray-600 border-l-2 border-gray-200 ml-1">
+                        <a href="location-arera.html" class="block px-3">Arera Colony</a>
+                        <a href="location-hoshangabad.html" class="block px-3">Hoshangabad Rd</a>
+                        <a href="location-10-no.html" class="block px-3">10 No. Market</a>
+                        <a href="location-fortune.html" class="block px-3">Fortune Arcade</a>
+                    </div>
+                </details>
+            </div>
+            
+            <div class="w-full">
+                <details class="group">
+                    <summary class="flex justify-between items-center cursor-pointer list-none focus:outline-none">
+                        <span>More</span>
+                        <svg class="w-4 h-4 transition-transform duration-300 group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                    </summary>
+                    <div class="pl-4 mt-4 space-y-4 font-sans text-lg text-gray-600 border-l-2 border-gray-200 ml-1">
+                        <a href="events.html" class="block px-3 hover:text-ink transition-colors">Events</a>
+                        <a href="amenities-perks.html" class="block px-3 hover:text-ink transition-colors">Amenities & Perks</a>
+                        <a href="blogs.html" class="block px-3 hover:text-ink transition-colors">Blogs</a>
+                        <a href="gallery.html" class="block px-3 hover:text-ink transition-colors">Gallery</a>
+                        <a href="faqs.html" class="block px-3 hover:text-ink transition-colors">FAQs</a>
+                    </div>
+                </details>
+            </div>
+
+            <div class="pt-4 border-t border-gray-300">
+                <a href="tel:+918989898040" class="bg-green text-white py-4 font-sans text-xl font-bold uppercase tracking-widest text-center block w-full hover:bg-ink transition-colors">Call Now</a>
+            </div>
+        </div>
+    </div>
+</nav>
+
+
+<main class="overflow-hidden">
+        
+        
+              
+   
+
+<section class="bg-green py-12 md:py-24 text-center">
+            <div class="container mx-auto px-6">
+                <div class="flex justify-center items-center gap-2 md:gap-4 text-[10px] md:text-xs font-mono uppercase tracking-widest text-ink mb-4 md:mb-6">
+                    <span>SHARED MOMENTS</span>
+                    <span>•</span>
+                    <span>15 FEBRURY, 2026</span>
+                </div>
+            
+                <h1 class="text-4xl md:text-6xl font-serif mb-6 md:mb-8 leading-tight max-w-6xl mx-auto">
+                    A New Milestone: <br class="hidden md:block"> Opening Puja at Fortune, Bawadiya Kalan
+                </h1>
+            </div>
+        </section>
+
+
+
+
+
+
+        <main class="py-20 px-6 md:px-12 lg:px-24  border-t border-ink">
+        <div class="container mx-auto max-w-6xl">
+
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-24 mb-16 items-start">
+                
+                <div>
+                    <h1 class="text-3xl md:text-5xl lg:text-6xl leading-tight mb-6 md:mb-8">
+                     Chapter Four. <br> <span class="whitespace-nowrap">Built With Intention.</span> <br> A Space Comes to Life.
+                    </h1>
+                    
+                    <div class="text-base md:text-lg leading-relaxed text-gray-800 space-y-4">
+                        <p>
+                            Every expansion tells a story. Not just of growth, but of belief — belief in a community, in the way people choose to work, and in spaces that support both focus and flow.
+                        </p>
+                        <p>
+                             With the opening of its fourth centre at 
+ <a href="location-fortune.html" target="_blank" class="hover:text-green transition-colors border-b border-ink hover:border-green">
+          Fortune, Bawadiya Kalan</a>, Oneworx began this new journey with a traditional puja — a quiet ceremony that brought intention, gratitude, and clarity into the space before the first workday begins.
+                        </p>
+                        
+                        <p class="font-serif italic text-lg md:text-xl text-gray-500 mt-4 border-l-2 border-green pl-4">
+                          “Every new space deserves a mindful beginning.”
+                        </p>
+                    </div>
+                </div>
+
+                <div class="w-full h-full border border-ink overflow-hidden relative shadow-lg">
+                    <img src="assets/images/blogs/Fortune opening 01.png" alt="PUJA 1" class="object-cover w-full h-full">
+                </div>
+
+            </div>
+
+            <div class="text-base md:text-lg leading-relaxed text-gray-800 space-y-6 md:space-y-8">
+    
+    <h3 class="text-xl md:text-2xl font-bold font-sans text-ink mt-2">Grounded in Gratitude</h3>
+    <p>
+        The morning began softly, with prayers, incense, and a shared sense of calm. There were no grand announcements — just a respectful pause to acknowledge the path that led here.
+Team members gathered, offerings were made, and the space slowly filled with warmth and quiet positivity. It wasn’t about celebration in the loudest sense — it was about grounding the new centre with purpose before the doors officially opened.
+Moments like these are reminders that growth is meaningful when it is intentional.
+    </p>
+
+    <h3 class="text-xl md:text-2xl font-bold font-sans text-ink mt-6 md:mt-8">Designed for What Matters</h3>
+    <p>
+        Located in Fortune, Bawadiya Kalan, this new Oneworx centre carries forward the spirit of the brand — while adapting to a new neighborhood and new possibilities. The layout has been planned to support:
+    </p>
+
+    <ul class="list-disc pl-6 space-y-3 marker:text-green">
+        <li>Deep, uninterrupted focus</li>
+        <li>Thoughtful meetings and collaborations</li>
+        <li>A workday that feels balanced, not rushed</li>
+    </ul>
+
+    <p>
+        With natural light, clean interiors, and well-defined zones, the space is designed to feel steady and welcoming. It’s a workspace meant to support progress quietly — without distraction, without excess. Because at Oneworx, the environment is never an afterthought.
+    </p>
+
+    <h3 class="text-xl md:text-2xl font-bold font-sans text-ink mt-6 md:mt-8">Why Fortune, Bawadiya Kalan</h3>
+    <p>
+         Bawadiya Kalan has steadily become one of Bhopal’s emerging residential and commercial areas — connected, accessible, and growing with the city.
+
+Bringing Oneworx to this location felt like a natural step. It allows professionals in and around the area to work closer to where they live, without compromising on infrastructure or atmosphere.
+
+The Fortune centre is built for founders, consultants, hybrid teams, and individuals who want a reliable, thoughtfully managed workspace in their part of the city.
+    </p>
+ 
+    <h3 class="text-xl md:text-2xl font-bold font-sans text-ink mt-6 md:mt-8">More Than an Opening</h3>
+    <p>
+     The puja marked more than the inauguration of a new office.
+ <br>
+It marked new conversations waiting to happen.
+New teams finding their footing.
+New routines settling into place.
+New ideas taking shape.
+<br>
+Each centre Oneworx opens strengthens the network of people who choose to work differently — calmly, consistently, and with purpose.
+    </p>
+
+</div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center mt-16 md:mt-20">
+                
+                <div class="w-full aspect-[4/3] border border-ink overflow-hidden relative shadow-lg">
+                     <img src="assets/images/blogs/Fortune opening 02.png" alt="puja 2" class="object-cover w-full h-full">
+                </div>
+
+                <div class="flex flex-col justify-center h-full">
+                    <h3 class="text-3xl md:text-4xl font-serif font-bold mb-6 md:mb-8 text-ink">Beginning with Intention</h3>
+                    
+                    <p class="text-base md:text-xl text-gray-700 leading-relaxed mb-6 md:mb-10 font-sans">
+                      As the ceremony concluded, the feeling wasn’t one of completion — but of readiness.
+                    </p>
+                    
+                    <ul class="text-base md:text-lg font-sans italic space-y-4 text-ink list-none pl-4 border-l-4 border-green">
+                      Readiness for focused mornings. For collaborative afternoons. For steady growth. The fourth Oneworx centre at Fortune, Bawadiya Kalan now stands ready — not just as another location, but as another chapter in a growing community. Because every workspace begins with walls and design. But it becomes meaningful through the people who bring it to life.
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+    </main>
+
+ 
+
+
+
+ <section class="w-full bg-green border-y border-ink py-6 mt-10">
+        <div class="container mx-auto px-6 md:px-12 lg:px-24 flex flex-col md:flex-row justify-center items-center gap-4 md:gap-8">
+            
+            <p class="text-base md:text-xl font-sans  text-ink text-center md:text-left">
+               Moments from the opening puja at our fourth outlet, Fortune Arcade.
+            </p>
+
+            <a href="https://www.instagram.com/reel/DU6F5tajBvl/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==" target="_blank" class="bg-ink text-cream px-8 py-3 rounded-full font-bold uppercase tracking-wider text-sm hover:bg-cream hover:text-green hover:scale-105 transition-all duration-300 shadow-md whitespace-nowrap">
+                 Watch the reel
+            </a>
+
+        </div>
+    </section>
+
+
+
+
+
+
+        <section class="bg-cream  py-20">
+            <div class="container mx-auto px-6">
+                <h3 class="text-3xl font-serif mb-12 text-center">Read Next</h3>
+                
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+
+
+                    <a href="Independence-Day.html" class="group cursor-pointer block">
+                        <div class="aspect-[4/3] overflow-hidden rounded-sm mb-4 border border-gray-200">
+                            <img src="assets/images/blogs/Independence day 1.jpg" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
+                        </div>
+                        <h4 class="text-xl font-serif mb-2 group-hover:text-green transition-colors">An Evening of Ease: <br> Independence Day at Oneworx
+</h4>
+                        <span class="text-xs font-mono uppercase tracking-wider text-gray-500">15 aug, 2025</span>
+                    </a>
+
+
+
+ <a href="Ganesh-Chaturthi.html" class="group cursor-pointer block">
+                        <div class="aspect-[4/3] overflow-hidden rounded-sm mb-4 border border-gray-200">
+                            <img src="assets/images/blogs/Ganesh Chaturthi 1.jpg" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
+                        </div>
+                        <h4 class="text-xl font-serif mb-2 group-hover:text-green transition-colors">Ganesh Chaturthi at Oneworx: <br> Celebrating Culture at Work
+</h4>
+                        <span class="text-xs font-mono uppercase tracking-wider text-gray-500">26 Aug, 2025</span>
+                    </a>
+
+
+                     <a href="Atharva-blog.html" class="group cursor-pointer block">
+                        <div class="aspect-[4/3] overflow-hidden rounded-sm mb-4 border border-gray-200">
+                            <img src="assets/images/blogs/atharva 2.jpg" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
+                        </div>
+                        <h4 class="text-xl font-serif mb-2 group-hover:text-green transition-colors">Building Big Dreams from Bhopal: <br> A Member Story at Oneworx</h4>
+                        <span class="text-xs font-mono uppercase tracking-wider text-gray-500">12 Dec, 2025</span>
+                    </a>
+
+
+
+                </div>
+            </div>
+        </section>
+
+    
+
+    </main>
+
+    <footer class="bg-ink text-cream pt-20 pb-10">
+        <div class="container mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-20">
+                <div class="col-span-1 md:col-span-2">
+                    <img src="assets/images/logo-light.png" alt="OneWorx" class="h-6 md:h-10 mb-6 md:mb-8 object-contain">
+                    
+                    <p class="max-w-md text-gray-400 text-sm md:text-lg leading-relaxed">Work shouldn't feel like work. Join a community that balances professional growth with personal well-being, comfort, and connection.</p>
+                </div>
+                <div>
+                    <h4 class="font-sans text-xs text-gray-500 mb-6 uppercase tracking-widest">Links</h4>
+                    
+                    <ul class="space-y-2 text-sm md:text-lg">
+                        <li><a href="terms-of-service.html" class="hover:text-green transition-colors">Terms Of Service</a></li>
+                        <li><a href="Privacy-policy.html" class="hover:text-green transition-colors">Privacy Policy</a></li>
+                        <li><a href="assets/docs/Oneworx Brochure.pdf" target="_blank" class="hover:text-green transition-colors">Brochure</a></li>
+                        <li><a href="#" class="open-booking-modal hover:text-green transition-colors">Book Tour</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-sans text-xs text-gray-500 mb-6 uppercase tracking-widest">Connect</h4>
+                    
+                    <ul class="space-y-2 text-sm md:text-lg">
+                        <li><a href="https://www.instagram.com/oneworx_" target="_blank" class="hover:text-green transition-colors">Instagram</a></li>
+                        <li><a href="https://www.linkedin.com/company/oneworx" target="_blank" class="hover:text-green transition-colors">LinkedIn</a></li>
+                        <li><a href="https://wa.me/918989898040" target="_blank" class="hover:text-green transition-colors">WhatsApp</a></li>
+                        <li><a href="mailto:hello@oneworx.in" class="hover:text-green transition-colors">Email</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between text-xs font-mono text-gray-500">
+                <p>&copy; 2024 oneworx. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <a href="https://wa.me/918989898040" target="_blank" class="fixed bottom-6 right-6 z-50 group">
+        <div class="relative w-24 h-24 md:w-32 md:h-32 bg-ink rounded-full flex items-center justify-center shadow-lg hover:scale-110 transition-transform duration-300">
+            <svg class="absolute w-full h-full animate-spin-slow p-2" viewBox="0 0 100 100">
+                <defs><path id="circlePath" d="M 50, 50 m -37, 0 a 37,37 0 1,1 74,0 a 37,37 0 1,1 -74,0" /></defs>
+                <text font-size="10.5" font-family="monospace" font-weight="bold" fill="white" letter-spacing="1.5"><textPath xlink:href="#circlePath"> • MAKE AN ENQUIRY • BOOK A TOUR </textPath></text>
+            </svg>
+            <img src="assets/images/logo-icon.png" alt="Go" class="w-10 h-10 md:w-20 md:h-20 object-contain">
+        </div>
+    </a>
+
+    <div id="booking-modal" class="opacity-0 pointer-events-none fixed inset-0 z-[100] flex items-center justify-center bg-ink bg-opacity-95 transition-opacity duration-300 backdrop-blur-sm">
+        <div class="bg-cream w-full max-w-lg mx-4 p-8 md:p-12 relative border border-white shadow-2xl transform scale-95 transition-transform duration-300" id="modal-content">
+            <button id="close-modal" class="absolute top-6 right-6 text-4xl leading-none hover:text-green transition-colors">×</button>
+            <h2 class="text-4xl mb-2 font-serif">Join Us.</h2>
+            <form id="booking-form" class="space-y-6">
+                <input type="text" placeholder="Full Name" required class="w-full bg-transparent border-b border-ink px-2 py-3 focus:outline-none focus:border-green placeholder-gray-400 font-sans">
+                <input type="email" placeholder="Email Address" required class="w-full bg-transparent border-b border-ink px-2 py-3 focus:outline-none focus:border-green placeholder-gray-400 font-sans">
+                <div class="grid grid-cols-2 gap-6">
+                    <input type="tel" placeholder="Phone Number" required class="w-full bg-transparent border-b border-ink px-2 py-3 focus:outline-none focus:border-green placeholder-gray-400 font-sans">
+                    <input type="number" placeholder="No. of Seats" min="1" class="w-full bg-transparent border-b border-ink px-2 py-3 focus:outline-none focus:border-green placeholder-gray-400 font-sans">
+                </div>
+                <div class="relative" id="location-select-container">
+                    <select class="w-full bg-transparent border-b border-ink px-2 py-3 focus:outline-none focus:border-green text-gray-700 appearance-none rounded-none font-sans">
+                        <option value="" disabled selected>Which Location?</option>
+                        <option>Arera Colony</option>
+                        <option>Hoshangabad Rd</option>
+                        <option>10 Number Market</option>
+                        <option>Fortune Arcade</option>
+                    </select>
+                    <span class="absolute right-2 top-4 pointer-events-none text-xs">▼</span>
+                </div>
+                <button type="submit" class="w-full bg-ink text-white py-4 font-bold hover:bg-green transition-colors mt-4 text-lg font-sans">Submit Request</button>
+            </form>
+        </div>
+    </div>
+    
+    <script src="assets/js/main.js"></script>
+</body>
+</html>

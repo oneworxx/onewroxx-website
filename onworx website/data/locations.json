@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Locations | OneWorx</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: { 'cream': '#FDFBF7', 'ink': '#1A1A1A', 'terra': '#D95D39', 'blue-brand': '#2563EB', 'sage': '#E3E8E3' },
+            fontFamily: { serif: ['"DM Serif Display"', 'serif'], sans: ['"Space Grotesk"', 'sans-serif'] }
+          }
+        }
+      }
+    </script>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Space+Grotesk:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>body { font-family: 'Space Grotesk', sans-serif; background-color: #FDFBF7; color: #1A1A1A; }</style>
+</head>
+<body class="flex flex-col min-h-screen">
+
+    <nav class="bg-cream border-b border-ink sticky top-0 z-40 transition-all duration-300">
+        <div class="container mx-auto px-6 h-20 flex items-center justify-between">
+            <a href="index.html" class="text-3xl font-serif tracking-tight group">OneWorx<span class="text-terra">.</span></a>
+            <div class="hidden md:flex items-center space-x-8 text-sm font-medium uppercase tracking-wide">
+                <a href="spaces.html" class="hover:text-terra transition-colors">Spaces</a>
+                <a href="amenities.html" class="hover:text-terra transition-colors">Amenities</a>
+                <a href="locations.html" class="text-terra">Locations</a>
+                <button class="border border-ink px-6 py-2 hover:bg-ink hover:text-white transition-all open-booking-modal">Book Tour</button>
+            </div>
+            <a href="index.html" class="md:hidden text-sm underline">Home</a>
+        </div>
+    </nav>
+
+    <main class="py-16">
+        <div class="container mx-auto px-6 max-w-4xl text-center mb-16">
+            <h1 class="text-6xl mb-6 font-serif">Find us in Bhopal.</h1>
+            <p class="text-xl">Pick the one closest to your home (or your favorite coffee shop).</p>
+        </div>
+
+        <div class="container mx-auto px-6 max-w-6xl grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div class="border border-ink bg-white group cursor-pointer hover:-translate-y-2 transition-transform duration-300">
+                <div class="h-64 overflow-hidden border-b border-ink relative">
+                    <img src="https://images.unsplash.com/photo-1524758631624-e2822e304c36?auto=format&fit=crop&w=800&q=80" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500">
+                </div>
+                <div class="p-8">
+                    <h3 class="text-3xl mb-2 font-serif group-hover:text-terra transition-colors">Arera Colony</h3>
+                    <p class="text-gray-500 font-mono text-xs uppercase tracking-wider mb-4">The Flagship</p>
+                    <p class="text-sm text-gray-600 mb-6">Lush greenery meets concrete aesthetics.</p>
+                    <button class="text-sm font-bold border-b border-ink pb-1 open-booking-modal">View Map</button>
+                </div>
+            </div>
+
+            <div class="border border-ink bg-white group cursor-pointer hover:-translate-y-2 transition-transform duration-300">
+                <div class="h-64 overflow-hidden border-b border-ink relative">
+                    <img src="https://images.unsplash.com/photo-1497215728101-856f4ea42174?auto=format&fit=crop&w=800&q=80" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500">
+                </div>
+                <div class="p-8">
+                    <h3 class="text-3xl mb-2 font-serif group-hover:text-terra transition-colors">Hoshangabad Rd</h3>
+                    <p class="text-gray-500 font-mono text-xs uppercase tracking-wider mb-4">Commercial Hub</p>
+                    <p class="text-sm text-gray-600 mb-6">High-capacity spaces for growing teams.</p>
+                    <button class="text-sm font-bold border-b border-ink pb-1 open-booking-modal">View Map</button>
+                </div>
+            </div>
+
+            <div class="border border-ink bg-white group cursor-pointer hover:-translate-y-2 transition-transform duration-300">
+                <div class="h-64 overflow-hidden border-b border-ink relative">
+                    <img src="https://images.unsplash.com/photo-1604328698692-f76ea9498e76?auto=format&fit=crop&w=800&q=80" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500">
+                </div>
+                <div class="p-8">
+                    <h3 class="text-3xl mb-2 font-serif group-hover:text-terra transition-colors">10 No. Market</h3>
+                    <p class="text-gray-500 font-mono text-xs uppercase tracking-wider mb-4">City Center</p>
+                    <p class="text-sm text-gray-600 mb-6">The bustling heart of the city.</p>
+                    <button class="text-sm font-bold border-b border-ink pb-1 open-booking-modal">View Map</button>
+                </div>
+            </div>
+        </div>
+    </main>
+    
+    <div id="booking-modal" class="opacity-0 pointer-events-none fixed inset-0 z-[100] flex items-center justify-center bg-ink bg-opacity-95 transition-opacity duration-300"></div>
+    <script src="assets/js/main.js"></script>
+</body>
+</html>

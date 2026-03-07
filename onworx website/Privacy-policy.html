@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Privacy Policy | Oneworx</title> 
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              'cream': '#FDFBF7',
+              'ink': '#1A1A1A',
+              'green': '#afbe9d', 
+              'sage': '#E3E8E3',
+
+            },
+            fontFamily: {
+              serif: ['"Plantagenet"', 'serif'],
+              sans: ['"AzoSans"', 'sans-serif'],
+            },
+            animation: {
+                'spin-slow': 'spin 16s linear infinite', 
+                'scroll': 'scroll 40s linear infinite',
+            },
+            keyframes: {
+                scroll: {
+                    '0%': { transform: 'translateX(0)' },
+                    '100%': { transform: 'translateX(-50%)' },
+                }
+            }
+          }
+        }
+      }
+    </script>
+
+    <style>
+        /* 1. REGISTER CUSTOM FONTS */
+        @font-face {
+            font-family: 'Plantagenet';
+            src: url('assets/fonts/plantagenet.ttf') format('truetype'); 
+            font-weight: normal;
+            font-style: normal;
+        }
+
+        @font-face {
+            font-family: 'AzoSans';
+            src: url('assets/fonts/azosans.otf') format('opentype');
+            font-weight: normal;
+            font-style: normal;
+        }
+
+        /* 2. APPLY TO HTML TAGS */
+        body { 
+            font-family: 'AzoSans', sans-serif; 
+            background-color: #FDFBF7; 
+            color: #1A1A1A; 
+        }
+        
+        h1, h2, h3, h4, h5, h6 { 
+            font-family: 'Plantagenet', serif; 
+            font-weight: 400; 
+        }
+
+        /* 3. UTILITIES */
+        .reveal { opacity: 0; transform: translateY(40px); transition: all 1s cubic-bezier(0.16, 1, 0.3, 1); }
+        .reveal.active { opacity: 1; transform: translateY(0); }
+     </style>
+</head>
+<body class="flex flex-col min-h-screen">
+
+    <nav class="bg-cream border-b border-ink sticky top-0 z-40 transition-all duration-300" id="navbar">
+    <div class="w-full px-8 lg:px-20 h-20 flex items-center justify-between">
+        
+        <a href="index.html" class="block flex-shrink-0">
+            <img src="assets/images/logo.png" alt="OneWorx" class="h-[19.3px] w-auto object-contain">
+        </a>
+        
+        <div class="hidden md:flex items-center space-x-4 lg:space-x-8 text-sm font-medium uppercase tracking-wide h-full">
+            <a href="about.html" class="hover:text-green transition-colors cursor-pointer whitespace-nowrap">About Us</a>
+
+            <div class="relative group h-full flex items-center">
+                <a href="offerings.html" class="hover:text-[#A7B68F] transition-colors cursor-pointer flex items-center gap-1 focus:outline-none uppercase h-full whitespace-nowrap">
+                    OFFERINGS
+                    <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                </a>
+                
+                <div class="absolute top-[60px] -left-4 w-72 bg-white border border-ink shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 transform group-hover:translate-y-0 translate-y-2 z-50 text-left">
+                    <div class="relative group/nested border-b border-gray-100">
+                        <div class="px-6 py-4 hover:bg-[#A7B68F] hover:text-white cursor-pointer flex justify-between items-center transition-colors">
+                            <span class="normal-case font-medium">Coworking Plans</span>
+                            <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+                        </div>
+                        <div class="absolute left-full top-[-1px] w-64 bg-white border border-ink shadow-xl opacity-0 invisible group-hover/nested:opacity-100 group-hover/nested:visible transition-all duration-200 z-50">
+                            <a href="dedicated-workspaces.html" class="block px-6 py-3 border-b border-gray-100 hover:bg-cream hover:text-green transition-colors normal-case font-medium"> Dedicated Open Workspaces</a>
+                            <a href="private-office.html" class="block px-6 py-3 border-b border-gray-100 hover:bg-cream hover:text-green transition-colors normal-case font-medium"> Private Office</a>
+                            <a href="private-cabins.html" class="block px-6 py-3 border-gray-100 hover:bg-cream hover:text-green transition-colors normal-case font-medium">Private Cabins</a>
+                        </div>
+                    </div>
+                    <a href="meeting-rooms.html" class="block px-6 py-4 border-b border-gray-100 hover:bg-cream hover:text-green transition-colors normal-case font-medium">Meeting Rooms</a>
+                    <a href="virtual-office.html" class="block px-6 py-4 border-b border-gray-100 hover:bg-cream hover:text-green transition-colors normal-case font-medium">Virtual Office</a>
+                    <a href="community.html" class="block px-6 py-4 hover:bg-cream hover:text-green transition-colors normal-case font-medium">Community & Spaces</a>
+                </div>
+            </div>
+
+            <div class="relative group h-full flex items-center">
+                <a href="locations.html" class="hover:text-green transition-colors cursor-pointer flex items-center gap-1 focus:outline-none uppercase h-full whitespace-nowrap">
+                    Locations
+                    <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                </a>
+                <div class="absolute top-[60px] -left-4 w-56 bg-white border border-ink shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 transform group-hover:translate-y-0 translate-y-2 z-50">
+                    <a href="location-arera.html" class="block px-6 py-3 border-b border-gray-100 hover:bg-cream hover:text-green transition-colors normal-case">Arera Colony</a>
+                    <a href="location-hoshangabad.html" class="block px-6 py-3 border-b border-gray-100 hover:bg-cream hover:text-green transition-colors normal-case">Hoshangabad Rd</a>
+                    <a href="location-10-no.html" class="block px-6 py-3 border-b border-gray-100 hover:bg-cream hover:text-green transition-colors normal-case">10 No. Market</a>
+                    <a href="location-fortune.html" class="block px-6 py-3 hover:bg-cream hover:text-green transition-colors normal-case">Fortune Arcade</a>
+                </div>
+            </div>
+            
+            <div class="relative group h-full flex items-center">
+                <button class="hover:text-green transition-colors cursor-pointer flex items-center gap-1 focus:outline-none uppercase whitespace-nowrap">
+                    MORE
+                    <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                </button>
+                <div class="absolute top-[60px] -left-4 w-48 bg-white border border-ink shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 transform group-hover:translate-y-0 translate-y-2 z-50">
+                    <a href="events.html" class="block px-6 py-3 border-b border-gray-100 hover:bg-cream hover:text-green transition-colors normal-case">Events</a>
+                    <a href="amenities-perks.html" class="block px-6 py-3 border-b border-gray-100 hover:bg-cream hover:text-green transition-colors normal-case">Amenities & Perks</a>
+                    <a href="blogs.html" class="block px-6 py-3 border-b border-gray-100 hover:bg-cream hover:text-green transition-colors normal-case">Blogs</a>
+                    <a href="gallery.html" class="block px-6 py-3 border-b border-gray-100 hover:bg-cream hover:text-green transition-colors normal-case">Gallery</a>
+                    <a href="faqs.html" class="block px-6 py-3 hover:bg-cream hover:text-green transition-colors normal-case">FAQs</a>
+                </div>
+            </div>
+
+            <a href="tel:+918989898040" class="border border-ink px-4 lg:px-6 py-2 hover:bg-ink hover:text-white transition-all text-center whitespace-nowrap">
+                Call Now
+            </a>
+        </div>
+        
+        <button id="mobile-menu-btn" class="md:hidden p-2">
+            <div class="w-8 h-0.5 bg-ink mb-1.5"></div>
+            <div class="w-8 h-0.5 bg-ink mb-1.5"></div>
+            <div class="w-8 h-0.5 bg-ink"></div>
+        </button>
+    </div>
+    
+    <div id="mobile-menu" class="hidden bg-cream border-t border-ink absolute w-full left-0 h-screen z-50 overflow-y-auto pb-20">
+        <div class="flex flex-col p-8 space-y-8 text-2xl font-serif">
+            <a href="about.html" class="block">About Us</a>
+            
+            <div class="w-full">
+                <details class="group">
+                    <summary class="flex justify-between items-center cursor-pointer list-none focus:outline-none">
+                        <span>Offerings</span>
+                        <svg class="w-4 h-4 transition-transform duration-300 group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                    </summary>
+                    
+                    <div class="pl-4 mt-4 space-y-4 font-sans text-lg text-gray-600 border-l-2 border-gray-200 ml-1">
+                        <details class="group/nested">
+                            <summary class="flex justify-between items-center cursor-pointer list-none py-2 px-3 rounded-md hover:bg-[#A7B68F] hover:text-white transition-colors focus:outline-none">
+                                <span>Coworking Plans</span>
+                                <svg class="w-3 h-3 transition-transform duration-300 group-open/nested:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                            </summary>
+                            <div class="pl-4 mt-2 space-y-3 text-base text-gray-500">
+                                <a href="dedicated-workspaces.html" class="block">Dedicated Workspaces</a>
+                                <a href="private-office.html" class="block">Private Office</a>
+                                <a href="private-cabins.html" class="block">Private Cabins</a>
+                            </div>
+                        </details>
+
+                        <a href="meeting-rooms.html" class="block px-3">Meeting Rooms</a>
+                        <a href="virtual-office.html" class="block px-3">Virtual Office</a>
+                        <a href="community.html" class="block px-3">Community & Spaces</a>
+                    </div>
+                </details>
+            </div>
+
+            <div class="w-full">
+                <details class="group">
+                    <summary class="flex justify-between items-center cursor-pointer list-none focus:outline-none">
+                        <span>Locations</span>
+                        <svg class="w-4 h-4 transition-transform duration-300 group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                    </summary>
+                    <div class="pl-4 mt-4 space-y-4 font-sans text-lg text-gray-600 border-l-2 border-gray-200 ml-1">
+                        <a href="location-arera.html" class="block px-3">Arera Colony</a>
+                        <a href="location-hoshangabad.html" class="block px-3">Hoshangabad Rd</a>
+                        <a href="location-10-no.html" class="block px-3">10 No. Market</a>
+                        <a href="location-fortune.html" class="block px-3">Fortune Arcade</a>
+                    </div>
+                </details>
+            </div>
+            
+            <div class="w-full">
+                <details class="group">
+                    <summary class="flex justify-between items-center cursor-pointer list-none focus:outline-none">
+                        <span>More</span>
+                        <svg class="w-4 h-4 transition-transform duration-300 group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                    </summary>
+                    <div class="pl-4 mt-4 space-y-4 font-sans text-lg text-gray-600 border-l-2 border-gray-200 ml-1">
+                        <a href="events.html" class="block px-3 hover:text-ink transition-colors">Events</a>
+                        <a href="amenities-perks.html" class="block px-3 hover:text-ink transition-colors">Amenities & Perks</a>
+                        <a href="blogs.html" class="block px-3 hover:text-ink transition-colors">Blogs</a>
+                        <a href="gallery.html" class="block px-3 hover:text-ink transition-colors">Gallery</a>
+                        <a href="faqs.html" class="block px-3 hover:text-ink transition-colors">FAQs</a>
+                    </div>
+                </details>
+            </div>
+
+            <div class="pt-4 border-t border-gray-300">
+                <a href="tel:+918989898040" class="bg-green text-white py-4 font-sans text-xl font-bold uppercase tracking-widest text-center block w-full hover:bg-ink transition-colors">Call Now</a>
+            </div>
+        </div>
+    </div>
+</nav>
+
+
+    <main>
+
+<section class="bg-green py-16 md:py-24 text-center px-6 md:px-12 lg:px-16">
+            <div class="container mx-auto max-w-7xl">
+                <h1 class="text-5xl md:text-8xl text-black font-serif mb-4 md:mb-6">Privacy Policy</h1>
+                
+                <p class="text-base md:text-xl text-black font-sans tracking-wide max-w-4xl mx-auto">
+                   Learn how we collect, use, and safeguard your information.
+                </p>
+            </div>
+        </section>
+
+
+
+
+       <section class="border-y border-ink bg-cream py-16 md:py-24 px-6">
+    <div class="container mx-auto max-w-8xl"> 
+        
+        <div class="text-base md:text-xl leading-relaxed text-gray-800 mb-12 space-y-6 md:space-y-8 font-sans text-left">
+                                         
+            <p>
+                At Oneworx, we are dedicated to protecting your privacy and maintaining your trust. This policy explains how we collect, use, and protect your personal information when you interact with our websites, apps, or services (collectively “Services”).
+            </p>
+
+            <p class="mt-8 md:mt-10">
+                <strong class="text-lg md:text-xl font-sans text-ink mr-2">1.  Introduction</strong><br>
+                a) <strong>Personal Information: </strong> This includes any data that can identify you personally, either on its own or when combined with other information.<br>
+                b) <strong>Our Services:</strong> This policy applies to the services provided by Oneworx.<br>
+                c) <strong>Who is "You":</strong> In this policy, "you" refers to anyone who uses our website or services.
+            </p>
+
+            <p class="mt-8 md:mt-10">
+                <strong class="text-lg md:text-xl font-sans text-ink mr-2">2.  What Information We Collect</strong> <br>
+                We collect information in the following ways: <br>
+                a) <strong>Information you provide: </strong> Details you share directly with us.<br>
+                b) <strong>Information from your company:</strong> Data your employer or authorized representative provides.<br>
+                c) <strong>Device and usage data: </strong> Information about your devices, location, and how you use our services. <br>
+                d) <strong>Third parties: </strong>  Information we receive from landlords, property brokers, and other external sources.
+            </p>
+
+            <p class="mt-8 md:mt-10">
+                <strong class="text-lg md:text-xl font-sans text-ink mr-2">3.  Types of Information We Collect</strong> <br>
+                Depending on how you interact with us, we may collect the following types of personal information: <br>
+                a) <strong>Contact Information: </strong> Your name, phone number, email address, and mailing address.<br>
+                b) <strong>KYC Information:</strong> Your photo, government ID, and date of birth for verification purposes.<br>
+                c) <strong>Professional Information: </strong> Details about your job, company, and role. <br>
+                d) <strong>Payment Information:  </strong>   Credit/debit card details and bank account information.<br>
+                e) <strong>Office Preferences: </strong> Temperature, desk settings, snack/ beverage preferences, etc.<br>
+                f) <strong> Usage Information: </strong> Data on how often you visit, the services you use, Wi-Fi or printer usage, etc.<br>
+                g) <strong>Communications: </strong> Any information you send through emails, messages, or feedback platforms.<br>
+                h) <strong>Device and Online Activity: </strong> Information such as IP address, Wi-Fi MAC address, or geolocation if enabled.
+            </p>
+
+            <p class="mt-8 md:mt-10">
+                <strong class="text-lg md:text-xl font-sans text-ink mr-2">4.  Information We Get from Others </strong> <br>
+                We may also collect information about you from third-party sources like your company, landlords, or public databases. This helps us provide the services you need.
+            </p>
+
+            <p class="mt-8 md:mt-10">
+                <strong class="text-lg md:text-xl font-sans text-ink mr-2">5.  Use of Analytics Tools </strong> <br>
+                We use tools like Google Analytics to collect information about your use of our website, such as which pages you visit and how often. This information helps us improve our services but does not include your personal identifying data.
+            </p>
+
+            <p class="mt-8 md:mt-10">
+                <strong class="text-lg md:text-xl font-sans text-ink mr-2">6. Your Privacy Choices </strong> <br>
+                If you enable "Do Not Track" in your browser, we will respect this and stop tracking your information. We also offer mobile-friendly versions of our services, and some mobile tools may require you to log in with your account for access.
+            </p>
+
+            <p class="mt-8 md:mt-10">
+                <strong class="text-lg md:text-xl font-sans text-ink mr-2">7.  Use of Personal Information </strong> <br>
+                We use your personal information to:<br>
+                a) Provide you with our services, including events and other materials you request.<br>
+                b) Protect against fraud and ensure both physical and online security.<br>
+                c) Respond to customer service requests.<br>
+                d) Analyze and improve our products and services to better meet your needs.<br>
+                e) Contact you with information about our services, promotions, and offers via email, phone, or other methods.<br>
+                f) Fulfill legal obligations and protect our rights, including handling contracts and legal requests.
+            </p>
+
+            <p class="mt-8 md:mt-10">
+                <strong class="text-lg md:text-xl font-sans text-ink mr-2">8.  Sharing of Personal Information</strong> <br>
+                We share your personal information in specific circumstances: <br>
+                a) <strong>With Our Community: </strong>  In online/offline member networks to help you connect with others.<br>
+                b) <strong>With Primary Members:</strong>  Information on individual service usage is shared with the primary member or organization paying for the services.<br>
+                c) <strong> With Suppliers/Vendors: </strong> We work with third-party service providers who follow our instructions to help us run our business. <br>
+                d) <strong>With Landlords/Building Management:  </strong>    Information may be shared for managing building operations effectively.<br>
+                e) <strong>For Research/Surveys: </strong> We may use your information for research or surveys to improve our services. Participation is voluntary.<br>
+                f) <strong> When Required by Law:  </strong> We share personal information to provide services, meet legal obligations, or protect our rights.<br>
+                g) <strong>Corporate Transactions: </strong> If there’s a business transaction, such as a merger or sale, we may share your information.<br>
+                h) <strong>Third-Party Partners: </strong> With your consent, we may share your information with partners to offer additional services related to your membership.
+            </p>
+
+            <p class="mt-8 md:mt-10">
+                <strong class="text-lg md:text-xl font-sans text-ink mr-2">10.  Your Rights </strong> <br>
+                You have the right to:<br>
+                a) Know whether we store, use, or share your personal information.<br>
+                b) Access or obtain a copy of your personal information.<br>
+                c) Request corrections or updates to your personal information.<br>
+                d) Ask us to erase, block, or anonymize your data, subject to certain legal exceptions.<br>
+                e) Withdraw consent for processing your data, though this may limit some services.<br>
+                f) Object to decisions made based on automated data processing.<br>
+                g) Cancel your account with us.<br>
+                h) Opt-out or withdraw your consent for certain uses of your personal information, especially related to direct marketing.
+            </p>
+
+            <p class="mt-8 md:mt-10">
+                <strong class="text-lg md:text-xl font-sans text-ink mr-2">11.  Sensitive Personal Information</strong> An Authorized If you have given us consent to use sensitive personal information (e.g., health details, religious beliefs, or biometric data), you may withdraw that consent at any time, as allowed by law. We will seek your explicit consent before sharing or using sensitive personal information for purposes beyond its original intent.
+            </p>
+
+            <p class="mt-8 md:mt-10">
+                <strong class="text-lg md:text-xl font-sans text-ink mr-2">12.  Email and Telephone Communications </strong><br>
+                a) <strong>Opting Out of Marketing Communications:</strong> You can unsubscribe from marketing emails at any time, but we will still send transactional emails about the services you requested. You may also receive updates on our terms and policies, which you cannot opt-out of unless you end your relationship with Oneworx.<br>
+                b) <strong>Collaboration: </strong>  We don’t sell your information for direct marketing purposes. However, we may partner with organizations for events or programs. After participating, you may receive communications from them, and their privacy policy will explain how to opt-out.<br>
+                c) <strong>Text Messages: </strong> We may send SMS notifications related to services or transactions. You can stop these messages anytime by replying "STOP."
+            </p>
+
+            <p class="mt-8 md:mt-10">
+                <strong class="text-lg md:text-xl font-sans text-ink mr-2">13.  Retention of Personal Information </strong><br>
+                We retain your personal information for as long as you maintain a relationship with us and for five years afterward, to comply with legal requirements. We consider the following when deciding how long to retain your data:<br>
+                a) Improving our services;<br>
+                b) Maintaining business records for analysis or audit purposes;<br>
+                c) Complying with legal retention requirements;<br>
+                d) Handling potential legal claims or complaints.
+            </p>
+
+            <p class="mt-8 md:mt-10">
+                <strong class="text-lg md:text-xl font-sans text-ink mr-2">14.  Information Security </strong><br>
+                We take steps to protect your personal information through technical and organizational measures, but no data transmission or storage system is entirely secure. You can help by using strong passwords, not sharing credentials, and following security best practices.
+            </p>
+
+            <p class="mt-8 md:mt-10">
+                <strong class="text-lg md:text-xl font-sans text-ink mr-2">15.  Automated Processing </strong><br>
+                In the future, we may use automated processes to evaluate your eligibility for new services or business opportunities. We will put safeguards in place where required by law, allowing you to request human review or contest decisions based on automated processing. By using our services, you agree that we may communicate with you electronically about privacy and security issues. If we discover a security breach, we may notify you via email, postal mail, or a notice on our platform.
+            </p>
+
+            <p class="mt-8 md:mt-10">
+                <strong class="text-lg md:text-xl font-sans text-ink mr-2">16. Other Rights and Important Information </strong> <br>
+                a) <strong>CCTV: </strong> Our buildings have CCTV cameras installed to ensure the safety of employees, members, vendors, and guests. We may access these recordings for security purposes or share them with authorized parties or legal authorities if necessary. Typically, the recordings are retained for a short period but may be kept longer if needed for investigations or by legal request. <br>
+                b) <strong>Third Parties:</strong> This Privacy Policy only applies to Oneworx, and not to third parties. While we may display third-party ads or provide links to third-party websites, we are not responsible for their privacy practices. Before interacting with third-party services, we recommend reviewing their privacy policies, as their data collection, use, and sharing are separate from ours.
+            </p>
+
+            <p class="mt-8 md:mt-10">
+                <strong class="text-lg md:text-xl font-sans text-ink mr-2">17.  Changes to This Policy</strong> <br>
+                We may update this policy at any time. If there are significant changes, we will notify you by posting the updates on our platform or sending an email. The “Last Updated” date will show when these changes became effective. Please review the policy regularly to stay informed. Your continued use of our services after the changes will signify your acceptance of the revised policy.
+            </p>
+
+            <p class="mt-8 md:mt-10">
+                <strong class="text-lg md:text-xl font-sans text-ink mr-2">18.  Complaints and Questions</strong> <br>
+                If you have any questions or complaints regarding this policy, please contact us. We're here to help clarify any concerns you may have regarding your data and privacy. <br>
+                This policy ensures transparency about how Oneworx handles your personal information and offers you control over your data.
+            </p>
+
+        </div>
+    </div>
+</section>
+    </main>
+
+    <footer class="bg-ink text-cream pt-20 pb-10">
+        <div class="container mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-20">
+                <div class="col-span-1 md:col-span-2">
+                    <img src="assets/images/logo-light.png" alt="OneWorx" class="h-6 md:h-10 mb-6 md:mb-8 object-contain">
+                    
+                    <p class="max-w-md text-gray-400 text-sm md:text-lg leading-relaxed">Work shouldn't feel like work. Join a community that balances professional growth with personal well-being, comfort, and connection.</p>
+                </div>
+                <div>
+                    <h4 class="font-sans text-xs text-gray-500 mb-6 uppercase tracking-widest">Links</h4>
+                    
+                    <ul class="space-y-2 text-sm md:text-lg">
+                        <li><a href="terms-of-service.html" class="hover:text-green transition-colors">Terms Of Service</a></li>
+                        <li><a href="Privacy-policy.html" class="hover:text-green transition-colors">Privacy Policy</a></li>
+                        <li><a href="assets/docs/Oneworx Brochure.pdf" target="_blank" class="hover:text-green transition-colors">Brochure</a></li>
+                        <li><a href="#" class="open-booking-modal hover:text-green transition-colors">Book Tour</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-sans text-xs text-gray-500 mb-6 uppercase tracking-widest">Connect</h4>
+                    
+                    <ul class="space-y-2 text-sm md:text-lg">
+                        <li><a href="https://www.instagram.com/oneworx_" target="_blank" class="hover:text-green transition-colors">Instagram</a></li>
+                        <li><a href="https://www.linkedin.com/company/oneworx" target="_blank" class="hover:text-green transition-colors">LinkedIn</a></li>
+                        <li><a href="https://wa.me/918989898040" target="_blank" class="hover:text-green transition-colors">WhatsApp</a></li>
+                        <li><a href="mailto:hello@oneworx.in" class="hover:text-green transition-colors">Email</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between text-xs font-mono text-gray-500">
+                <p>&copy; 2024 oneworx. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+
+    <a href="https://wa.me/918989898040" target="_blank" class="fixed bottom-6 right-6 z-50 group">
+    <div class="relative w-24 h-24 md:w-32 md:h-32 bg-ink rounded-full flex items-center justify-center shadow-lg hover:scale-110 transition-transform duration-300">
+        <svg class="absolute w-full h-full animate-spin-slow p-2" viewBox="0 0 100 100">
+            <defs><path id="circlePath" d="M 50, 50 m -37, 0 a 37,37 0 1,1 74,0 a 37,37 0 1,1 -74,0" /></defs>
+            <text font-size="10.5" font-family="monospace" font-weight="bold" fill="white" letter-spacing="1.5"><textPath xlink:href="#circlePath"> • MAKE AN ENQUIRY • BOOK A TOUR </textPath></text>
+        </svg>
+        <img src="assets/images/logo-icon.png" alt="Go" class="w-10 h-10 md:w-20 md:h-20 object-contain">
+    </div>
+</a>
+
+
+    <div id="booking-modal" class="opacity-0 pointer-events-none fixed inset-0 z-[100] flex items-center justify-center bg-ink bg-opacity-95 transition-opacity duration-300 backdrop-blur-sm">
+        <div class="bg-cream w-full max-w-lg mx-4 p-8 md:p-12 relative border border-white shadow-2xl transform scale-95 transition-transform duration-300" id="modal-content">
+            <button id="close-modal" class="absolute top-6 right-6 text-4xl leading-none hover:text-green transition-colors">&times;</button>
+            <h2 class="text-4xl mb-2 font-serif">Join Us.</h2>
+            <p class="text-gray-500 mb-8 font-sans">Elevate your workspace experience.</p>
+
+                    <form id="booking-form" class="space-y-6">
+    
+    <input type="text" placeholder="Full Name" required class="w-full bg-transparent border-b border-ink px-2 py-3 focus:outline-none focus:border-green placeholder-gray-400 font-sans">
+    
+    <input type="email" placeholder="Email Address" required class="w-full bg-transparent border-b border-ink px-2 py-3 focus:outline-none focus:border-green placeholder-gray-400 font-sans">
+
+     <div class="grid grid-cols-2 gap-6">
+    <input type="tel" placeholder="Phone Number" required class="w-full bg-transparent border-b border-ink px-2 py-3 focus:outline-none focus:border-green placeholder-gray-400 font-sans">
+
+    <input type="number" placeholder="No. of Seats Required" min="1" class="w-full bg-transparent border-b border-ink px-2 py-3 focus:outline-none focus:border-green placeholder-gray-400 font-sans">
+ </div>
+
+    <div class="relative" id="location-select-container">
+        <select class="w-full bg-transparent border-b border-ink px-2 py-3 focus:outline-none focus:border-green text-gray-700 appearance-none rounded-none font-sans">
+            <option value="" disabled selected>Which Location?</option>
+            <option>Arera Colony</option>
+            <option>Hoshangabad Rd</option>
+            <option>10 Number Market</option>
+            <option>Fortune Arcade</option>
+        </select>
+        <span class="absolute right-2 top-4 pointer-events-none text-xs">▼</span>
+    </div>
+
+    <button type="submit" class="w-full bg-ink text-white py-4 font-bold hover:bg-green transition-colors mt-4 text-lg font-sans">Submit Request</button>
+</form>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Mobile Menu
+            const menuBtn = document.getElementById('mobile-menu-btn');
+            const menu = document.getElementById('mobile-menu');
+            if(menuBtn && menu) {
+                menuBtn.addEventListener('click', () => { 
+                    menu.classList.toggle('hidden'); 
+                    document.body.classList.toggle('overflow-hidden'); 
+                });
+            }
+
+            // Modal Logic
+            const modal = document.getElementById('booking-modal');
+            const modalContent = document.getElementById('modal-content');
+            const closeBtn = document.getElementById('close-modal');
+            const openBtns = document.querySelectorAll('.open-booking-modal');
+
+            const toggleModal = () => {
+                const isOpen = !modal.classList.contains('opacity-0');
+                if (isOpen) {
+                    modal.classList.add('opacity-0', 'pointer-events-none');
+                    modalContent.classList.remove('scale-100');
+                    modalContent.classList.add('scale-95');
+                } else {
+                    modal.classList.remove('opacity-0', 'pointer-events-none');
+                    modalContent.classList.remove('scale-95');
+                    modalContent.classList.add('scale-100');
+                }
+            };
+
+            if(openBtns.length > 0) {
+                openBtns.forEach(btn => btn.addEventListener('click', (e) => { e.preventDefault(); toggleModal(); }));
+            }
+            if(closeBtn) closeBtn.addEventListener('click', toggleModal);
+            if(modal) modal.addEventListener('click', (e) => { if(e.target === modal) toggleModal(); });
+        });
+    </script>
+</body>
+</html>

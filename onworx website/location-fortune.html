@@ -1,0 +1,811 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fortune Arcade | Oneworx</title> 
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              'cream': '#FDFBF7',
+              'ink': '#1A1A1A',
+              'green': '#afbe9d', 
+              'sage': '#E3E8E3',
+            },
+            fontFamily: {
+              serif: ['"Plantagenet"', 'serif'],
+              sans: ['"AzoSans"', 'sans-serif'],
+            },
+           // UPDATED ANIMATION CONFIG FOR SMOOTHNESS
+            keyframes: {
+                scroll: {
+                    '0%': { transform: 'translate3d(0, 0, 0)' }, // Uses 3D to force GPU
+                    '100%': { transform: 'translate3d(-50%, 0, 0)' },
+                }
+            },
+            animation: {
+                'spin-slow': 'spin 16s linear infinite', 
+                'scroll': 'scroll 30s linear infinite',
+            }
+          }
+        }
+      }
+    </script>
+
+
+    <style>
+        /* FONTS */
+        @font-face { font-family: 'Plantagenet'; src: url('assets/fonts/plantagenet.ttf') format('truetype'); font-weight: normal; font-style: normal; }
+        @font-face { font-family: 'AzoSans'; src: url('assets/fonts/azosans.otf') format('opentype'); font-weight: normal; font-style: normal; }
+
+        body { font-family: 'AzoSans', sans-serif; background-color: #FDFBF7; color: #1A1A1A; }
+        h1, h2, h3, h4 { font-family: 'Plantagenet', serif; font-weight: 400; }
+        
+        /* Smooth Accordion Transition */
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out, opacity 0.3s ease-out;
+            opacity: 0;
+        }
+        .faq-answer.open {
+            max-height: 500px; /* Arbitrary large height */
+            opacity: 1;
+        }
+        .icon-rotate {
+            transition: transform 0.3s ease;
+        }
+        .icon-rotate.open {
+            transform: rotate(45deg);
+        }
+
+/* Smooth Accordion Transition */
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out, opacity 0.3s ease-out;
+            opacity: 0;
+        }
+        .faq-answer.open {
+            max-height: 500px; /* Arbitrary large height */
+            opacity: 1;
+        }
+        .icon-rotate {
+            transition: transform 0.3s ease;
+        }
+        .icon-rotate.open {
+            transform: rotate(45deg);
+        }
+
+     </style>
+</head>
+<body class="flex flex-col min-h-screen">
+
+    <nav class="bg-cream border-b border-ink sticky top-0 z-40 transition-all duration-300" id="navbar">
+    <div class="w-full px-8 lg:px-20 h-20 flex items-center justify-between">
+        
+        <a href="index.html" class="block flex-shrink-0">
+            <img src="assets/images/logo.png" alt="OneWorx" class="h-[19.3px] w-auto object-contain">
+        </a>
+        
+        <div class="hidden md:flex items-center space-x-4 lg:space-x-8 text-sm font-medium uppercase tracking-wide h-full">
+            <a href="about.html" class="hover:text-green transition-colors cursor-pointer whitespace-nowrap">About Us</a>
+
+            <div class="relative group h-full flex items-center">
+                <a href="offerings.html" class="hover:text-[#A7B68F] transition-colors cursor-pointer flex items-center gap-1 focus:outline-none uppercase h-full whitespace-nowrap">
+                    OFFERINGS
+                    <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                </a>
+                
+                <div class="absolute top-[60px] -left-4 w-72 bg-white border border-ink shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 transform group-hover:translate-y-0 translate-y-2 z-50 text-left">
+                    <div class="relative group/nested border-b border-gray-100">
+                        <div class="px-6 py-4 hover:bg-[#A7B68F] hover:text-white cursor-pointer flex justify-between items-center transition-colors">
+                            <span class="normal-case font-medium">Coworking Plans</span>
+                            <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+                        </div>
+                        <div class="absolute left-full top-[-1px] w-64 bg-white border border-ink shadow-xl opacity-0 invisible group-hover/nested:opacity-100 group-hover/nested:visible transition-all duration-200 z-50">
+                            <a href="dedicated-workspaces.html" class="block px-6 py-3 border-b border-gray-100 hover:bg-cream hover:text-green transition-colors normal-case font-medium"> Dedicated Open Workspaces</a>
+                            <a href="private-office.html" class="block px-6 py-3 border-b border-gray-100 hover:bg-cream hover:text-green transition-colors normal-case font-medium"> Private Office</a>
+                            <a href="private-cabins.html" class="block px-6 py-3 border-gray-100 hover:bg-cream hover:text-green transition-colors normal-case font-medium">Private Cabins</a>
+                        </div>
+                    </div>
+                    <a href="meeting-rooms.html" class="block px-6 py-4 border-b border-gray-100 hover:bg-cream hover:text-green transition-colors normal-case font-medium">Meeting Rooms</a>
+                    <a href="virtual-office.html" class="block px-6 py-4 border-b border-gray-100 hover:bg-cream hover:text-green transition-colors normal-case font-medium">Virtual Office</a>
+                    <a href="community.html" class="block px-6 py-4 hover:bg-cream hover:text-green transition-colors normal-case font-medium">Community & Spaces</a>
+                </div>
+            </div>
+
+            <div class="relative group h-full flex items-center">
+                <a href="locations.html" class="hover:text-green transition-colors cursor-pointer flex items-center gap-1 focus:outline-none uppercase h-full whitespace-nowrap">
+                    Locations
+                    <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                </a>
+                <div class="absolute top-[60px] -left-4 w-56 bg-white border border-ink shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 transform group-hover:translate-y-0 translate-y-2 z-50">
+                    <a href="location-arera.html" class="block px-6 py-3 border-b border-gray-100 hover:bg-cream hover:text-green transition-colors normal-case">Arera Colony</a>
+                    <a href="location-hoshangabad.html" class="block px-6 py-3 border-b border-gray-100 hover:bg-cream hover:text-green transition-colors normal-case">Hoshangabad Rd</a>
+                    <a href="location-10-no.html" class="block px-6 py-3 border-b border-gray-100 hover:bg-cream hover:text-green transition-colors normal-case">10 No. Market</a>
+                    <a href="location-fortune.html" class="block px-6 py-3 hover:bg-cream hover:text-green transition-colors normal-case">Fortune Arcade</a>
+                </div>
+            </div>
+            
+            <div class="relative group h-full flex items-center">
+                <button class="hover:text-green transition-colors cursor-pointer flex items-center gap-1 focus:outline-none uppercase whitespace-nowrap">
+                    MORE
+                    <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                </button>
+                <div class="absolute top-[60px] -left-4 w-48 bg-white border border-ink shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 transform group-hover:translate-y-0 translate-y-2 z-50">
+                    <a href="events.html" class="block px-6 py-3 border-b border-gray-100 hover:bg-cream hover:text-green transition-colors normal-case">Events</a>
+                    <a href="amenities-perks.html" class="block px-6 py-3 border-b border-gray-100 hover:bg-cream hover:text-green transition-colors normal-case">Amenities & Perks</a>
+                    <a href="blogs.html" class="block px-6 py-3 border-b border-gray-100 hover:bg-cream hover:text-green transition-colors normal-case">Blogs</a>
+                    <a href="gallery.html" class="block px-6 py-3 border-b border-gray-100 hover:bg-cream hover:text-green transition-colors normal-case">Gallery</a>
+                    <a href="faqs.html" class="block px-6 py-3 hover:bg-cream hover:text-green transition-colors normal-case">FAQs</a>
+                </div>
+            </div>
+
+            <a href="tel:+918989898040" class="border border-ink px-4 lg:px-6 py-2 hover:bg-ink hover:text-white transition-all text-center whitespace-nowrap">
+                Call Now
+            </a>
+        </div>
+        
+        <button id="mobile-menu-btn" class="md:hidden p-2">
+            <div class="w-8 h-0.5 bg-ink mb-1.5"></div>
+            <div class="w-8 h-0.5 bg-ink mb-1.5"></div>
+            <div class="w-8 h-0.5 bg-ink"></div>
+        </button>
+    </div>
+    
+    <div id="mobile-menu" class="hidden bg-cream border-t border-ink absolute w-full left-0 h-screen z-50 overflow-y-auto pb-20">
+        <div class="flex flex-col p-8 space-y-8 text-2xl font-serif">
+            <a href="about.html" class="block">About Us</a>
+            
+            <div class="w-full">
+                <details class="group">
+                    <summary class="flex justify-between items-center cursor-pointer list-none focus:outline-none">
+                        <span>Offerings</span>
+                        <svg class="w-4 h-4 transition-transform duration-300 group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                    </summary>
+                    
+                    <div class="pl-4 mt-4 space-y-4 font-sans text-lg text-gray-600 border-l-2 border-gray-200 ml-1">
+                        <details class="group/nested">
+                            <summary class="flex justify-between items-center cursor-pointer list-none py-2 px-3 rounded-md hover:bg-[#A7B68F] hover:text-white transition-colors focus:outline-none">
+                                <span>Coworking Plans</span>
+                                <svg class="w-3 h-3 transition-transform duration-300 group-open/nested:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                            </summary>
+                            <div class="pl-4 mt-2 space-y-3 text-base text-gray-500">
+                                <a href="dedicated-workspaces.html" class="block">Dedicated Workspaces</a>
+                                <a href="private-office.html" class="block">Private Office</a>
+                                <a href="private-cabins.html" class="block">Private Cabins</a>
+                            </div>
+                        </details>
+
+                        <a href="meeting-rooms.html" class="block px-3">Meeting Rooms</a>
+                        <a href="virtual-office.html" class="block px-3">Virtual Office</a>
+                        <a href="community.html" class="block px-3">Community & Spaces</a>
+                    </div>
+                </details>
+            </div>
+
+            <div class="w-full">
+                <details class="group">
+                    <summary class="flex justify-between items-center cursor-pointer list-none focus:outline-none">
+                        <span>Locations</span>
+                        <svg class="w-4 h-4 transition-transform duration-300 group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                    </summary>
+                    <div class="pl-4 mt-4 space-y-4 font-sans text-lg text-gray-600 border-l-2 border-gray-200 ml-1">
+                        <a href="location-arera.html" class="block px-3">Arera Colony</a>
+                        <a href="location-hoshangabad.html" class="block px-3">Hoshangabad Rd</a>
+                        <a href="location-10-no.html" class="block px-3">10 No. Market</a>
+                        <a href="location-fortune.html" class="block px-3">Fortune Arcade</a>
+                    </div>
+                </details>
+            </div>
+            
+            <div class="w-full">
+                <details class="group">
+                    <summary class="flex justify-between items-center cursor-pointer list-none focus:outline-none">
+                        <span>More</span>
+                        <svg class="w-4 h-4 transition-transform duration-300 group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                    </summary>
+                    <div class="pl-4 mt-4 space-y-4 font-sans text-lg text-gray-600 border-l-2 border-gray-200 ml-1">
+                        <a href="events.html" class="block px-3 hover:text-ink transition-colors">Events</a>
+                        <a href="amenities-perks.html" class="block px-3 hover:text-ink transition-colors">Amenities & Perks</a>
+                        <a href="blogs.html" class="block px-3 hover:text-ink transition-colors">Blogs</a>
+                        <a href="gallery.html" class="block px-3 hover:text-ink transition-colors">Gallery</a>
+                        <a href="faqs.html" class="block px-3 hover:text-ink transition-colors">FAQs</a>
+                    </div>
+                </details>
+            </div>
+
+            <div class="pt-4 border-t border-gray-300">
+                <a href="tel:+918989898040" class="bg-green text-white py-4 font-sans text-xl font-bold uppercase tracking-widest text-center block w-full hover:bg-ink transition-colors">Call Now</a>
+            </div>
+        </div>
+    </div>
+</nav>
+
+    <main>
+        <section class="w-full border-b border-ink">
+    <div class="flex flex-col lg:flex-row h-auto lg:h-[650px]">
+        
+        <div class="w-full lg:w-1/2 relative border-b lg:border-b-0 lg:border-r border-ink overflow-hidden group bg-gray-200 h-[400px] lg:h-full">
+            <img src="assets/images/Fortune Arcade/1.jpg" alt="FA1" class="slider-image absolute inset-0 w-full h-full object-cover transition-transform duration-1000 ease-in-out translate-x-0 z-20">
+           <img src="assets/images/Fortune Arcade/2.jpg" alt="FA2" class="slider-image absolute inset-0 w-full h-full object-cover transition-transform duration-1000 ease-in-out translate-x-0 z-20">
+             <div class="absolute inset-0 bg-black/0 z-30"></div>
+        </div>
+
+        <div class="w-full lg:w-1/2 bg-[#afbe9d] text-ink p-10 lg:p-16 flex flex-col justify-center">
+            
+            <div class="flex flex-col justify-center">
+                <h1 class="text-4xl md:text-6xl font-serif mb-6 leading-[1.1]">
+                   Oneworx | Fortune Arcade
+                </h1>
+
+                <div class="text-lg leading-relaxed text-gray-800 space-y-4">
+                        <p>
+                           Located in the heart of MP Nagar, this upcoming Oneworx center is a joint venture designed for businesses that want to stay close to Bhopal’s commercial pulse. The space will bring together modern interiors, flexible work options, and shared amenities — all tailored for fast-moving teams and professionals.
+                        </p>
+                        <p>
+                          With excellent connectivity and proximity to key business hubs, this location is ideal for startups, agencies, and growing companies that thrive in an active business environment. The layout is planned to support collaboration, meetings, and everyday operations with ease.
+                        </p>
+                        <p>
+                        This upcoming space is built for momentum — offering the flexibility of coworking with the professionalism of a managed office.
+                        </p>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<section class="bg-cream py-20 px-6 border-b border-ink">
+            <div class="container mx-auto max-w-7xl">
+                
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 relative">
+                    
+                    <div class="col-span-1 lg:col-span-8">
+                        <div class="mb-10">
+                            <h2 class="text-4xl md:text-5xl font-serif text-ink mb-4">Location Plans</h2>
+                            <p class="text-lg text-gray-600 font-sans">Find the perfect workspace setup tailored to your needs at this location.</p>
+                        </div>
+
+                        <div class="mb-12">
+                            <h3 class="text-2xl font-serif text-ink mb-6 pb-2 border-b border-gray-300">Monthly Coworking Plans</h3>
+
+
+
+<div class="border border-ink bg-white p-6 mb-4 flex flex-col md:flex-row md:items-center gap-6 hover:shadow-md transition-shadow">
+                                <div class="flex items-start gap-5 flex-grow">
+                                    <div class="w-12 h-12 bg-sage rounded-full flex items-center justify-center flex-shrink-0 text-ink">
+                                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
+                                    </div>
+                                    <div>
+                                        <h4 class="font-serif text-2xl text-ink mb-2">Dedicated Desks</h4>
+                                        <p class="text-sm text-gray-600 font-sans leading-relaxed">Your personal fixed desk in our shared open area. Leave your monitors and belongings safely overnight.</p>
+                                    </div>
+                                </div>
+                                <div class="md:text-right flex-shrink-0 md:min-w-[140px] pt-4 md:pt-0 border-t md:border-t-0 border-gray-100">
+                                    <p class="text-xs text-gray-500 uppercase tracking-widest mb-1">Starting at</p>
+                                    <p class="font-sans font-bold text-xl text-ink">₹6,500<span class="text-sm font-normal text-gray-500">/mo</span></p>
+                                </div>
+                            </div>
+
+
+                            
+                            <div class="border border-ink bg-white p-6 mb-4 flex flex-col md:flex-row md:items-center gap-6 hover:shadow-md transition-shadow">
+                                <div class="flex items-start gap-5 flex-grow">
+                                    <div class="w-12 h-12 bg-sage rounded-full flex items-center justify-center flex-shrink-0 text-ink">
+                                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"></path></svg>
+                                    </div>
+                                    <div>
+                                        <h4 class="font-serif text-2xl text-ink mb-2">Private Offices</h4>
+                                        <p class="text-sm text-gray-600 font-sans leading-relaxed">Move-in ready, fully furnished, and secured private offices for your team. Includes 24/7 access and meeting room credits.</p>
+                                    </div>
+                                </div>
+                                <div class="md:text-right flex-shrink-0 md:min-w-[140px] pt-4 md:pt-0 border-t md:border-t-0 border-gray-100">
+                                    <p class="text-xs text-gray-500 uppercase tracking-widest mb-1">Starting at</p>
+                                    <p class="font-sans font-bold text-xl text-ink">₹12,000<span class="text-sm font-normal text-gray-500">/seat</span></p>
+                                </div>
+                            </div>
+
+                            
+
+
+<div class="border border-ink bg-white p-6 mb-4 flex flex-col md:flex-row md:items-center gap-6 hover:shadow-md transition-shadow">
+                                <div class="flex items-start gap-5 flex-grow">
+                                    <div class="w-12 h-12 bg-sage rounded-full flex items-center justify-center flex-shrink-0 text-ink">
+                                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M8 14v3m4-3v3m4-3v3M3 21h18M3 10h18M3 7l9-4 9 4M4 10h16v11H4V10z"></path></svg>
+                                    </div>
+                                    <div>
+                                        <h4 class="font-serif text-2xl text-ink mb-2">Private Cabins</h4>
+                                        <p class="text-sm text-gray-600 font-sans leading-relaxed">An exclusive, enclosed workspace tailored for individuals or small teams needing ultimate privacy, focus, and a quiet environment.</p>
+                                    </div>
+                                </div>
+                                <div class="md:text-right flex-shrink-0 md:min-w-[140px] pt-4 md:pt-0 border-t md:border-t-0 border-gray-100">
+                                    <p class="text-xs text-gray-500 uppercase tracking-widest mb-1">Starting at</p>
+                                    <p class="font-sans font-bold text-xl text-ink">₹10,000<span class="text-sm font-normal text-gray-500">/seat</span></p>
+                                </div>
+                            </div>
+
+
+                            
+                        </div>
+
+                        <div>
+                            <h3 class="text-2xl font-serif text-ink mb-6 pb-2 border-b border-gray-300">One Off & Flexible Plans</h3>
+                            
+                            <div class="border border-ink bg-white p-6 mb-4 flex flex-col md:flex-row md:items-center gap-6 hover:shadow-md transition-shadow">
+                                <div class="flex items-start gap-5 flex-grow">
+                                    <div class="w-12 h-12 bg-sage rounded-full flex items-center justify-center flex-shrink-0 text-ink">
+                                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                                    </div>
+                                    <div>
+                                        <h4 class="font-serif text-2xl text-ink mb-2">Day Passes</h4>
+                                        <p class="text-sm text-gray-600 font-sans leading-relaxed">Drop in for the day. Gives you full access to our open lounge, superfast Wi-Fi, and pantry amenities from 9 AM to 7 PM.</p>
+                                    </div>
+                                </div>
+                                <div class="md:text-right flex-shrink-0 md:min-w-[140px] pt-4 md:pt-0 border-t md:border-t-0 border-gray-100">
+                                    <p class="text-xs text-gray-500 uppercase tracking-widest mb-1">Starting at</p>
+                                    <p class="font-sans font-bold text-xl text-ink">₹500<span class="text-sm font-normal text-gray-500">/day</span></p>
+                                </div>
+                            </div>
+
+                            <div class="border border-ink bg-white p-6 mb-4 flex flex-col md:flex-row md:items-center gap-6 hover:shadow-md transition-shadow">
+                                <div class="flex items-start gap-5 flex-grow">
+                                    <div class="w-12 h-12 bg-sage rounded-full flex items-center justify-center flex-shrink-0 text-ink">
+                                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path></svg>
+                                    </div>
+                                    <div>
+                                        <h4 class="font-serif text-2xl text-ink mb-2">Meeting Rooms</h4>
+                                        <p class="text-sm text-gray-600 font-sans leading-relaxed">Fully equipped, soundproof meeting rooms featuring smart TVs and whiteboards. Available to book by the hour.</p>
+                                    </div>
+                                </div>
+                                <div class="md:text-right flex-shrink-0 md:min-w-[140px] pt-4 md:pt-0 border-t md:border-t-0 border-gray-100">
+                                    <p class="text-xs text-gray-500 uppercase tracking-widest mb-1">Starting at</p>
+                                    <p class="font-sans font-bold text-xl text-ink">₹400<span class="text-sm font-normal text-gray-500">/hr</span></p>
+                                </div>
+                            </div>
+                        </div>
+
+
+
+<div class="border border-ink bg-white p-6 mb-4 flex flex-col md:flex-row md:items-center gap-6 hover:shadow-md transition-shadow">
+                                <div class="flex items-start gap-5 flex-grow">
+                                    <div class="w-12 h-12 bg-sage rounded-full flex items-center justify-center flex-shrink-0 text-ink">
+                                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
+                                    </div>
+                                    <div>
+                                        <h4 class="font-serif text-2xl text-ink mb-2">Virtual Office</h4>
+                                        <p class="text-sm text-gray-600 font-sans leading-relaxed">A premium business address for your company registration, complete with mail handling and occasional physical access.</p>
+                                    </div>
+                                </div>
+                                <div class="md:text-right flex-shrink-0 md:min-w-[140px] pt-4 md:pt-0 border-t md:border-t-0 border-gray-100">
+                                    <p class="text-xs text-gray-500 uppercase tracking-widest mb-1">Starting at</p>
+                                    <p class="font-sans font-bold text-xl text-ink">₹1,500<span class="text-sm font-normal text-gray-500">/mo</span></p>
+                                </div>
+                            </div>
+                    </div>
+
+                    <div class="col-span-1 lg:col-span-4 relative">
+                        <div class="lg:sticky lg:top-28 border border-ink bg-white p-8 shadow-[8px_8px_0px_0px_#afbe9d]">
+                            <h3 class="text-3xl font-serif text-ink mb-2">Book a Tour</h3>
+                            <p class="text-sm text-gray-600 font-sans mb-6">Come see the space for yourself.</p>
+                            
+                            <form class="space-y-4 font-sans">
+                                <div>
+                                    <input type="text" placeholder="Full Name*" required class="w-full border border-gray-300 p-3 text-sm focus:outline-none focus:border-green focus:ring-1 focus:ring-green transition-all bg-cream">
+                                </div>
+                                <div>
+                                    <input type="email" placeholder="Email Address*" required class="w-full border border-gray-300 p-3 text-sm focus:outline-none focus:border-green focus:ring-1 focus:ring-green transition-all bg-cream">
+                                </div>
+                                <div>
+                                    <input type="tel" placeholder="Phone Number*" required class="w-full border border-gray-300 p-3 text-sm focus:outline-none focus:border-green focus:ring-1 focus:ring-green transition-all bg-cream">
+                                </div>
+                                
+                                <div class="relative">
+                                    <select required class="w-full border border-gray-300 p-3 text-sm focus:outline-none focus:border-green focus:ring-1 focus:ring-green transition-all bg-cream appearance-none text-gray-700">
+                                        <option value="" disabled selected>Membership Plan*</option>
+                                        <option value="dedicated-desk">Dedicated Desk</option>
+                                        <option value="private-office">Private Office</option>
+                                        <option value="private-cabin">Private Cabin</option>
+                                        <option value="day-pass">Day Pass</option>
+                                        <option value="meeting-room">Meeting Room</option>
+                                        <option value="virtual-office">Virtual Office</option>
+                                    </select>
+                                    <span class="absolute right-3 top-3.5 pointer-events-none text-xs text-gray-500">▼</span>
+                                </div>
+
+                                <div class="relative">
+                                    <input type="date" required class="w-full border border-gray-300 p-3 text-sm focus:outline-none focus:border-green focus:ring-1 focus:ring-green transition-all bg-cream text-gray-700">
+                                </div>
+
+                                <button type="button" class="w-full bg-ink text-white py-4 mt-2 font-bold uppercase tracking-widest hover:bg-green transition-colors">
+                                    Schedule a Tour
+                                </button>
+
+                                <div class="mt-4 pt-4 border-t border-gray-100 text-center">
+                                    <p class="text-xs text-gray-500 font-sans">
+                                        Want to get in touch now?<br>
+                                        Call us at <a href="tel:+918989898040" class="text-ink font-bold hover:text-green transition-colors">+91 8989898040</a>
+                                    </p>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+
+
+
+<section class="bg-white py-20 px-6 border-b border-ink">
+            <div class="container mx-auto max-w-7xl">
+                
+                <div class="text-center mb-16 reveal">
+                    <h2 class="text-3xl md:text-5xl font-serif text-ink">
+                        Location Advantage
+                    </h2>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 reveal delay-100">
+                    
+                    <div class="flex items-center gap-4 group hover:-translate-y-1 transition-transform duration-300">
+                        <div class="w-16 h-16 lg:w-20 lg:h-20 border-2 border-ink rounded-2xl flex items-center justify-center flex-shrink-0 bg-cream group-hover:shadow-md transition-shadow">
+                            <svg class="w-8 h-8 lg:w-10 lg:h-10 text-green" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
+                                <path d="M2 15h20"></path>
+                                <path d="M5 15v6"></path>
+                                <path d="M19 15v6"></path>
+                                <path d="M5 15c0-4.5 3-8 7-8s7 3.5 7 8"></path>
+                            </svg>
+                        </div>
+                        <div>
+                            <h4 class="text-sm lg:text-base font-bold font-sans text-ink uppercase tracking-wide leading-tight">Danish Bridge<br>Flyover</h4>
+                            <p class="text-gray-600 font-sans mt-1 text-xs lg:text-sm font-medium">(0.2 km / 1 min)</p>
+                        </div>
+                    </div>
+
+                    <div class="flex items-center gap-4 group hover:-translate-y-1 transition-transform duration-300">
+                        <div class="w-16 h-16 lg:w-20 lg:h-20 border-2 border-ink rounded-2xl flex items-center justify-center flex-shrink-0 bg-cream group-hover:shadow-md transition-shadow">
+                            <svg class="w-8 h-8 lg:w-10 lg:h-10 text-green" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
+                                <path d="M3 21h18"></path>
+                                <path d="M9 8h1"></path>
+                                <path d="M9 12h1"></path>
+                                <path d="M9 16h1"></path>
+                                <path d="M14 8h1"></path>
+                                <path d="M14 12h1"></path>
+                                <path d="M14 16h1"></path>
+                                <path d="M5 21V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v16"></path>
+                            </svg>
+                        </div>
+                        <div>
+                            <h4 class="text-sm lg:text-base font-bold font-sans text-ink uppercase tracking-wide leading-tight">Danish<br>Kunj</h4>
+                            <p class="text-gray-600 font-sans mt-1 text-xs lg:text-sm font-medium">(2.5–3 km / 7 min)</p>
+                        </div>
+                    </div>
+
+                    <div class="flex items-center gap-4 group hover:-translate-y-1 transition-transform duration-300">
+                        <div class="w-16 h-16 lg:w-20 lg:h-20 border-2 border-ink rounded-2xl flex items-center justify-center flex-shrink-0 bg-cream group-hover:shadow-md transition-shadow">
+                            <svg class="w-8 h-8 lg:w-10 lg:h-10 text-green" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
+                                <path d="M4 22l4-20h8l4 20"></path>
+                                <path d="M12 2v20" stroke-dasharray="4 4"></path>
+                            </svg>
+                        </div>
+                        <div>
+                            <h4 class="text-sm lg:text-base font-bold font-sans text-ink uppercase tracking-wide leading-tight">80 Feet Road<br>Connectivity</h4>
+                            <p class="text-gray-600 font-sans mt-1 text-xs lg:text-sm font-medium">(0 km / Immediate)</p>
+                        </div>
+                    </div>
+
+                    <div class="flex items-center gap-4 group hover:-translate-y-1 transition-transform duration-300">
+                        <div class="w-16 h-16 lg:w-20 lg:h-20 border-2 border-ink rounded-2xl flex items-center justify-center flex-shrink-0 bg-cream group-hover:shadow-md transition-shadow">
+                            <svg class="w-8 h-8 lg:w-10 lg:h-10 text-green" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
+                                <rect x="8" y="8" width="8" height="8" rx="1" ry="1"></rect>
+                                <path d="M12 2v6"></path>
+                                <path d="M12 16v6"></path>
+                                <path d="M2 12h6"></path>
+                                <path d="M16 12h6"></path>
+                            </svg>
+                        </div>
+                        <div>
+                            <h4 class="text-sm lg:text-base font-bold font-sans text-ink uppercase tracking-wide leading-tight">Salaiya<br>Square</h4>
+                            <p class="text-gray-600 font-sans mt-1 text-xs lg:text-sm font-medium">(1–1.5 km / 3–4 min)</p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+
+
+
+
+<section class="bg-cream py-20 ">
+            <div class="container mx-auto max-w-4xl px-6">
+                
+                <div class="text-center mb-12">
+                    <p class="uppercase tracking-widest text-sm font-bold text-gray-500 mb-4">FAQs</p>
+                    <h2 class="text-5xl font-serif text-ink mb-4">Let’s Clear Things Up</h2>
+                </div>
+
+                <div class="border-t border-gray-300">
+                    
+
+
+<div class="faq-item border-b border-gray-300">
+                        <button class="w-full py-6 md:py-8 flex justify-between items-center text-left focus:outline-none group">
+                            <span class="text-lg md:text-2xl font-serif text-ink group-hover:text-green transition-colors">Where is Oneworx Fortune located?</span>
+                            <span class="text-2xl md:text-3xl font-light text-green icon-rotate">+</span>
+                        </button>
+                        <div class="faq-answer">
+                            <p class="pb-6 md:pb-8 text-gray-600 text-sm md:text-lg leading-relaxed font-sans max-w-2xl">
+                          Oneworx Fortune is located at Fortune Business Arcade, 80 Feet Road, near Danish Bridge, Bawadiya Kalan, Salaiya, Bhopal, Madhya Pradesh 462039. The center is situated in a rapidly growing residential and commercial area of Bhopal.
+                            </p>
+                        </div>
+                    </div>
+
+
+
+
+<div class="faq-item border-b border-gray-300">
+                        <button class="w-full py-6 md:py-8 flex justify-between items-center text-left focus:outline-none group">
+                            <span class="text-lg md:text-2xl font-serif text-ink group-hover:text-green transition-colors">What types of workspaces are available at this location?</span>
+                            <span class="text-2xl md:text-3xl font-light text-green icon-rotate">+</span>
+                        </button>
+                        <div class="faq-answer">
+                            <p class="pb-6 md:pb-8 text-gray-600 text-sm md:text-lg leading-relaxed font-sans max-w-2xl">
+                           This center offers Dedicated Desks, Private Cabins, Private Offices, Meeting Rooms, and Virtual Office options, subject to availability.
+                            </p>
+                        </div>
+                    </div>
+
+
+
+<div class="faq-item border-b border-gray-300">
+                        <button class="w-full py-6 md:py-8 flex justify-between items-center text-left focus:outline-none group">
+                            <span class="text-lg md:text-2xl font-serif text-ink group-hover:text-green transition-colors">Is Oneworx Fortune well connected to other parts of Bhopal?</span>
+                            <span class="text-2xl md:text-3xl font-light text-green icon-rotate">+</span>
+                        </button>
+                        <div class="faq-answer">
+                            <p class="pb-6 md:pb-8 text-gray-600 text-sm md:text-lg leading-relaxed font-sans max-w-2xl">
+                          Yes. Located near Danish Bridge on 80 Feet Road, the center offers easy access to Hoshangabad Road, Bagmugaliya, Salaiya, and other major residential areas.
+                            </p>
+                        </div>
+                    </div>
+
+
+
+<div class="faq-item border-b border-gray-300">
+                        <button class="w-full py-6 md:py-8 flex justify-between items-center text-left focus:outline-none group">
+                            <span class="text-lg md:text-2xl font-serif text-ink group-hover:text-green transition-colors">Who is this coworking space ideal for?</span>
+                            <span class="text-2xl md:text-3xl font-light text-green icon-rotate">+</span>
+                        </button>
+                        <div class="faq-answer">
+                            <p class="pb-6 md:pb-8 text-gray-600 text-sm md:text-lg leading-relaxed font-sans max-w-2xl">
+                           This location is ideal for freelancers, remote professionals, startups, consultants, and growing teams based in or around Bawadiya Kalan, Salaiya, and nearby neighborhoods.
+                            </p>
+                        </div>
+                    </div>
+
+
+                   
+<div class="faq-item border-b border-gray-300">
+                        <button class="w-full py-6 md:py-8 flex justify-between items-center text-left focus:outline-none group">
+                            <span class="text-lg md:text-2xl font-serif text-ink group-hover:text-green transition-colors">Are meeting rooms available at Oneworx Fortune?</span>
+                            <span class="text-2xl md:text-3xl font-light text-green icon-rotate">+</span>
+                        </button>
+                        <div class="faq-answer">
+                            <p class="pb-6 md:pb-8 text-gray-600 text-sm md:text-lg leading-relaxed font-sans max-w-2xl">
+                           Yes. Fully equipped meeting rooms are available for client meetings, interviews, team discussions, and presentations.
+                            </p>
+                        </div>
+                    </div>
+
+
+<div class="faq-item border-b border-gray-300">
+                        <button class="w-full py-6 md:py-8 flex justify-between items-center text-left focus:outline-none group">
+                            <span class="text-lg md:text-2xl font-serif text-ink group-hover:text-green transition-colors">What amenities are included at the Fortune location</span>
+                            <span class="text-2xl md:text-3xl font-light text-green icon-rotate">+</span>
+                        </button>
+                        <div class="faq-answer">
+                            <p class="pb-6 md:pb-8 text-gray-600 text-sm md:text-lg leading-relaxed font-sans max-w-2xl">
+                            Members enjoy high-speed Wi-Fi, power backup, reception support, housekeeping, phone booths, café access, event space, and secure premises.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+    <section class="bg-white py-24 border-t border-ink">
+        <div class="container mx-auto px-6">
+            <div class="flex justify-between items-center mb-12">
+                <h2 class="text-4xl font-serif">Check out other locations</h2>
+                           </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+              
+
+
+                <a href="location-10-no.html" class="block group border border-gray-200  p-6 hover:shadow-xl transition-all bg-cream">
+                    <div class="mb-6"><span class="text-4xl">✨</span></div>
+                    <h3 class="text-xl font-bold font-serif mb-2">Oneworx | 10 No. Market</h3>
+                    <p class="text-sm text-gray-600 mb-4">Modern, design-forward space</p>
+                    <div class="flex items-center text-sm font-bold text-green group-hover:translate-x-2 transition-transform">
+                        Learn More <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+                    </div>
+                </a>
+
+
+
+                <a href="location-hoshangabad.html" class="block group border border-gray-200 p-6 hover:shadow-xl transition-all bg-cream">
+                    <div class="mb-6"><span class="text-4xl">🏢</span></div>
+                    <h3 class="text-xl font-bold font-serif mb-2">Oneworx | Hoshangabad Road</h3>
+                    <p class="text-sm text-gray-600 mb-4">Flagship, full-scale workspace.</p>
+                    <div class="flex items-center text-sm font-bold text-green group-hover:translate-x-2 transition-transform">
+                        Learn More <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+                    </div>
+                </a>
+
+
+                <a href="location-arera.html" class="block group border border-gray-200 p-6 hover:shadow-xl transition-all bg-cream">
+                    <div class="mb-6"><span class="text-4xl">🌿</span></div>
+                    <h3 class="text-xl font-bold font-serif mb-2">Oneworx | Arera Colony</h3>
+                    <p class="text-sm text-gray-600 mb-4">Calm, composed work environment</p>
+                    <div class="flex items-center text-sm font-bold text-green group-hover:translate-x-2 transition-transform">
+                        Learn More <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+                    </div>
+                </a>
+
+
+            </div>
+        </div>
+    </section>
+
+        <section class="h-[500px] w-full border-b border-ink relative grayscale contrast-125">
+    <iframe 
+        src="https://maps.google.com/maps?q=Oneworx+Fortune+Bhopal&t=&z=17&ie=UTF8&iwloc=&output=embed" 
+        width="100%" 
+        height="100%" 
+        style="border:0;" 
+        allowfullscreen="" 
+        loading="lazy" 
+        referrerpolicy="no-referrer-when-downgrade">
+    </iframe>
+</section>
+
+    </main>
+
+    <footer class="bg-ink text-cream pt-20 pb-10">
+        <div class="container mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-20">
+                <div class="col-span-1 md:col-span-2">
+                    <img src="assets/images/logo-light.png" alt="OneWorx" class="h-6 md:h-10 mb-6 md:mb-8 object-contain">
+                    
+                    <p class="max-w-md text-gray-400 text-sm md:text-lg leading-relaxed">Work shouldn't feel like work. Join a community that balances professional growth with personal well-being, comfort, and connection.</p>
+                </div>
+                <div>
+                    <h4 class="font-sans text-xs text-gray-500 mb-6 uppercase tracking-widest">Links</h4>
+                    
+                    <ul class="space-y-2 text-sm md:text-lg">
+                        <li><a href="terms-of-service.html" class="hover:text-green transition-colors">Terms Of Service</a></li>
+                        <li><a href="Privacy-policy.html" class="hover:text-green transition-colors">Privacy Policy</a></li>
+                        <li><a href="assets/docs/Oneworx Brochure.pdf" target="_blank" class="hover:text-green transition-colors">Brochure</a></li>
+                        <li><a href="#" class="open-booking-modal hover:text-green transition-colors">Book Tour</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-sans text-xs text-gray-500 mb-6 uppercase tracking-widest">Connect</h4>
+                    
+                    <ul class="space-y-2 text-sm md:text-lg">
+                        <li><a href="https://www.instagram.com/oneworx_" target="_blank" class="hover:text-green transition-colors">Instagram</a></li>
+                        <li><a href="https://www.linkedin.com/company/oneworx" target="_blank" class="hover:text-green transition-colors">LinkedIn</a></li>
+                        <li><a href="https://wa.me/918989898040" target="_blank" class="hover:text-green transition-colors">WhatsApp</a></li>
+                        <li><a href="mailto:hello@oneworx.in" class="hover:text-green transition-colors">Email</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between text-xs font-mono text-gray-500">
+                <p>&copy; 2024 oneworx. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <a href="https://wa.me/918989898040" target="_blank" class="fixed bottom-6 right-6 z-50 group">
+    <div class="relative w-24 h-24 md:w-32 md:h-32 bg-ink rounded-full flex items-center justify-center shadow-lg hover:scale-110 transition-transform duration-300">
+        <svg class="absolute w-full h-full animate-spin-slow p-2" viewBox="0 0 100 100">
+            <defs><path id="circlePath" d="M 50, 50 m -37, 0 a 37,37 0 1,1 74,0 a 37,37 0 1,1 -74,0" /></defs>
+            <text font-size="10.5" font-family="monospace" font-weight="bold" fill="white" letter-spacing="1.5"><textPath xlink:href="#circlePath"> • MAKE AN ENQUIRY • BOOK A TOUR </textPath></text>
+        </svg>
+        <img src="assets/images/logo-icon.png" alt="Go" class="w-10 h-10 md:w-20 md:h-20 object-contain">
+    </div>
+</a>
+
+    <div id="booking-modal" class="opacity-0 pointer-events-none fixed inset-0 z-[100] flex items-center justify-center bg-ink bg-opacity-95 transition-opacity duration-300 backdrop-blur-sm">
+        <div class="bg-cream w-full max-w-lg mx-4 p-10 relative shadow-2xl" id="modal-content">
+            <button id="close-modal" class="absolute top-6 right-6 text-3xl hover:text-green">×</button>
+            <h2 class="text-4xl mb-2">Book Arera.</h2>
+            <form id="booking-form" class="space-y-6 mt-8">
+                <div class="grid grid-cols-2 gap-6"><input type="text" placeholder="First Name" class="w-full bg-transparent border-b border-ink p-2"><input type="text" placeholder="Last Name" class="w-full bg-transparent border-b border-ink p-2"></div>
+                <input type="email" placeholder="Email" class="w-full bg-transparent border-b border-ink p-2">
+                <input type="tel" placeholder="Phone" class="w-full bg-transparent border-b border-ink p-2">
+                <button type="submit" class="w-full bg-ink text-white py-4 mt-2 hover:bg-green">Request Booking</button>
+            </form>
+        </div>
+    </div>
+    
+    <script src="assets/js/main.js"></script>
+
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const slides = document.querySelectorAll('.slider-image');
+        let activeIndex = 0;
+        const intervalTime = 3000; // 3 seconds
+
+        setInterval(() => {
+            const currentSlide = slides[activeIndex];
+            const nextIndex = (activeIndex + 1) % slides.length;
+            const nextSlide = slides[nextIndex];
+
+            // 1. Move Current Slide: CENTER -> LEFT (Exit)
+            currentSlide.classList.remove('translate-x-0');
+            currentSlide.classList.add('-translate-x-full');
+            currentSlide.style.zIndex = '10';
+
+            // 2. Move Next Slide: RIGHT -> CENTER (Enter)
+            nextSlide.classList.remove('translate-x-full');
+            nextSlide.classList.add('translate-x-0');
+            nextSlide.style.zIndex = '20';
+
+            // 3. Reset the Exited Slide: LEFT -> RIGHT (Hidden)
+            // Wait 1000ms (animation time) then instantly snap back to right
+            setTimeout(() => {
+                currentSlide.classList.remove('duration-1000'); // Disable animation
+                currentSlide.classList.add('duration-0');
+                
+                currentSlide.classList.remove('-translate-x-full'); // Remove Left position
+                currentSlide.classList.add('translate-x-full');   // Add Right position
+                
+                // Force browser to accept the change
+                void currentSlide.offsetWidth; 
+
+                // Re-enable animation for next time
+                currentSlide.classList.remove('duration-0');
+                currentSlide.classList.add('duration-1000');
+            }, 1000);
+
+            activeIndex = nextIndex;
+        }, intervalTime);
+    });
+
+document.addEventListener('DOMContentLoaded', () => {
+            // FAQ Logic
+            const faqItems = document.querySelectorAll('.faq-item');
+            faqItems.forEach(item => {
+                const button = item.querySelector('button');
+                const answer = item.querySelector('.faq-answer');
+                const icon = item.querySelector('.icon-rotate');
+
+                button.addEventListener('click', () => {
+                    answer.classList.toggle('open');
+                    icon.classList.toggle('open');
+                    
+                    faqItems.forEach(otherItem => {
+                        if (otherItem !== item) {
+                            otherItem.querySelector('.faq-answer').classList.remove('open');
+                            otherItem.querySelector('.icon-rotate').classList.remove('open');
+                        }
+                    });
+                });
+            });
+        });
+
+</script>
+
+</body>
+</html>

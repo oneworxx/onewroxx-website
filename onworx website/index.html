@@ -1,0 +1,1128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Oneworx | Premium Coworking in Bhopal</title>
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          // ADDED THIS: It globally forces perfect margins on all devices!
+          container: {
+            center: true,
+            padding: {
+              DEFAULT: '1.5rem', /* 24px margin for Mobile */
+              md: '3rem',        /* 48px margin for Tablets */
+              lg: '4rem',        /* 64px margin for Laptops */
+            },
+          },
+          // Your existing colors and fonts stay exactly the same
+          extend: {
+            colors: {
+              'cream': '#FDFBF7',
+              'ink': '#1A1A1A',
+              'green': '#afbe9d', 
+              'sage': '#E3E8E3',
+            },
+            fontFamily: {
+              serif: ['"Plantagenet"', 'serif'],
+              sans: ['"AzoSans"', 'sans-serif'],
+            },
+            animation: {
+                'spin-slow': 'spin 16s linear infinite', 
+                'scroll': 'scroll 40s linear infinite',
+            },
+            keyframes: {
+                scroll: {
+                    '0%': { transform: 'translateX(0)' },
+                    '100%': { transform: 'translateX(-50%)' },
+                }
+            }
+          }
+        }
+      }
+    </script>
+
+    <style>
+        /* 1. REGISTER CUSTOM FONTS */
+        @font-face {
+            font-family: 'Plantagenet';
+            src: url('assets/fonts/plantagenet.ttf') format('truetype'); 
+            font-weight: normal;
+            font-style: normal;
+        }
+
+        @font-face {
+            font-family: 'AzoSans';
+            src: url('assets/fonts/azosans.otf') format('opentype');
+            font-weight: normal;
+            font-style: normal;
+        }
+
+        /* 2. APPLY TO HTML TAGS */
+        body { 
+            font-family: 'AzoSans', sans-serif; 
+            background-color: #FDFBF7; 
+            color: #1A1A1A; 
+            overflow-x: hidden; 
+        }
+        
+        h1, h2, h3, h4 { 
+            font-family: 'Plantagenet', serif; 
+            font-weight: 400; 
+        }
+
+        /* Scroll Reveal Animation */
+        .reveal { opacity: 0; transform: translateY(40px); transition: all 1s cubic-bezier(0.16, 1, 0.3, 1); }
+        .reveal.active { opacity: 1; transform: translateY(0); }
+        
+        /* Scribble Animation */
+        .scribble path { stroke-dasharray: 1000; stroke-dashoffset: 1000; transition: stroke-dashoffset 3s ease-out; }
+        .scribble.active path { stroke-dashoffset: 0; }
+        
+        /* Custom Radio Button Style */
+        .radio-input:checked + span { border-color: #1A1A1A; background-color: #1A1A1A; color: #FDFBF7;
+}
+
+
+
+        /* Slider Transitions */
+        .slide {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            transform: translateX(-100%);
+            transition: transform 1s ease-in-out;
+            z-index: 0;
+        }
+        .slide.active { transform: translateX(0); z-index: 10; }
+        .slide.exit { transform: translateX(100%); z-index: 5; }
+        .slide.reset { transition: none !important; transform: translateX(-100%) !important; }
+    </style>
+</head>
+
+<body class="flex flex-col min-h-screen relative">
+
+    <nav class="bg-cream border-b border-ink sticky top-0 z-40 transition-all duration-300" id="navbar">
+    <div class="w-full px-8 lg:px-20 h-20 flex items-center justify-between">
+        
+        <a href="index.html" class="block flex-shrink-0">
+            <img src="assets/images/logo.png" alt="OneWorx" class="h-[19.3px] w-auto object-contain">
+        </a>
+        
+        <div class="hidden md:flex items-center space-x-4 lg:space-x-8 text-sm font-medium uppercase tracking-wide h-full">
+            <a href="about.html" class="hover:text-green transition-colors cursor-pointer whitespace-nowrap">About Us</a>
+
+            <div class="relative group h-full flex items-center">
+                <a href="offerings.html" class="hover:text-[#A7B68F] transition-colors cursor-pointer flex items-center gap-1 focus:outline-none uppercase h-full whitespace-nowrap">
+                    OFFERINGS
+                    <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                </a>
+                
+                <div class="absolute top-[60px] -left-4 w-72 bg-white border border-ink shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 transform group-hover:translate-y-0 translate-y-2 z-50 text-left">
+                    <div class="relative group/nested border-b border-gray-100">
+                        <div class="px-6 py-4 hover:bg-[#A7B68F] hover:text-white cursor-pointer flex justify-between items-center transition-colors">
+                            <span class="normal-case font-medium">Coworking Plans</span>
+                            <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+                        </div>
+                        <div class="absolute left-full top-[-1px] w-64 bg-white border border-ink shadow-xl opacity-0 invisible group-hover/nested:opacity-100 group-hover/nested:visible transition-all duration-200 z-50">
+                            <a href="dedicated-workspaces.html" class="block px-6 py-3 border-b border-gray-100 hover:bg-cream hover:text-green transition-colors normal-case font-medium"> Dedicated Open Workspaces</a>
+                            <a href="private-office.html" class="block px-6 py-3 border-b border-gray-100 hover:bg-cream hover:text-green transition-colors normal-case font-medium"> Private Office</a>
+                            <a href="private-cabins.html" class="block px-6 py-3 border-gray-100 hover:bg-cream hover:text-green transition-colors normal-case font-medium">Private Cabins</a>
+                        </div>
+                    </div>
+                    <a href="meeting-rooms.html" class="block px-6 py-4 border-b border-gray-100 hover:bg-cream hover:text-green transition-colors normal-case font-medium">Meeting Rooms</a>
+                    <a href="virtual-office.html" class="block px-6 py-4 border-b border-gray-100 hover:bg-cream hover:text-green transition-colors normal-case font-medium">Virtual Office</a>
+                    <a href="community.html" class="block px-6 py-4 hover:bg-cream hover:text-green transition-colors normal-case font-medium">Community & Spaces</a>
+                </div>
+            </div>
+
+            <div class="relative group h-full flex items-center">
+                <a href="locations.html" class="hover:text-green transition-colors cursor-pointer flex items-center gap-1 focus:outline-none uppercase h-full whitespace-nowrap">
+                    Locations
+                    <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                </a>
+                <div class="absolute top-[60px] -left-4 w-56 bg-white border border-ink shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 transform group-hover:translate-y-0 translate-y-2 z-50">
+                    <a href="location-arera.html" class="block px-6 py-3 border-b border-gray-100 hover:bg-cream hover:text-green transition-colors normal-case">Arera Colony</a>
+                    <a href="location-hoshangabad.html" class="block px-6 py-3 border-b border-gray-100 hover:bg-cream hover:text-green transition-colors normal-case">Hoshangabad Rd</a>
+                    <a href="location-10-no.html" class="block px-6 py-3 border-b border-gray-100 hover:bg-cream hover:text-green transition-colors normal-case">10 No. Market</a>
+                    <a href="location-fortune.html" class="block px-6 py-3 hover:bg-cream hover:text-green transition-colors normal-case">Fortune Arcade</a>
+                </div>
+            </div>
+            
+            <div class="relative group h-full flex items-center">
+                <button class="hover:text-green transition-colors cursor-pointer flex items-center gap-1 focus:outline-none uppercase whitespace-nowrap">
+                    MORE
+                    <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                </button>
+                <div class="absolute top-[60px] -left-4 w-48 bg-white border border-ink shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 transform group-hover:translate-y-0 translate-y-2 z-50">
+                    <a href="events.html" class="block px-6 py-3 border-b border-gray-100 hover:bg-cream hover:text-green transition-colors normal-case">Events</a>
+                    <a href="amenities-perks.html" class="block px-6 py-3 border-b border-gray-100 hover:bg-cream hover:text-green transition-colors normal-case">Amenities & Perks</a>
+                    <a href="blogs.html" class="block px-6 py-3 border-b border-gray-100 hover:bg-cream hover:text-green transition-colors normal-case">Blogs</a>
+                    <a href="gallery.html" class="block px-6 py-3 border-b border-gray-100 hover:bg-cream hover:text-green transition-colors normal-case">Gallery</a>
+                    <a href="faqs.html" class="block px-6 py-3 hover:bg-cream hover:text-green transition-colors normal-case">FAQs</a>
+                </div>
+            </div>
+
+            <a href="tel:+918989898040" class="border border-ink px-4 lg:px-6 py-2 hover:bg-ink hover:text-white transition-all text-center whitespace-nowrap">
+                Call Now
+            </a>
+        </div>
+        
+        <button id="mobile-menu-btn" class="md:hidden p-2">
+            <div class="w-8 h-0.5 bg-ink mb-1.5"></div>
+            <div class="w-8 h-0.5 bg-ink mb-1.5"></div>
+            <div class="w-8 h-0.5 bg-ink"></div>
+        </button>
+    </div>
+    
+    <div id="mobile-menu" class="hidden bg-cream border-t border-ink absolute w-full left-0 h-screen z-50 overflow-y-auto pb-20">
+        <div class="flex flex-col p-8 space-y-8 text-2xl font-serif">
+            <a href="about.html" class="block">About Us</a>
+            
+            <div class="w-full">
+                <details class="group">
+                    <summary class="flex justify-between items-center cursor-pointer list-none focus:outline-none">
+                        <span>Offerings</span>
+                        <svg class="w-4 h-4 transition-transform duration-300 group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                    </summary>
+                    
+                    <div class="pl-4 mt-4 space-y-4 font-sans text-lg text-gray-600 border-l-2 border-gray-200 ml-1">
+                        <details class="group/nested">
+                            <summary class="flex justify-between items-center cursor-pointer list-none py-2 px-3 rounded-md hover:bg-[#A7B68F] hover:text-white transition-colors focus:outline-none">
+                                <span>Coworking Plans</span>
+                                <svg class="w-3 h-3 transition-transform duration-300 group-open/nested:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                            </summary>
+                            <div class="pl-4 mt-2 space-y-3 text-base text-gray-500">
+                                <a href="dedicated-workspaces.html" class="block">Dedicated Workspaces</a>
+                                <a href="private-office.html" class="block">Private Office</a>
+                                <a href="private-cabins.html" class="block">Private Cabins</a>
+                            </div>
+                        </details>
+
+                        <a href="meeting-rooms.html" class="block px-3">Meeting Rooms</a>
+                        <a href="virtual-office.html" class="block px-3">Virtual Office</a>
+                        <a href="community.html" class="block px-3">Community & Spaces</a>
+                    </div>
+                </details>
+            </div>
+
+            <div class="w-full">
+                <details class="group">
+                    <summary class="flex justify-between items-center cursor-pointer list-none focus:outline-none">
+                        <span>Locations</span>
+                        <svg class="w-4 h-4 transition-transform duration-300 group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                    </summary>
+                    <div class="pl-4 mt-4 space-y-4 font-sans text-lg text-gray-600 border-l-2 border-gray-200 ml-1">
+                        <a href="location-arera.html" class="block px-3">Arera Colony</a>
+                        <a href="location-hoshangabad.html" class="block px-3">Hoshangabad Rd</a>
+                        <a href="location-10-no.html" class="block px-3">10 No. Market</a>
+                        <a href="location-fortune.html" class="block px-3">Fortune Arcade</a>
+                    </div>
+                </details>
+            </div>
+            
+            <div class="w-full">
+                <details class="group">
+                    <summary class="flex justify-between items-center cursor-pointer list-none focus:outline-none">
+                        <span>More</span>
+                        <svg class="w-4 h-4 transition-transform duration-300 group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                    </summary>
+                    <div class="pl-4 mt-4 space-y-4 font-sans text-lg text-gray-600 border-l-2 border-gray-200 ml-1">
+                        <a href="events.html" class="block px-3 hover:text-ink transition-colors">Events</a>
+                        <a href="amenities-perks.html" class="block px-3 hover:text-ink transition-colors">Amenities & Perks</a>
+                        <a href="blogs.html" class="block px-3 hover:text-ink transition-colors">Blogs</a>
+                        <a href="gallery.html" class="block px-3 hover:text-ink transition-colors">Gallery</a>
+                        <a href="faqs.html" class="block px-3 hover:text-ink transition-colors">FAQs</a>
+                    </div>
+                </details>
+            </div>
+
+            <div class="pt-4 border-t border-gray-300">
+                <a href="tel:+918989898040" class="bg-green text-white py-4 font-sans text-xl font-bold uppercase tracking-widest text-center block w-full hover:bg-ink transition-colors">Call Now</a>
+            </div>
+        </div>
+    </div>
+</nav>
+
+    <main class="flex-grow">
+        <section class="flex flex-col md:flex-row min-h-[85vh] border-b border-ink">
+            <div class="w-full md:w-1/2 p-8 md:p-20 flex flex-col justify-center bg-cream relative overflow-hidden">
+                <h1 class="text-5xl md:text-7xl leading-[0.9] mb-8 reveal relative z-10">
+                    A coworking <br>
+                    space in <span class="italic font-bold">Bhopal</span> <br>
+                    that feels 
+                    <span class="relative inline-block">
+                        just right.
+                        <svg class="absolute -bottom-2 -left-4 w-[120%] h-12 text-green scribble reveal" viewBox="0 0 200 60" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" style="overflow: visible;">
+                            <path d="M 0 55 Q 80 55 190 35" class="opacity-90" style="transition-delay: 700ms; transition-duration: 1s;" />
+                        </svg>
+                    </span>
+                </h1>
+                <p class="text-base md:text-xl text-gray-600 max-w-md mb-10 leading-relaxed reveal delay-100">
+    Professional functionality meets personal well-being. Focus, collaborate, and recharge—all under one roof.
+</p>
+                <div class="flex flex-col sm:flex-row gap-4 reveal delay-200">
+                    <button class="bg-ink text-white px-8 py-4 text-lg hover:bg-green transition-colors open-booking-modal">
+                        Get a Desk
+                    </button>
+                    <a href="offerings.html" class="border border-ink px-8 py-4 text-lg hover:bg-white transition-colors text-center">
+                        Explore Offerings
+                    </a>
+                </div>
+            </div>
+
+            <div class="w-full md:w-1/2 bg-gray-200 border-l border-ink relative overflow-hidden h-[50vh] md:h-auto">
+                <video class="absolute inset-0 w-full h-full object-cover" autoplay loop muted playsinline>
+                    <source src="assets/videos/hero.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+                
+                </div>
+        </section>
+
+
+
+        
+
+<section class="bg-white py-24 px-6 border-b border-ink">
+            <div class="container mx-auto px-6 mb-8">
+                <h2 class="text-4xl md:text-6xl font-serif mb-2 text-center text-ink">What We Offer</h2>
+            </div>
+
+            <div class="w-full overflow-hidden">
+                <div class="flex w-max animate-scroll hover:[animation-play-state:paused]">
+                    <div class="flex gap-12 px-6">
+                        <div class="w-[350px] border border-ink bg-cream p-6">
+                            <div class="h-48 mb-6 bg-gray-100 overflow-hidden border border-gray-200">
+                                <img src="assets/images/nap.gif" class="w-full h-full object-cover">
+                            </div>
+                            <h3 class="text-2xl mb-2 font-serif">The Nap Room</h3>
+                            <p class="text-sm text-gray-600">Rest and restart. A dedicated quiet zone.</p>
+                        </div>
+                        <div class="w-[350px] border border-ink bg-cream p-6">
+                            <div class="h-48 mb-6 bg-gray-100 overflow-hidden border border-gray-200">
+                                <img src="assets/images/access.gif" class="w-full h-full object-cover">
+                            </div>
+                            <h3 class="text-2xl mb-2 font-serif">Always On</h3>
+                            <p class="text-sm text-gray-600">Secure biometric access, day or night.</p>
+                        </div>
+                        <div class="w-[350px] border border-ink bg-cream p-6">
+                            <div class="h-48 mb-6 bg-gray-100 overflow-hidden border border-gray-200">
+                                <img src="assets/images/community.gif" class="w-full h-full object-cover">
+                            </div>
+                            <h3 class="text-2xl mb-2 font-serif">Community</h3>
+                            <p class="text-sm text-gray-600">Where peers meet and ideas grow.</p>
+                        </div>
+                        <div class="w-[350px] border border-ink bg-cream p-6">
+                            <div class="h-48 mb-6 bg-gray-100 overflow-hidden border border-gray-200">
+                                <img src="assets/images/coffee.gif" class="w-full h-full object-cover">
+                            </div>
+                            <h3 class="text-2xl mb-2 font-serif">One Deli</h3>
+                            <p class="text-sm text-gray-600">Fresh coffee without leaving the building.</p>
+                        </div>
+                    </div>
+                    <div class="flex gap-12 px-6">
+                        <div class="w-[350px] border border-ink bg-cream p-6">
+                            <div class="h-48 mb-6 bg-gray-100 overflow-hidden border border-gray-200"><img src="assets/images/nap.gif" class="w-full h-full object-cover"></div>
+                            <h3 class="text-2xl mb-2 font-serif">The Nap Room</h3><p class="text-sm text-gray-600">Rest and restart.</p>
+                        </div>
+                        <div class="w-[350px] border border-ink bg-cream p-6">
+                            <div class="h-48 mb-6 bg-gray-100 overflow-hidden border border-gray-200"><img src="assets/images/access.gif" class="w-full h-full object-cover"></div>
+                            <h3 class="text-2xl mb-2 font-serif">Always On</h3><p class="text-sm text-gray-600">Secure access.</p>
+                        </div>
+                        <div class="w-[350px] border border-ink bg-cream p-6">
+                            <div class="h-48 mb-6 bg-gray-100 overflow-hidden border border-gray-200"><img src="assets/images/community.gif" class="w-full h-full object-cover"></div>
+                            <h3 class="text-2xl mb-2 font-serif">Community</h3><p class="text-sm text-gray-600">Ideas grow here.</p>
+                        </div>
+                        <div class="w-[350px] border border-ink bg-cream p-6">
+                            <div class="h-48 mb-6 bg-gray-100 overflow-hidden border border-gray-200"><img src="assets/images/coffee.gif" class="w-full h-full object-cover"></div>
+                            <h3 class="text-2xl mb-2 font-serif">One Deli</h3><p class="text-sm text-gray-600">Fresh coffee.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+
+            <section class="bg-cream py-24 border-b border-ink">
+    <div class="container mx-auto px-6">
+        <div class="text-center mb-16 max-w-4xl mx-auto reveal">
+            <h2 class="text-4xl md:text-6xl font-serif mb-6 text-ink">
+                   Memberships to suit 
+                <span class="italic relative inline-block">
+                    everyone.
+                    <svg class="absolute -bottom-1 left-0 w-full h-3 text-green opacity-60" viewBox="0 0 100 10" preserveAspectRatio="none">
+                        <path d="M0 5 Q 50 10 100  5" stroke="currentColor" stroke-width="2" fill="none"/>
+                    </svg>
+                </span>
+            </h2>
+            <p class="text-lg italic text-gray-600"> Whether you’re flying solo, working with a team, or just need a desk for the day to get that pitch finished, we’ve got you.
+            </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-10">
+            
+            <div class="group reveal delay-100">
+                <div class="h-80 border border-ink overflow-hidden mb-8 relative">
+                    <img src="assets/images/Flexible plans.jpg" alt="Flexible Plans" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+                </div>
+                <h3 class="text-2xl font-serif mb-4">Flexible Plans</h3>
+                <p class="text-gray-600 leading-relaxed text-m">
+                   Flexible access options designed for changing schedules, short stays, or part-time workdays.
+                </p>
+            </div>
+
+            <div class="group reveal delay-200">
+                <div class="h-80 border border-ink overflow-hidden mb-8 relative">
+                    <img src="assets/images/Dedicated desks.jpg" alt="Dedicated Desks" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+                </div>
+                <h3 class="text-2xl font-serif mb-4">Dedicated Desks</h3>
+                <p class="text-gray-600 leading-relaxed text-m">
+                    A fixed desk in our open workspace with reliable infrastructure and everyday comfort.
+                </p>
+            </div>
+
+            <div class="group reveal delay-300">
+                <div class="h-80 border border-ink overflow-hidden mb-8 relative">
+                    <img src="assets/images/Private Cabins.jpg" alt="Private Cabins" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+                </div>
+                <h3 class="text-2xl font-serif mb-4">Private Cabins</h3>
+                <p class="text-gray-600 leading-relaxed text-m">
+                    Lockable, enclosed spaces ideal for small teams who need focus and privacy.
+                </p>
+            </div>
+
+            <div class="group reveal delay-400">
+                <div class="h-80 border border-ink overflow-hidden mb-8 relative">
+                    <img src="assets/images/private office.jpg" alt="Private Offices" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+                </div>
+                <h3 class="text-2xl font-serif mb-4">Private Offices</h3>
+                <p class="text-gray-600 leading-relaxed text-m">
+                    Fully private, ready-to-use offices designed for growing teams and businesses.
+                </p>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+        
+
+<section class="border-b border-ink">
+    <a href="assets/docs/Oneworx brochure.pdf" target="_blank" class="block w-full bg-green text-ink hover:bg-green hover:text-cream transition-colors duration-300 py-8 text-center cursor-pointer no-underline">
+        <h2 class="text-2xl md:text-3xl font-serif font-light flex justify-center items-center">
+            Download brochure
+        </h2>
+    </a>
+</section>
+        
+           <section class="bg-cream py-24 px-6 border-b border-ink">
+            <div class="container mx-auto px-6 mb-8">
+                <h2 class="text-4xl md:text-6xl font-serif mb-2 text-center text-ink">Our Clients</h2>
+            </div>
+
+            <div class="container mx-auto px-6 overflow-hidden py-4">
+                <div class="flex w-max animate-scroll items-center">
+                    
+                    <a href="https://www.apraava.com/" target="_blank" class="mx-8 md:mx-12 block grayscale hover:grayscale-0 transition-all duration-300">
+                        <img src="assets/images/brands/apraava.png" alt="apraava" class="h-20 md:h-28 w-auto object-contain mix-blend-multiply">
+                    </a>
+                    <a href="https://beyondcc.club/" target="_blank" class="mx-8 md:mx-12 block grayscale hover:grayscale-0 transition-all duration-300">
+                        <img src="assets/images/brands/beyondcc.png" alt="Beyondcc" class="h-20 md:h-28 w-auto object-contain mix-blend-multiply">
+                    </a>
+                    <div class="mx-8 md:mx-12 block grayscale hover:grayscale-0 transition-all duration-300">
+                        <img src="assets/images/brands/bindurekha.png" alt="Bindurekha" class="h-20 md:h-28 w-auto object-contain mix-blend-multiply">
+                    </div>
+                    <a href="https://excitymedia.com/" target="_blank" class="mx-8 md:mx-12 block grayscale hover:grayscale-0 transition-all duration-300">
+                        <img src="assets/images/brands/excitymedia.png" alt="Excitymedia" class="h-20 md:h-28 w-auto object-contain mix-blend-multiply">
+                    </a>
+                    <a href="https://www.flowdojo.in/" target="_blank" class="mx-8 md:mx-12 block grayscale hover:grayscale-0 transition-all duration-300">
+                        <img src="assets/images/brands/flowdojo.png" alt="Flowdojo" class="h-20 md:h-28 w-auto object-contain mix-blend-multiply">
+                    </a>
+                    <a href="https://kadellabs.com/" target="_blank" class="mx-8 md:mx-12 block grayscale hover:grayscale-0 transition-all duration-300">
+                        <img src="assets/images/brands/kadellabs.png" alt="Kadellabs" class="h-20 md:h-28 w-auto object-contain mix-blend-multiply">
+                    </a>
+                    <a href="https://oneinfinity.in/" target="_blank" class="mx-8 md:mx-12 block grayscale hover:grayscale-0 transition-all duration-300">
+                        <img src="assets/images/brands/oneinfinity.png" alt="Oneinfinity" class="h-20 md:h-28 w-auto object-contain mix-blend-multiply">
+                    </a>
+                    <a href="https://opensenselabs.com/" target="_blank" class="mx-8 md:mx-12 block grayscale hover:grayscale-0 transition-all duration-300">
+                        <img src="assets/images/brands/opensense.png" alt="Opensense" class="h-20 md:h-28 w-auto object-contain mix-blend-multiply">
+                    </a>
+                    <div class="mx-8 md:mx-12 block grayscale hover:grayscale-0 transition-all duration-300">
+                        <img src="assets/images/brands/rsav.png" alt="RSAV" class="h-20 md:h-28 w-auto object-contain mix-blend-multiply">
+                    </div>
+                    <a href="https://www.vitraya.com/" target="_blank" class="mx-8 md:mx-12 block grayscale hover:grayscale-0 transition-all duration-300">
+                        <img src="assets/images/brands/vitraya.png" alt="Vitraya" class="h-20 md:h-28 w-auto object-contain mix-blend-multiply">
+                    </a>
+                    <a href="https://www.zappian.com/" target="_blank" class="mx-8 md:mx-12 block grayscale hover:grayscale-0 transition-all duration-300">
+                        <img src="assets/images/brands/zappin.png" alt="Zappin" class="h-20 md:h-28 w-auto object-contain mix-blend-multiply">
+                    </a>
+                    <a href="https://zarthi.com/" target="_blank" class="mx-8 md:mx-12 block grayscale hover:grayscale-0 transition-all duration-300">
+                        <img src="assets/images/brands/zarthi.png" alt="Zarthi" class="h-20 md:h-28 w-auto object-contain mix-blend-multiply">
+                    </a>
+                    <a href="https://www.enigmaev.in/" target="_blank" class="mx-8 md:mx-12 block grayscale hover:grayscale-0 transition-all duration-300">
+                        <img src="assets/images/brands/enigma.png" alt="Enigma" class="h-20 md:h-28 w-auto object-contain mix-blend-multiply">
+                    </a>
+                   <a href="https://www.vinsys.com/" target="_blank" class="mx-8 md:mx-12 block grayscale hover:grayscale-0 transition-all duration-300">
+                        <img src="assets/images/brands/vinsys.png" alt="Vinsys" class="h-20 md:h-28 w-auto object-contain mix-blend-multiply">
+                    </a>
+                    <a href="https://www.magicbricks.com/?reqFrom=OA" target="_blank" class="mx-8 md:mx-12 block grayscale hover:grayscale-0 transition-all duration-300">
+                        <img src="assets/images/brands/magicbricks.png" alt="Magicbricks" class="h-20 md:h-28 w-auto object-contain mix-blend-multiply">
+                    </a>
+                   <a href="https://www.ksb.com/en-in" target="_blank" class="mx-8 md:mx-12 block grayscale hover:grayscale-0 transition-all duration-300">
+                        <img src="assets/images/brands/KSB.png" alt="KSB" class="h-20 md:h-28 w-auto object-contain mix-blend-multiply">
+                    </a>
+                    <a href="https://www.adfactorspr.com/" target="_blank" class="mx-8 md:mx-12 block grayscale hover:grayscale-0 transition-all duration-300">
+                        <img src="assets/images/brands/adfactors.png" alt="Adfactors" class="h-20 md:h-28 w-auto object-contain mix-blend-multiply">
+                    </a>
+                   <a href="https://ijmindia.org/" target="_blank" class="mx-8 md:mx-12 block grayscale hover:grayscale-0 transition-all duration-300">
+                        <img src="assets/images/brands/IJM.png" alt="IJM" class="h-20 md:h-28 w-auto object-contain mix-blend-multiply">
+                    </a>
+
+
+
+                    <a href="https://www.apraava.com/" target="_blank" class="mx-8 md:mx-12 block grayscale hover:grayscale-0 transition-all duration-300" aria-hidden="true">
+                        <img src="assets/images/brands/apraava.png" alt="apraava" class="h-20 md:h-28 w-auto object-contain mix-blend-multiply">
+                    </a>
+                    <a href="https://beyondcc.club/" target="_blank" class="mx-8 md:mx-12 block grayscale hover:grayscale-0 transition-all duration-300" aria-hidden="true">
+                        <img src="assets/images/brands/beyondcc.png" alt="Beyondcc" class="h-20 md:h-28 w-auto object-contain mix-blend-multiply">
+                    </a>
+                    <div class="mx-8 md:mx-12 block grayscale hover:grayscale-0 transition-all duration-300" aria-hidden="true">
+                        <img src="assets/images/brands/bindurekha.png" alt="Bindurekha" class="h-20 md:h-28 w-auto object-contain mix-blend-multiply">
+                    </div>
+                    <a href="https://excitymedia.com/" target="_blank" class="mx-8 md:mx-12 block grayscale hover:grayscale-0 transition-all duration-300" aria-hidden="true">
+                        <img src="assets/images/brands/excitymedia.png" alt="Excitymedia" class="h-20 md:h-28 w-auto object-contain mix-blend-multiply">
+                    </a>
+                    <a href="https://www.flowdojo.in/" target="_blank" class="mx-8 md:mx-12 block grayscale hover:grayscale-0 transition-all duration-300" aria-hidden="true">
+                        <img src="assets/images/brands/flowdojo.png" alt="Flowdojo" class="h-20 md:h-28 w-auto object-contain mix-blend-multiply">
+                    </a>
+                    <a href="https://kadellabs.com/" target="_blank" class="mx-8 md:mx-12 block grayscale hover:grayscale-0 transition-all duration-300" aria-hidden="true">
+                        <img src="assets/images/brands/kadellabs.png" alt="Kadellabs" class="h-20 md:h-28 w-auto object-contain mix-blend-multiply">
+                    </a>
+                    <a href="https://oneinfinity.in/" target="_blank" class="mx-8 md:mx-12 block grayscale hover:grayscale-0 transition-all duration-300" aria-hidden="true">
+                        <img src="assets/images/brands/oneinfinity.png" alt="Oneinfinity" class="h-20 md:h-28 w-auto object-contain mix-blend-multiply">
+                    </a>
+                    <a href="https://opensenselabs.com/" target="_blank" class="mx-8 md:mx-12 block grayscale hover:grayscale-0 transition-all duration-300" aria-hidden="true">
+                        <img src="assets/images/brands/opensense.png" alt="Opensense" class="h-20 md:h-28 w-auto object-contain mix-blend-multiply">
+                    </a>
+                    <div class="mx-8 md:mx-12 block grayscale hover:grayscale-0 transition-all duration-300" aria-hidden="true">
+                        <img src="assets/images/brands/rsav.png" alt="RSAV" class="h-20 md:h-28 w-auto object-contain mix-blend-multiply">
+                    </div>
+                    <a href="https://www.vitraya.com/" target="_blank" class="mx-8 md:mx-12 block grayscale hover:grayscale-0 transition-all duration-300" aria-hidden="true">
+                        <img src="assets/images/brands/vitraya.png" alt="Vitraya" class="h-20 md:h-28 w-auto object-contain mix-blend-multiply">
+                    </a>
+                    <a href="https://www.zappian.com/" target="_blank" class="mx-8 md:mx-12 block grayscale hover:grayscale-0 transition-all duration-300" aria-hidden="true">
+                        <img src="assets/images/brands/zappin.png" alt="Zappin" class="h-20 md:h-28 w-auto object-contain mix-blend-multiply">
+                    </a>
+                    <a href="https://zarthi.com/" target="_blank" class="mx-8 md:mx-12 block grayscale hover:grayscale-0 transition-all duration-300" aria-hidden="true">
+                        <img src="assets/images/brands/zarthi.png" alt="Zarthi" class="h-20 md:h-28 w-auto object-contain mix-blend-multiply">
+                    </a>
+<a href="https://www.enigmaev.in/" target="_blank" class="mx-8 md:mx-12 block grayscale hover:grayscale-0 transition-all duration-300">
+                        <img src="assets/images/brands/enigma.png" alt="Enigma" class="h-20 md:h-28 w-auto object-contain mix-blend-multiply">
+                    </a>
+                   <a href="https://www.vinsys.com/" target="_blank" class="mx-8 md:mx-12 block grayscale hover:grayscale-0 transition-all duration-300">
+                        <img src="assets/images/brands/vinsys.png" alt="Vinsys" class="h-20 md:h-28 w-auto object-contain mix-blend-multiply">
+                    </a>
+                    <a href="https://www.magicbricks.com/?reqFrom=OA" target="_blank" class="mx-8 md:mx-12 block grayscale hover:grayscale-0 transition-all duration-300">
+                        <img src="assets/images/brands/magicbricks.png" alt="Magicbricks" class="h-20 md:h-28 w-auto object-contain mix-blend-multiply">
+                    </a>
+                   <a href="https://www.ksb.com/en-in" target="_blank" class="mx-8 md:mx-12 block grayscale hover:grayscale-0 transition-all duration-300">
+                        <img src="assets/images/brands/KSB.png" alt="KSB" class="h-20 md:h-28 w-auto object-contain mix-blend-multiply">
+                    </a>
+                    <a href="https://www.adfactorspr.com/" target="_blank" class="mx-8 md:mx-12 block grayscale hover:grayscale-0 transition-all duration-300">
+                        <img src="assets/images/brands/adfactors.png" alt="Adfactors" class="h-20 md:h-28 w-auto object-contain mix-blend-multiply">
+                    </a>
+                   <a href="https://ijmindia.org/" target="_blank" class="mx-8 md:mx-12 block grayscale hover:grayscale-0 transition-all duration-300">
+                        <img src="assets/images/brands/IJM.png" alt="IJM" class="h-20 md:h-28 w-auto object-contain mix-blend-multiply">
+                    </a>
+
+                </div>
+            </div>
+        </section>
+
+
+
+
+
+
+<section class="bg-white py-24 border-b border-ink">
+    <div class="container mx-auto">
+        <div class="text-center mb-16 max-w-4xl mx-auto reveal">
+            <h2 class="text-4xl md:text-6xl font-serif mb-6 text-ink">
+                   Word on the 
+                <span class="italic relative inline-block">
+                    street.
+                    <svg class="absolute -bottom-1 left-0 w-full h-3 text-green opacity-60" viewBox="0 0 100 10" preserveAspectRatio="none">
+                        <path d="M0 5 Q 50 10 100  5" stroke="currentColor" stroke-width="2" fill="none"/>
+                    </svg>
+                </span>
+            </h2>
+            <p class="text-lg italic text-gray-600"> Don't just take our word for it. Here is what our community has to say about working at Oneworx.
+            </p>
+        </div>
+
+                <div class="relative w-full mx-auto">
+                    
+                    <button id="prev-testimonial" class="absolute top-1/2 -translate-y-1/2 -left-4 md:-left-20 z-20 p-3 bg-white border border-ink rounded-full shadow-lg hover:bg-ink hover:text-white transition-all duration-300 disabled:opacity-0 disabled:pointer-events-none disabled:translate-x-4">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path></svg>
+                    </button>
+
+                    <button id="next-testimonial" class="absolute top-1/2 -translate-y-1/2 -right-4 md:-right-20 z-20 p-3 bg-white border border-ink rounded-full shadow-lg hover:bg-ink hover:text-white transition-all duration-300 disabled:opacity-0 disabled:pointer-events-none disabled:-translate-x-4">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+                    </button>
+
+                    <div class="overflow-hidden w-full px-1 py-4">
+                        <div id="testimonial-track" class="flex gap-8 transition-transform duration-500 ease-in-out items-stretch">
+                            
+                            <div class="w-full md:w-[calc((100%-4rem)/3)] flex-shrink-0 border border-ink bg-cream p-8 group hover:-translate-y-1 transition-transform duration-300 shadow-sm hover:shadow-md flex flex-col self-stretch">
+                                <div class="text-gray-400 mb-6 group-hover:text-green transition-colors">
+                                    <svg class="w-10 h-10" fill="currentColor" viewBox="0 0 24 24"><path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z"/></svg>
+                                </div>
+                                <p class="text-gray-700 font-sans leading-relaxed mb-8 flex-grow">                                    
+"This coworking space feels just like home. It has all the amenities, a great community, and a calming
+vibe. Working here is so peaceful, it feels like meditating. It's the perfect mix of comfort and productivity."
+                                </p>
+                                <div class="border-t border-gray-100 pt-6 flex items-center justify-between gap-4 mt-auto">
+                                    <div>
+                                        <h4 class="font-serif text-xl text-ink">Atharva Kulkarni</h4>
+                                        <p class="text-[10px] md:text-xs text-gray-500 font-mono uppercase tracking-widest mt-1">Product Manager - Oneinfinity</p>
+                                    </div>
+                                    <div class="h-14 w-14 rounded-full border border-ink overflow-hidden bg-sage flex-shrink-0">
+                                        <img src="assets/images/testimonials/atharva.jpg" alt="Atharva Kulkarni" class="w-full h-full object-cover">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="w-full md:w-[calc((100%-4rem)/3)] flex-shrink-0 border border-ink bg-cream p-8 group hover:-translate-y-1 transition-transform duration-300 shadow-sm hover:shadow-md flex flex-col self-stretch">
+                                <div class="text-gray-400 mb-6 group-hover:text-green transition-colors">
+                                    <svg class="w-10 h-10" fill="currentColor" viewBox="0 0 24 24"><path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z"/></svg>
+                                </div>
+                                <p class="text-gray-700 font-sans leading-relaxed mb-8 flex-grow">
+                                    "I’m always seeking inspiration—and this coworking space delivers. A vibrant community sparks fresh ideas, while thoughtfully designed amenities make every session productive. It’s where creativity meets strategy, effortlessly."
+                                </p>
+                                <div class="border-t border-gray-100 pt-6 flex items-center justify-between gap-4 mt-auto">
+                                    <div>
+                                        <h4 class="font-serif text-xl text-ink">Parul Shrivastava</h4>
+                                        <p class="text-[10px] md:text-xs text-gray-500 font-mono uppercase tracking-widest mt-1">Co-Founder - Credmudra</p>
+                                    </div>
+                                    <div class="h-14 w-14 rounded-full border border-ink overflow-hidden bg-sage flex-shrink-0">
+                                        <img src="assets/images/testimonials/parul.png" alt="Parul Shrivastava" class="w-full h-full object-cover">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="w-full md:w-[calc((100%-4rem)/3)] flex-shrink-0 border border-ink bg-cream p-8 group hover:-translate-y-1 transition-transform duration-300 shadow-sm hover:shadow-md flex flex-col self-stretch">
+                                <div class="text-gray-400 mb-6 group-hover:text-green transition-colors">
+                                    <svg class="w-10 h-10" fill="currentColor" viewBox="0 0 24 24"><path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z"/></svg>
+                                </div>
+                                <p class="text-gray-700 font-sans leading-relaxed mb-8 flex-grow">
+                                    "This coworking space perfectly balances comfort and affordability. With great facilities, a peaceful atmosphere, and strong support services, it boosts productivity and makes for a smart business investment."
+                                </p>
+                                <div class="border-t border-gray-100 pt-6 flex items-center justify-between gap-4 mt-auto">
+                                    <div>
+                                        <h4 class="font-serif text-xl text-ink">Zoha Sultan</h4>
+                                        <p class="text-[10px] md:text-xs text-gray-500 font-mono uppercase tracking-widest mt-1">Finance Head - Zappian Media</p>
+                                    </div>
+                                    <div class="h-14 w-14 rounded-full border border-ink overflow-hidden bg-sage flex-shrink-0">
+                                        <img src="assets/images/testimonials/zoha.png" alt="Zoha Sultan" class="w-full h-full object-cover">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="w-full md:w-[calc((100%-4rem)/3)] flex-shrink-0 border border-ink bg-cream p-8 group hover:-translate-y-1 transition-transform duration-300 shadow-sm hover:shadow-md flex flex-col self-stretch">
+                                <div class="text-gray-400 mb-6 group-hover:text-green transition-colors">
+                                    <svg class="w-10 h-10" fill="currentColor" viewBox="0 0 24 24"><path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z"/></svg>
+                                </div>
+                                <p class="text-gray-700 font-sans leading-relaxed mb-8 flex-grow">
+                                    "Oneworx isn't just a workspace - it's honestly where I get my best ideas. Between the cozy corners, the great coffee, and the chill vibe, it somehow makes work feel easy. Everyone here's so friendly, it's like working with your favorite people every day."
+                                </p>
+                                <div class="border-t border-gray-100 pt-6 flex items-center justify-between gap-4 mt-auto">
+                                    <div>
+                                        <h4 class="font-serif text-xl text-ink">Manali Ramchandani</h4>
+                                        <p class="text-[10px] md:text-xs text-gray-500 font-mono uppercase tracking-widest mt-1">Jr. Architect - Efficiently</p>
+                                    </div>
+                                    <div class="h-14 w-14 rounded-full border border-ink overflow-hidden bg-sage flex-shrink-0">
+                                        <img src="assets/images/testimonials/manali.png" alt="Manali Ramchandani" class="w-full h-full object-cover">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="w-full md:w-[calc((100%-4rem)/3)] flex-shrink-0 border border-ink bg-cream p-8 group hover:-translate-y-1 transition-transform duration-300 shadow-sm hover:shadow-md flex flex-col self-stretch">
+                                <div class="text-gray-400 mb-6 group-hover:text-green transition-colors">
+                                    <svg class="w-10 h-10" fill="currentColor" viewBox="0 0 24 24"><path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z"/></svg>
+                                </div>
+                                <p class="text-gray-700 font-sans leading-relaxed mb-8 flex-grow">
+                                    "An inspiring space with a vibrant community, modern design, and plenty of natural light. With high-speed internet, well-equipped meeting rooms, and a friendly, supportive staff, it’s a welcoming and productive workspace. Highly recommended!"
+                                </p>
+                                <div class="border-t border-gray-100 pt-6 flex items-center justify-between gap-4 mt-auto">
+                                    <div>
+                                        <h4 class="font-serif text-xl text-ink">Enosh Masih</h4>
+                                        <p class="text-[10px] md:text-xs text-gray-500 font-mono uppercase tracking-widest mt-1">Jr. Architect - Bindu Rekha Architects</p>
+                                    </div>
+                                    <div class="h-14 w-14 rounded-full border border-ink overflow-hidden bg-sage flex-shrink-0">
+                                        <img src="assets/images/testimonials/enosh.jpg" alt="Enosh Masih" class="w-full h-full object-cover">
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <script>
+                document.addEventListener('DOMContentLoaded', () => {
+                    const track = document.getElementById('testimonial-track');
+                    const prevBtn = document.getElementById('prev-testimonial');
+                    const nextBtn = document.getElementById('next-testimonial');
+                    const cards = track.children;
+                    
+                    let currentIndex = 0;
+                    
+                    const getCardsPerView = () => window.innerWidth >= 768 ? 3 : 1;
+                    
+                    const updateSlider = () => {
+                        const cardsPerView = getCardsPerView();
+                        const maxIndex = cards.length - cardsPerView;
+                        
+                        if (currentIndex < 0) currentIndex = 0;
+                        if (currentIndex > maxIndex) currentIndex = maxIndex;
+                        
+                        const cardWidth = cards[0].offsetWidth;
+                        const gap = 32; 
+                        const translateX = currentIndex * (cardWidth + gap);
+                        
+                        track.style.transform = `translateX(-${translateX}px)`;
+                        
+                        prevBtn.disabled = currentIndex === 0;
+                        nextBtn.disabled = currentIndex >= maxIndex;
+                    };
+
+                    prevBtn.addEventListener('click', () => {
+                        if (currentIndex > 0) {
+                            currentIndex--;
+                            updateSlider();
+                        }
+                    });
+
+                    nextBtn.addEventListener('click', () => {
+                        const maxIndex = cards.length - getCardsPerView();
+                        if (currentIndex < maxIndex) {
+                            currentIndex++;
+                            updateSlider();
+                        }
+                    });
+
+                    window.addEventListener('resize', updateSlider);
+                    updateSlider();
+                });
+            </script>
+        </section>
+
+
+
+
+
+
+
+
+
+
+
+        <section class="bg-cream border-b border-ink py-20">
+            <div class="container mx-auto px-6">
+                
+                <div class="flex flex-col lg:flex-row gap-16 items-center">
+                    
+                    <div class="w-full lg:w-1/2">
+                        <h2 class="text-4xl md:text-5xl font-serif leading-tight mb-6 text-ink">
+                            Fancy a desk with the best vibe in town?
+                        </h2>
+                        
+                        <p class="text-lg text-gray-600 mb-10 font-sans leading-relaxed">
+                            Nestled in the city's heart, oneworx brings you closer to everything that matters — great coffee, great company, and a workspace that simply feels right.
+                        </p>
+
+                        <form class="space-y-6">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div class="flex flex-col">
+                            <label class="text-sm font-bold text-gray-700 mb-2">Full Name</label>
+                            <input type="text" class="border border-gray-300 p-3 rounded-md focus:outline-none focus:border-green bg-white-50" placeholder="Full Name">
+                        </div>
+                        <div class="flex flex-col">
+         <label class="text-sm font-bold text-gray-700 mb-2">No. of Seats Required</label>
+                            <input type="text" class="border border-gray-300 p-3 rounded-md focus:outline-none focus:border-green bg-white-50" placeholder="1-20" min="1"">
+
+                        </div>
+                    </div>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div class="flex flex-col">
+                            <label class="text-sm font-bold text-gray-700 mb-2">Email Address</label>
+                            <input type="email" class="border border-gray-300 p-3 rounded-md focus:outline-none focus:border-green bg-white-50" placeholder="email@company.com">
+                        </div>
+                        
+                        <div class="flex flex-col">
+                            <label class="text-sm font-bold text-gray-700 mb-2">Phone Number</label>
+                            <input type="tel" class="border border-gray-300 p-3 rounded-md focus:outline-none focus:border-green bg-white-50" placeholder="+91 89898 98040">
+                        </div>
+                    </div>
+
+                    <button class="w-full bg-ink text-white font-bold py-4 rounded-md hover:bg-green transition-colors text-lg">
+                        Submit
+                    </button>
+                </form>
+                    </div>
+
+                    <div class="w-full lg:w-1/2 lg:translate-x-12">
+                        <img src="assets/images/illustration.png" alt="OneWorx Illustration" class="w-full h-auto mix-blend-multiply opacity-80">
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+   <footer class="bg-ink text-cream pt-20 pb-10">
+        <div class="container mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-20">
+                <div class="col-span-1 md:col-span-2">
+                    <img src="assets/images/logo-light.png" alt="OneWorx" class="h-6 md:h-10 mb-6 md:mb-8 object-contain">
+                    
+                    <p class="max-w-md text-gray-400 text-sm md:text-lg leading-relaxed">Work shouldn't feel like work. Join a community that balances professional growth with personal well-being, comfort, and connection.</p>
+                </div>
+                <div>
+                    <h4 class="font-sans text-xs text-gray-500 mb-6 uppercase tracking-widest">Links</h4>
+                    
+                    <ul class="space-y-2 text-sm md:text-lg">
+                        <li><a href="terms-of-service.html" class="hover:text-green transition-colors">Terms Of Service</a></li>
+                        <li><a href="Privacy-policy.html" class="hover:text-green transition-colors">Privacy Policy</a></li>
+                        <li><a href="assets/docs/Oneworx Brochure.pdf" target="_blank" class="hover:text-green transition-colors">Brochure</a></li>
+                        <li><a href="#" class="open-booking-modal hover:text-green transition-colors">Book Tour</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-sans text-xs text-gray-500 mb-6 uppercase tracking-widest">Connect</h4>
+                    
+                    <ul class="space-y-2 text-sm md:text-lg">
+                        <li><a href="https://www.instagram.com/oneworx_" target="_blank" class="hover:text-green transition-colors">Instagram</a></li>
+                        <li><a href="https://www.linkedin.com/company/oneworx" target="_blank" class="hover:text-green transition-colors">LinkedIn</a></li>
+                        <li><a href="https://wa.me/918989898040" target="_blank" class="hover:text-green transition-colors">WhatsApp</a></li>
+                        <li><a href="mailto:hello@oneworx.in" class="hover:text-green transition-colors">Email</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between text-xs font-mono text-gray-500">
+                <p>&copy; 2024 oneworx. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <a href="https://wa.me/918989898040" target="_blank" class="fixed bottom-6 right-6 z-50 group">
+    <div class="relative w-24 h-24 md:w-32 md:h-32 bg-ink rounded-full flex items-center justify-center shadow-lg hover:scale-110 transition-transform duration-300">
+        <svg class="absolute w-full h-full animate-spin-slow p-2" viewBox="0 0 100 100">
+            <defs><path id="circlePath" d="M 50, 50 m -37, 0 a 37,37 0 1,1 74,0 a 37,37 0 1,1 -74,0" /></defs>
+            <text font-size="10.5" font-family="monospace" font-weight="bold" fill="white" letter-spacing="1.5"><textPath xlink:href="#circlePath"> • MAKE AN ENQUIRY • BOOK A TOUR </textPath></text>
+        </svg>
+        <img src="assets/images/logo-icon.png" alt="Go" class="w-10 h-10 md:w-20 md:h-20 object-contain">
+    </div>
+</a>
+
+
+    <div id="booking-modal" class="opacity-0 pointer-events-none fixed inset-0 z-[100] flex items-center justify-center bg-ink bg-opacity-95 transition-opacity duration-300 backdrop-blur-sm">
+        <div class="bg-cream w-full max-w-lg mx-4 p-8 md:p-12 relative border border-white shadow-2xl transform scale-95 transition-transform duration-300" id="modal-content">
+            <button id="close-modal" class="absolute top-6 right-6 text-4xl leading-none hover:text-green transition-colors">&times;</button>
+            <h2 class="text-4xl mb-2 font-serif">Join Us.</h2>
+            <p class="text-gray-500 mb-8 font-sans">Elevate your workspace experience.</p>
+
+                    <form id="booking-form" class="space-y-6">
+    
+    <input type="text" placeholder="Full Name" required class="w-full bg-transparent border-b border-ink px-2 py-3 focus:outline-none focus:border-green placeholder-gray-400 font-sans">
+    
+    <input type="email" placeholder="Email Address" required class="w-full bg-transparent border-b border-ink px-2 py-3 focus:outline-none focus:border-green placeholder-gray-400 font-sans">
+
+     <div class="grid grid-cols-2 gap-6">
+    <input type="tel" placeholder="Phone Number" required class="w-full bg-transparent border-b border-ink px-2 py-3 focus:outline-none focus:border-green placeholder-gray-400 font-sans">
+
+    <input type="number" placeholder="No. of Seats Required" min="1" class="w-full bg-transparent border-b border-ink px-2 py-3 focus:outline-none focus:border-green placeholder-gray-400 font-sans">
+ </div>
+
+    <div class="relative" id="location-select-container">
+        <select class="w-full bg-transparent border-b border-ink px-2 py-3 focus:outline-none focus:border-green text-gray-700 appearance-none rounded-none font-sans">
+            <option value="" disabled selected>Which Location?</option>
+            <option>Arera Colony</option>
+            <option>Hoshangabad Rd</option>
+            <option>10 Number Market</option>
+            <option>Fortune Arcade</option>
+        </select>
+        <span class="absolute right-2 top-4 pointer-events-none text-xs">▼</span>
+    </div>
+
+    <button type="submit" class="w-full bg-ink text-white py-4 font-bold hover:bg-green transition-colors mt-4 text-lg font-sans">Submit Request</button>
+</form>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // --- SCROLL REVEAL & NAVBAR LOGIC (Keep existing code) ---
+            const reveals = document.querySelectorAll('.reveal');
+            const onScroll = () => {
+                const windowHeight = window.innerHeight;
+                reveals.forEach(el => {
+                    const top = el.getBoundingClientRect().top;
+                    if (top < windowHeight - 100) el.classList.add('active');
+                });
+            };
+            window.addEventListener('scroll', onScroll);
+            onScroll(); 
+
+            // Mobile Menu
+            const menuBtn = document.getElementById('mobile-menu-btn');
+            const menu = document.getElementById('mobile-menu');
+            if(menuBtn) menuBtn.addEventListener('click', () => { menu.classList.toggle('hidden'); document.body.classList.toggle('overflow-hidden'); });
+
+            // Modal Logic
+            const modal = document.getElementById('booking-modal');
+            const modalContent = document.getElementById('modal-content');
+            const closeBtn = document.getElementById('close-modal');
+            const openBtns = document.querySelectorAll('.open-booking-modal');
+
+            const toggleModal = () => {
+                if (!modal) return;
+                const isOpen = !modal.classList.contains('opacity-0');
+                if (isOpen) {
+                    modal.classList.add('opacity-0', 'pointer-events-none');
+                    modalContent.classList.remove('scale-100');
+                    modalContent.classList.add('scale-95');
+                } else {
+                    modal.classList.remove('opacity-0', 'pointer-events-none');
+                    modalContent.classList.remove('scale-95');
+                    modalContent.classList.add('scale-100');
+                }
+            };
+            openBtns.forEach(btn => btn.addEventListener('click', (e) => { e.preventDefault(); toggleModal(); }));
+            if(closeBtn) closeBtn.addEventListener('click', toggleModal);
+            if(modal) modal.addEventListener('click', (e) => { if(e.target === modal) toggleModal(); });
+
+            // --- HERO SLIDER LOGIC ---
+            const heroSlides = document.querySelectorAll('.slide');
+            const sliderContainer = document.getElementById('slider-container');
+            const locationLabel = document.getElementById('location-label');
+            const locations = ['LOC: E-5, Arera Colony', 'LOC: Hoshangabad Road', 'LOC: 10 No. Street', 'LOC: Fortune Arcade'];
+            const realImages = ['assets/images/arera.jpg', 'assets/images/hoshangabad.jpg', 'assets/images/10number.jpg', 'assets/images/fortune.jpg'];
+            
+            if(heroSlides.length > 0) {
+                // ... (Delete everything inside this IF block) ...
+                // ...
+                // ...
+           
+            }
+
+            // ======================================================
+            //  SEAMLESS INFINITE CLIENT TESTIMONIALS LOGIC (UPDATED)
+            // ======================================================
+            const track = document.getElementById('card-track');
+            const windowEl = document.getElementById('card-slider-window');
+            const dotsContainer = document.getElementById('slider-dots');
+            
+            if(track && windowEl && dotsContainer) {
+                const dots = dotsContainer.children;
+                const slides = document.querySelectorAll('.testimonial-card');
+                
+                let currentIndex = 1; // Start at 1 (because 0 is Clone 4)
+                const totalRealSlides = 4;
+                const totalElements = 6; // 4 Real + 2 Clones
+                
+                let autoPlayInterval;
+                let isDragging = false;
+                let startPos = 0;
+                let currentTranslate = 0;
+                let prevTranslate = 0;
+                let animationID;
+                let isTransitioning = false;
+
+                // 1. Calculate the exact width of one slide + its gap
+                const getMetrics = () => {
+                    const cardWidth = slides[0].offsetWidth;
+                    const windowWidth = windowEl.offsetWidth;
+                    const style = window.getComputedStyle(track);
+                    const gap = parseFloat(style.gap) || 0;
+                    
+                    // Formula to center the active slide
+                    const centerOffset = (windowWidth - cardWidth) / 2;
+                    const totalMetric = cardWidth + gap;
+                    
+                    return { totalMetric, centerOffset };
+                };
+
+                // 2. Set Position immediately (No animation)
+                const setPosition = () => {
+                    const { totalMetric, centerOffset } = getMetrics();
+                    currentTranslate = centerOffset - (currentIndex * totalMetric);
+                    track.style.transition = 'none'; // Ensure no float
+                    track.style.transform = `translateX(${currentTranslate}px)`;
+                    updateDots();
+                    updateVisuals();
+                };
+
+                // 3. Highlight Active Card
+                const updateVisuals = () => {
+                    slides.forEach((slide, index) => {
+                        if (index === currentIndex) {
+                            // Active: Full Opacity, Shadow
+                            slide.classList.remove('opacity-50', 'scale-95', 'shadow-none');
+                            slide.classList.add('opacity-100', 'scale-100', 'shadow-2xl');
+                            slide.style.zIndex = 10;
+                        } else {
+                            // Inactive: Faded, Flat
+                            slide.classList.add('opacity-50', 'scale-95', 'shadow-none');
+                            slide.classList.remove('opacity-100', 'scale-100', 'shadow-2xl');
+                            slide.style.zIndex = 0;
+                        }
+                    });
+                };
+
+                const updateDots = () => {
+                    // Map the clone indices back to 0-3
+                    let dotIndex = currentIndex - 1;
+                    if (dotIndex < 0) dotIndex = totalRealSlides - 1;
+                    if (dotIndex >= totalRealSlides) dotIndex = 0;
+
+                    Array.from(dots).forEach((dot, index) => {
+                        if (index === dotIndex) {
+                            dot.classList.remove('bg-gray-300');
+                            dot.classList.add('bg-ink', 'w-6');
+                        } else {
+                            dot.classList.add('bg-gray-300');
+                            dot.classList.remove('bg-ink', 'w-6');
+                        }
+                    });
+                };
+
+                // 4. Move Slide Function
+                const moveToSlide = (index) => {
+                    if (isTransitioning) return;
+                    isTransitioning = true;
+                    currentIndex = index;
+                    
+                    const { totalMetric, centerOffset } = getMetrics();
+                    currentTranslate = centerOffset - (currentIndex * totalMetric);
+                    
+                    track.style.transition = 'transform 0.6s cubic-bezier(0.25, 1, 0.5, 1)'; 
+                    track.style.transform = `translateX(${currentTranslate}px)`;
+                    
+                    updateDots();
+                    updateVisuals();
+                };
+
+                // 5. The "Seamless Teleport" Logic
+                track.addEventListener('transitionend', () => {
+                    isTransitioning = false;
+                    const { totalMetric, centerOffset } = getMetrics();
+
+                    // If we reached the End Clone (Clone 1), instantly jump to Real 1
+                    if (currentIndex >= totalElements - 1) {
+                        track.style.transition = 'none'; // Kill animation
+                        currentIndex = 1; // Real 1 Index
+                        currentTranslate = centerOffset - (currentIndex * totalMetric);
+                        track.style.transform = `translateX(${currentTranslate}px)`;
+                        
+                        // Force browser to repaint so it doesn't try to animate the jump
+                        void track.offsetWidth; 
+                    }
+                    
+                    // If we reached the Start Clone (Clone 4), instantly jump to Real 4
+                    if (currentIndex <= 0) {
+                        track.style.transition = 'none';
+                        currentIndex = totalElements - 2; // Real 4 Index
+                        currentTranslate = centerOffset - (currentIndex * totalMetric);
+                        track.style.transform = `translateX(${currentTranslate}px)`;
+                        
+                        void track.offsetWidth;
+                    }
+                    updateVisuals();
+                });
+
+                // 6. Auto Play
+                const startAutoPlay = () => {
+                    clearInterval(autoPlayInterval);
+                    autoPlayInterval = setInterval(() => {
+                        moveToSlide(currentIndex + 1);
+                    }, 3500);
+                };
+                const stopAutoPlay = () => clearInterval(autoPlayInterval);
+
+                // 7. Drag Logic
+                windowEl.addEventListener('mousedown', touchStart);
+                windowEl.addEventListener('touchstart', touchStart);
+                windowEl.addEventListener('mouseup', touchEnd);
+                windowEl.addEventListener('mouseleave', touchEnd);
+                windowEl.addEventListener('touchend', touchEnd);
+                windowEl.addEventListener('mousemove', touchMove);
+                windowEl.addEventListener('touchmove', touchMove);
+
+                function touchStart(event) {
+                    stopAutoPlay();
+                    isDragging = true;
+                    startPos = getPositionX(event);
+                    animationID = requestAnimationFrame(animation);
+                    windowEl.style.cursor = 'grabbing';
+                    track.style.transition = 'none'; 
+                }
+
+                function touchMove(event) {
+                    if (isDragging) {
+                        const currentPosition = getPositionX(event);
+                        const diff = currentPosition - startPos;
+                        const { totalMetric, centerOffset } = getMetrics();
+                        const staticPos = centerOffset - (currentIndex * totalMetric);
+                        currentTranslate = staticPos + diff;
+                    }
+                }
+
+                function touchEnd() {
+                    isDragging = false;
+                    cancelAnimationFrame(animationID);
+                    windowEl.style.cursor = 'grab';
+
+                    const { totalMetric, centerOffset } = getMetrics();
+                    const staticPos = centerOffset - (currentIndex * totalMetric);
+                    const diff = currentTranslate - staticPos;
+
+                    if (diff < -50) moveToSlide(currentIndex + 1);
+                    else if (diff > 50) moveToSlide(currentIndex - 1);
+                    else moveToSlide(currentIndex); 
+                    
+                    startAutoPlay();
+                }
+
+                function getPositionX(event) {
+                    return event.type.includes('mouse') ? event.pageX : event.touches[0].clientX;
+                }
+
+                function animation() {
+                    if (isDragging) {
+                        track.style.transform = `translateX(${currentTranslate}px)`;
+                        requestAnimationFrame(animation);
+                    }
+                }
+
+                // Initial Setup
+                window.addEventListener('load', setPosition);
+                window.addEventListener('resize', () => {
+                    track.style.transition = 'none';
+                    setPosition();
+                });
+                startAutoPlay();
+            }
+        });
+    </script>
+</body>
+</html>

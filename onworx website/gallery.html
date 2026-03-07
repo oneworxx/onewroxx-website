@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gallery | Oneworx</title> 
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              'cream': '#FDFBF7',
+              'ink': '#1A1A1A',
+              'green': '#afbe9d', 
+              'sage': '#E3E8E3',
+            },
+            fontFamily: {
+              serif: ['"Plantagenet"', 'serif'],
+              sans: ['"AzoSans"', 'sans-serif'],
+            },
+            animation: {
+                'spin-slow': 'spin 16s linear infinite', 
+            }
+          }
+        }
+      }
+    </script>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+
+    <style>
+        /* FONTS */
+        @font-face { font-family: 'Plantagenet'; src: url('assets/fonts/plantagenet.ttf') format('truetype'); font-weight: normal; font-style: normal; }
+        @font-face { font-family: 'AzoSans'; src: url('assets/fonts/azosans.otf') format('opentype'); font-weight: normal; font-style: normal; }
+
+        body { font-family: 'AzoSans', sans-serif; background-color: #FDFBF7; color: #1A1A1A; overflow-x: hidden; }
+        h1, h2, h3, h4 { font-family: 'Plantagenet', serif; font-weight: 400; }
+        
+        /* SWIPER CUSTOM STYLES */
+        .swiper {
+            width: 100%;
+            padding-top: 50px;  /* Space for top shadow */
+            padding-bottom: 50px; /* Space for bottom shadow */
+        }
+
+        /* CRITICAL: Forces smooth linear movement (Conveyor Belt) */
+        .swiper-wrapper {
+            transition-timing-function: linear !important;
+        }
+
+        .swiper-slide {
+            /* Card Dimensions */
+            width: 300px; 
+            height: 420px; 
+            
+            /* Floating Tile Styling */
+            background: transparent;
+            border-radius: 24px; /* Large rounded corners */
+            overflow: hidden;
+            
+            /* Soft, airy shadow for elevation */
+            box-shadow: 0 15px 35px -5px rgba(0, 0, 0, 0.12);
+            
+            /* Interaction */
+            transition: transform 0.4s ease, box-shadow 0.4s ease;
+            cursor: grab;
+        }
+
+        /* Hover Effect: Slight lift */
+        .swiper-slide:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 25px 50px -10px rgba(0, 0, 0, 0.18);
+        }
+
+        .swiper-slide:active {
+            cursor: grabbing;
+        }
+
+        .swiper-slide img {
+            display: block;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            /* Ensure image respects the card border radius */
+            border-radius: 24px; 
+        }
+     </style>
+</head>
+<body class="flex flex-col min-h-screen">
+
+   <nav class="bg-cream border-b border-ink sticky top-0 z-40 transition-all duration-300" id="navbar">
+    <div class="w-full px-8 lg:px-20 h-20 flex items-center justify-between">
+        
+        <a href="index.html" class="block flex-shrink-0">
+            <img src="assets/images/logo.png" alt="OneWorx" class="h-[19.3px] w-auto object-contain">
+        </a>
+        
+        <div class="hidden md:flex items-center space-x-4 lg:space-x-8 text-sm font-medium uppercase tracking-wide h-full">
+            <a href="about.html" class="hover:text-green transition-colors cursor-pointer whitespace-nowrap">About Us</a>
+
+            <div class="relative group h-full flex items-center">
+                <a href="offerings.html" class="hover:text-[#A7B68F] transition-colors cursor-pointer flex items-center gap-1 focus:outline-none uppercase h-full whitespace-nowrap">
+                    OFFERINGS
+                    <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                </a>
+                
+                <div class="absolute top-[60px] -left-4 w-72 bg-white border border-ink shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 transform group-hover:translate-y-0 translate-y-2 z-50 text-left">
+                    <div class="relative group/nested border-b border-gray-100">
+                        <div class="px-6 py-4 hover:bg-[#A7B68F] hover:text-white cursor-pointer flex justify-between items-center transition-colors">
+                            <span class="normal-case font-medium">Coworking Plans</span>
+                            <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+                        </div>
+                        <div class="absolute left-full top-[-1px] w-64 bg-white border border-ink shadow-xl opacity-0 invisible group-hover/nested:opacity-100 group-hover/nested:visible transition-all duration-200 z-50">
+                            <a href="dedicated-workspaces.html" class="block px-6 py-3 border-b border-gray-100 hover:bg-cream hover:text-green transition-colors normal-case font-medium"> Dedicated Open Workspaces</a>
+                            <a href="private-office.html" class="block px-6 py-3 border-b border-gray-100 hover:bg-cream hover:text-green transition-colors normal-case font-medium"> Private Office</a>
+                            <a href="private-cabins.html" class="block px-6 py-3 border-gray-100 hover:bg-cream hover:text-green transition-colors normal-case font-medium">Private Cabins</a>
+                        </div>
+                    </div>
+                    <a href="meeting-rooms.html" class="block px-6 py-4 border-b border-gray-100 hover:bg-cream hover:text-green transition-colors normal-case font-medium">Meeting Rooms</a>
+                    <a href="virtual-office.html" class="block px-6 py-4 border-b border-gray-100 hover:bg-cream hover:text-green transition-colors normal-case font-medium">Virtual Office</a>
+                    <a href="community.html" class="block px-6 py-4 hover:bg-cream hover:text-green transition-colors normal-case font-medium">Community & Spaces</a>
+                </div>
+            </div>
+
+            <div class="relative group h-full flex items-center">
+                <a href="locations.html" class="hover:text-green transition-colors cursor-pointer flex items-center gap-1 focus:outline-none uppercase h-full whitespace-nowrap">
+                    Locations
+                    <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                </a>
+                <div class="absolute top-[60px] -left-4 w-56 bg-white border border-ink shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 transform group-hover:translate-y-0 translate-y-2 z-50">
+                    <a href="location-arera.html" class="block px-6 py-3 border-b border-gray-100 hover:bg-cream hover:text-green transition-colors normal-case">Arera Colony</a>
+                    <a href="location-hoshangabad.html" class="block px-6 py-3 border-b border-gray-100 hover:bg-cream hover:text-green transition-colors normal-case">Hoshangabad Rd</a>
+                    <a href="location-10-no.html" class="block px-6 py-3 border-b border-gray-100 hover:bg-cream hover:text-green transition-colors normal-case">10 No. Market</a>
+                    <a href="location-fortune.html" class="block px-6 py-3 hover:bg-cream hover:text-green transition-colors normal-case">Fortune Arcade</a>
+                </div>
+            </div>
+            
+            <div class="relative group h-full flex items-center">
+                <button class="hover:text-green transition-colors cursor-pointer flex items-center gap-1 focus:outline-none uppercase whitespace-nowrap">
+                    MORE
+                    <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                </button>
+                <div class="absolute top-[60px] -left-4 w-48 bg-white border border-ink shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 transform group-hover:translate-y-0 translate-y-2 z-50">
+                    <a href="events.html" class="block px-6 py-3 border-b border-gray-100 hover:bg-cream hover:text-green transition-colors normal-case">Events</a>
+                    <a href="amenities-perks.html" class="block px-6 py-3 border-b border-gray-100 hover:bg-cream hover:text-green transition-colors normal-case">Amenities & Perks</a>
+                    <a href="blogs.html" class="block px-6 py-3 border-b border-gray-100 hover:bg-cream hover:text-green transition-colors normal-case">Blogs</a>
+                    <a href="gallery.html" class="block px-6 py-3 border-b border-gray-100 hover:bg-cream hover:text-green transition-colors normal-case">Gallery</a>
+                    <a href="faqs.html" class="block px-6 py-3 hover:bg-cream hover:text-green transition-colors normal-case">FAQs</a>
+                </div>
+            </div>
+
+            <a href="tel:+918989898040" class="border border-ink px-4 lg:px-6 py-2 hover:bg-ink hover:text-white transition-all text-center whitespace-nowrap">
+                Call Now
+            </a>
+        </div>
+        
+        <button id="mobile-menu-btn" class="md:hidden p-2">
+            <div class="w-8 h-0.5 bg-ink mb-1.5"></div>
+            <div class="w-8 h-0.5 bg-ink mb-1.5"></div>
+            <div class="w-8 h-0.5 bg-ink"></div>
+        </button>
+    </div>
+    
+    <div id="mobile-menu" class="hidden bg-cream border-t border-ink absolute w-full left-0 h-screen z-50 overflow-y-auto pb-20">
+        <div class="flex flex-col p-8 space-y-8 text-2xl font-serif">
+            <a href="about.html" class="block">About Us</a>
+            
+            <div class="w-full">
+                <details class="group">
+                    <summary class="flex justify-between items-center cursor-pointer list-none focus:outline-none">
+                        <span>Offerings</span>
+                        <svg class="w-4 h-4 transition-transform duration-300 group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                    </summary>
+                    
+                    <div class="pl-4 mt-4 space-y-4 font-sans text-lg text-gray-600 border-l-2 border-gray-200 ml-1">
+                        <details class="group/nested">
+                            <summary class="flex justify-between items-center cursor-pointer list-none py-2 px-3 rounded-md hover:bg-[#A7B68F] hover:text-white transition-colors focus:outline-none">
+                                <span>Coworking Plans</span>
+                                <svg class="w-3 h-3 transition-transform duration-300 group-open/nested:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                            </summary>
+                            <div class="pl-4 mt-2 space-y-3 text-base text-gray-500">
+                                <a href="dedicated-workspaces.html" class="block">Dedicated Workspaces</a>
+                                <a href="private-office.html" class="block">Private Office</a>
+                                <a href="private-cabins.html" class="block">Private Cabins</a>
+                            </div>
+                        </details>
+
+                        <a href="meeting-rooms.html" class="block px-3">Meeting Rooms</a>
+                        <a href="virtual-office.html" class="block px-3">Virtual Office</a>
+                        <a href="community.html" class="block px-3">Community & Spaces</a>
+                    </div>
+                </details>
+            </div>
+
+            <div class="w-full">
+                <details class="group">
+                    <summary class="flex justify-between items-center cursor-pointer list-none focus:outline-none">
+                        <span>Locations</span>
+                        <svg class="w-4 h-4 transition-transform duration-300 group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                    </summary>
+                    <div class="pl-4 mt-4 space-y-4 font-sans text-lg text-gray-600 border-l-2 border-gray-200 ml-1">
+                        <a href="location-arera.html" class="block px-3">Arera Colony</a>
+                        <a href="location-hoshangabad.html" class="block px-3">Hoshangabad Rd</a>
+                        <a href="location-10-no.html" class="block px-3">10 No. Market</a>
+                        <a href="location-fortune.html" class="block px-3">Fortune Arcade</a>
+                    </div>
+                </details>
+            </div>
+            
+            <div class="w-full">
+                <details class="group">
+                    <summary class="flex justify-between items-center cursor-pointer list-none focus:outline-none">
+                        <span>More</span>
+                        <svg class="w-4 h-4 transition-transform duration-300 group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                    </summary>
+                    <div class="pl-4 mt-4 space-y-4 font-sans text-lg text-gray-600 border-l-2 border-gray-200 ml-1">
+                        <a href="events.html" class="block px-3 hover:text-ink transition-colors">Events</a>
+                        <a href="amenities-perks.html" class="block px-3 hover:text-ink transition-colors">Amenities & Perks</a>
+                        <a href="blogs.html" class="block px-3 hover:text-ink transition-colors">Blogs</a>
+                        <a href="gallery.html" class="block px-3 hover:text-ink transition-colors">Gallery</a>
+                        <a href="faqs.html" class="block px-3 hover:text-ink transition-colors">FAQs</a>
+                    </div>
+                </details>
+            </div>
+
+            <div class="pt-4 border-t border-gray-300">
+                <a href="tel:+918989898040" class="bg-green text-white py-4 font-sans text-xl font-bold uppercase tracking-widest text-center block w-full hover:bg-ink transition-colors">Call Now</a>
+            </div>
+        </div>
+    </div>
+</nav>
+
+    <main class="overflow-hidden">
+        
+        
+
+<section class="bg-green py-16 md:py-24 text-center px-6 md:px-12 lg:px-16">
+            <div class="container mx-auto max-w-7xl">
+                <h1 class="text-5xl md:text-8xl text-black font-serif mb-4 md:mb-6">Inside the space</h1>
+                
+                <p class="text-base md:text-xl text-black font-sans tracking-wide max-w-4xl mx-auto">
+                    From open work zones and private offices to coffee breaks and community moments.
+                </p>
+            </div>
+        </section>
+
+
+
+        <div class="border-y border-ink bg-cream py-4 text-center sticky top-20 z-10">
+            <h2 class="font-mono text-2xl tracking-[0.5em] uppercase text-ink">The Space</h2>
+        </div>
+
+        <section class="bg-cream border-b border-ink">
+            <div class="swiper mySwiperSpace w-full">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide"><img src="assets/images/Gallery/space/1.jpg" alt="Space 1"></div>
+                    <div class="swiper-slide"><img src="assets/images/Gallery/space/2.jpg" alt="Space 2"></div>
+                    <div class="swiper-slide"><img src="assets/images/Gallery/space/3.jpg" alt="Space 3"></div>
+                    <div class="swiper-slide"><img src="assets/images/Gallery/space/4.jpg" alt="Space 4"></div>
+                    <div class="swiper-slide"><img src="assets/images/Gallery/space/5.jpg" alt="Space 5"></div>
+                    <div class="swiper-slide"><img src="assets/images/Gallery/space/6.jpg" alt="Space 6"></div>
+                    <div class="swiper-slide"><img src="assets/images/Gallery/space/7.jpg" alt="Space 7"></div>
+                    <div class="swiper-slide"><img src="assets/images/Gallery/space/8.png" alt="Space 8"></div>
+
+                    <div class="swiper-slide"><img src="assets/images/Gallery/space/1.jpg" alt="Space 1"></div>
+                    <div class="swiper-slide"><img src="assets/images/Gallery/space/2.jpg" alt="Space 2"></div>
+                    <div class="swiper-slide"><img src="assets/images/Gallery/space/3.jpg" alt="Space 3"></div>
+                    <div class="swiper-slide"><img src="assets/images/Gallery/space/4.jpg" alt="Space 4"></div>
+                    <div class="swiper-slide"><img src="assets/images/Gallery/space/5.jpg" alt="Space 5"></div>
+                    <div class="swiper-slide"><img src="assets/images/Gallery/space/6.jpg" alt="Space 6"></div>
+                    <div class="swiper-slide"><img src="assets/images/Gallery/space/7.jpg" alt="Space 7"></div>
+                    <div class="swiper-slide"><img src="assets/images/Gallery/space/8.png" alt="Space 8"></div>
+                </div>
+            </div>
+        </section>
+
+        <div class="border-b border-ink bg-cream py-4 text-center sticky top-20 z-10">
+            <h2 class="font-mono text-2xl tracking-[0.5em] uppercase text-ink">The Community</h2>
+        </div>
+
+        <section class="bg-cream border-b border-ink">
+            <div class="swiper mySwiperCommunity w-full">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide"><img src="assets/images/Gallery/community/1.jpg" alt="Community 1"></div>
+                    <div class="swiper-slide"><img src="assets/images/Gallery/community/2.jpg" alt="Community 2"></div>
+                    <div class="swiper-slide"><img src="assets/images/Gallery/community/3.jpg" alt="Community 3"></div>
+                    <div class="swiper-slide"><img src="assets/images/Gallery/community/4.jpg" alt="Community 4"></div>
+                    <div class="swiper-slide"><img src="assets/images/Gallery/community/5.jpg" alt="Community 5"></div>
+                    <div class="swiper-slide"><img src="assets/images/Gallery/community/6.png" alt="Community 6"></div>
+                    <div class="swiper-slide"><img src="assets/images/Gallery/community/7.png" alt="Community 7"></div>
+                    <div class="swiper-slide"><img src="assets/images/Gallery/community/8.png" alt="Community 8"></div>
+                    <div class="swiper-slide"><img src="assets/images/Gallery/community/9.png" alt="Community 9"></div>
+                    <div class="swiper-slide"><img src="assets/images/Gallery/community/10.jpg" alt="Community 10"></div>
+
+                </div>
+            </div>
+        </section>
+
+             <section class="py-20 md:py-32 bg-ink text-cream text-center relative overflow-hidden">
+             <div class="absolute top-0 left-0 w-full h-full opacity-10 pointer-events-none">
+                <svg width="100%" height="100%"><pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse"><path d="M 40 0 L 0 0 0 40" fill="none" stroke="currentColor" stroke-width="1"/></pattern><rect width="100%" height="100%" fill="url(#grid)" /></svg>
+             </div>
+
+            <div class="container mx-auto px-6 relative z-10">
+                <h2 class="text-4xl md:text-7xl font-serif mb-6 md:mb-8 leading-tight">
+                    Want to be part of this <br> <span class="text-green italic">amazing</span> community?
+                </h2>
+                
+                <p class="text-lg md:text-xl text-gray-400 mb-8 md:mb-12 max-w-2xl mx-auto">
+                    Find your desk, meet your people, and grow your business.
+                </p>
+                
+                <button class="bg-green text-white px-8 py-4 md:px-12 md:py-5 text-sm md:text-lg font-bold uppercase tracking-wider hover:bg-white hover:text-ink transition-all duration-300 open-booking-modal">
+                    Join Now
+                </button>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="bg-ink text-cream pt-20 pb-10">
+        <div class="container mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-20">
+                <div class="col-span-1 md:col-span-2">
+                    <img src="assets/images/logo-light.png" alt="OneWorx" class="h-6 md:h-10 mb-6 md:mb-8 object-contain">
+                    
+                    <p class="max-w-md text-gray-400 text-sm md:text-lg leading-relaxed">Work shouldn't feel like work. Join a community that balances professional growth with personal well-being, comfort, and connection.</p>
+                </div>
+                <div>
+                    <h4 class="font-sans text-xs text-gray-500 mb-6 uppercase tracking-widest">Links</h4>
+                    
+                    <ul class="space-y-2 text-sm md:text-lg">
+                        <li><a href="terms-of-service.html" class="hover:text-green transition-colors">Terms Of Service</a></li>
+                        <li><a href="Privacy-policy.html" class="hover:text-green transition-colors">Privacy Policy</a></li>
+                        <li><a href="assets/docs/Oneworx Brochure.pdf" target="_blank" class="hover:text-green transition-colors">Brochure</a></li>
+                        <li><a href="#" class="open-booking-modal hover:text-green transition-colors">Book Tour</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-sans text-xs text-gray-500 mb-6 uppercase tracking-widest">Connect</h4>
+                    
+                    <ul class="space-y-2 text-sm md:text-lg">
+                        <li><a href="https://www.instagram.com/oneworx_" target="_blank" class="hover:text-green transition-colors">Instagram</a></li>
+                        <li><a href="https://www.linkedin.com/company/oneworx" target="_blank" class="hover:text-green transition-colors">LinkedIn</a></li>
+                        <li><a href="https://wa.me/918989898040" target="_blank" class="hover:text-green transition-colors">WhatsApp</a></li>
+                        <li><a href="mailto:hello@oneworx.in" class="hover:text-green transition-colors">Email</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between text-xs font-mono text-gray-500">
+                <p>&copy; 2024 oneworx. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+
+    <a href="https://wa.me/918989898040" target="_blank" class="fixed bottom-6 right-6 z-50 group">
+    <div class="relative w-24 h-24 md:w-32 md:h-32 bg-ink rounded-full flex items-center justify-center shadow-lg hover:scale-110 transition-transform duration-300">
+        <svg class="absolute w-full h-full animate-spin-slow p-2" viewBox="0 0 100 100">
+            <defs><path id="circlePath" d="M 50, 50 m -37, 0 a 37,37 0 1,1 74,0 a 37,37 0 1,1 -74,0" /></defs>
+            <text font-size="10.5" font-family="monospace" font-weight="bold" fill="white" letter-spacing="1.5"><textPath xlink:href="#circlePath"> • MAKE AN ENQUIRY • BOOK A TOUR </textPath></text>
+        </svg>
+        <img src="assets/images/logo-icon.png" alt="Go" class="w-10 h-10 md:w-20 md:h-20 object-contain">
+    </div>
+</a>
+
+
+    <div id="booking-modal" class="opacity-0 pointer-events-none fixed inset-0 z-[100] flex items-center justify-center bg-ink bg-opacity-95 transition-opacity duration-300 backdrop-blur-sm">
+        <div class="bg-cream w-full max-w-lg mx-4 p-8 md:p-12 relative border border-white shadow-2xl transform scale-95 transition-transform duration-300" id="modal-content">
+            <button id="close-modal" class="absolute top-6 right-6 text-4xl leading-none hover:text-green transition-colors">×</button>
+            <h2 class="text-4xl mb-2 font-serif">Join Us.</h2>
+            <p class="text-gray-500 mb-8 font-sans">Elevate your workspace experience.</p>
+            <form id="booking-form" class="space-y-6">
+                <div class="grid grid-cols-2 gap-6"><input type="text" placeholder="First Name" class="w-full bg-transparent border-b border-ink px-2 py-3 focus:outline-none focus:border-green font-sans"><input type="text" placeholder="Last Name" class="w-full bg-transparent border-b border-ink px-2 py-3 focus:outline-none focus:border-green font-sans"></div>
+                <input type="email" placeholder="Email Address" class="w-full bg-transparent border-b border-ink px-2 py-3 focus:outline-none focus:border-green font-sans">
+                <input type="tel" placeholder="Phone Number" class="w-full bg-transparent border-b border-ink px-2 py-3 focus:outline-none focus:border-green font-sans">
+                
+                <div class="relative">
+                    <select class="w-full bg-transparent border-b border-ink px-2 py-3 focus:outline-none focus:border-green text-gray-700 appearance-none rounded-none font-sans">
+                        <option value="" disabled selected>Which Location?</option>
+                        <option>Arera Colony</option>
+                        <option>Hoshangabad Rd</option>
+                        <option>10 Number Market</option>
+                        <option>Fortune Arcade</option>
+                    </select>
+                    <span class="absolute right-2 top-4 pointer-events-none text-xs">▼</span>
+                </div>
+
+                <button type="submit" class="w-full bg-ink text-white py-4 font-bold hover:bg-green transition-colors mt-4 text-lg font-sans">Submit Request</button>
+            </form>
+        </div>
+    </div>
+    
+    <script src="assets/js/main.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+    <script>
+        // Swiper Configuration Function (Returns a fresh object to prevent conflicts)
+        const getMarqueeConfig = () => ({
+            slidesPerView: "auto", 
+            spaceBetween: 40, // Nice airy gap
+            loop: true, // Infinite Loop
+            speed: 5000, // Duration of one cycle (Linear)
+            freeMode: true, // Allow dragging
+            grabCursor: true,
+            autoplay: {
+                delay: 0, // Continuous flow
+                disableOnInteraction: false, // Continue after drag
+                pauseOnMouseEnter: true, // STOPS ON HOVER
+            },
+        });
+
+        // 1. SPACE (Left)
+        new Swiper(".mySwiperSpace", getMarqueeConfig());
+
+        // 2. COMMUNITY (Right)
+        new Swiper(".mySwiperCommunity", {
+            ...getMarqueeConfig(),
+            autoplay: {
+                delay: 0,
+                disableOnInteraction: false,
+                pauseOnMouseEnter: true,
+                reverseDirection: true // Moves Left to Right
+            }
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,522 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Terms of Service | Oneworx</title> 
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              'cream': '#FDFBF7',
+              'ink': '#1A1A1A',
+              'green': '#afbe9d', 
+              'sage': '#E3E8E3',
+
+            },
+            fontFamily: {
+              serif: ['"Plantagenet"', 'serif'],
+              sans: ['"AzoSans"', 'sans-serif'],
+            },
+            animation: {
+                'spin-slow': 'spin 16s linear infinite', 
+                'scroll': 'scroll 40s linear infinite',
+            },
+            keyframes: {
+                scroll: {
+                    '0%': { transform: 'translateX(0)' },
+                    '100%': { transform: 'translateX(-50%)' },
+                }
+            }
+          }
+        }
+      }
+    </script>
+
+    <style>
+        /* 1. REGISTER CUSTOM FONTS */
+        @font-face {
+            font-family: 'Plantagenet';
+            src: url('assets/fonts/plantagenet.ttf') format('truetype'); 
+            font-weight: normal;
+            font-style: normal;
+        }
+
+        @font-face {
+            font-family: 'AzoSans';
+            src: url('assets/fonts/azosans.otf') format('opentype');
+            font-weight: normal;
+            font-style: normal;
+        }
+
+        /* 2. APPLY TO HTML TAGS */
+        body { 
+            font-family: 'AzoSans', sans-serif; 
+            background-color: #FDFBF7; 
+            color: #1A1A1A; 
+        }
+        
+        h1, h2, h3, h4, h5, h6 { 
+            font-family: 'Plantagenet', serif; 
+            font-weight: 400; 
+        }
+
+        /* 3. UTILITIES */
+        .reveal { opacity: 0; transform: translateY(40px); transition: all 1s cubic-bezier(0.16, 1, 0.3, 1); }
+        .reveal.active { opacity: 1; transform: translateY(0); }
+     </style>
+</head>
+<body class="flex flex-col min-h-screen">
+
+    <nav class="bg-cream border-b border-ink sticky top-0 z-40 transition-all duration-300" id="navbar">
+    <div class="w-full px-8 lg:px-20 h-20 flex items-center justify-between">
+        
+        <a href="index.html" class="block flex-shrink-0">
+            <img src="assets/images/logo.png" alt="OneWorx" class="h-[19.3px] w-auto object-contain">
+        </a>
+        
+        <div class="hidden md:flex items-center space-x-4 lg:space-x-8 text-sm font-medium uppercase tracking-wide h-full">
+            <a href="about.html" class="hover:text-green transition-colors cursor-pointer whitespace-nowrap">About Us</a>
+
+            <div class="relative group h-full flex items-center">
+                <a href="offerings.html" class="hover:text-[#A7B68F] transition-colors cursor-pointer flex items-center gap-1 focus:outline-none uppercase h-full whitespace-nowrap">
+                    OFFERINGS
+                    <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                </a>
+                
+                <div class="absolute top-[60px] -left-4 w-72 bg-white border border-ink shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 transform group-hover:translate-y-0 translate-y-2 z-50 text-left">
+                    <div class="relative group/nested border-b border-gray-100">
+                        <div class="px-6 py-4 hover:bg-[#A7B68F] hover:text-white cursor-pointer flex justify-between items-center transition-colors">
+                            <span class="normal-case font-medium">Coworking Plans</span>
+                            <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+                        </div>
+                        <div class="absolute left-full top-[-1px] w-64 bg-white border border-ink shadow-xl opacity-0 invisible group-hover/nested:opacity-100 group-hover/nested:visible transition-all duration-200 z-50">
+                            <a href="dedicated-workspaces.html" class="block px-6 py-3 border-b border-gray-100 hover:bg-cream hover:text-green transition-colors normal-case font-medium"> Dedicated Open Workspaces</a>
+                            <a href="private-office.html" class="block px-6 py-3 border-b border-gray-100 hover:bg-cream hover:text-green transition-colors normal-case font-medium"> Private Office</a>
+                            <a href="private-cabins.html" class="block px-6 py-3 border-gray-100 hover:bg-cream hover:text-green transition-colors normal-case font-medium">Private Cabins</a>
+                        </div>
+                    </div>
+                    <a href="meeting-rooms.html" class="block px-6 py-4 border-b border-gray-100 hover:bg-cream hover:text-green transition-colors normal-case font-medium">Meeting Rooms</a>
+                    <a href="virtual-office.html" class="block px-6 py-4 border-b border-gray-100 hover:bg-cream hover:text-green transition-colors normal-case font-medium">Virtual Office</a>
+                    <a href="community.html" class="block px-6 py-4 hover:bg-cream hover:text-green transition-colors normal-case font-medium">Community & Spaces</a>
+                </div>
+            </div>
+
+            <div class="relative group h-full flex items-center">
+                <a href="locations.html" class="hover:text-green transition-colors cursor-pointer flex items-center gap-1 focus:outline-none uppercase h-full whitespace-nowrap">
+                    Locations
+                    <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                </a>
+                <div class="absolute top-[60px] -left-4 w-56 bg-white border border-ink shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 transform group-hover:translate-y-0 translate-y-2 z-50">
+                    <a href="location-arera.html" class="block px-6 py-3 border-b border-gray-100 hover:bg-cream hover:text-green transition-colors normal-case">Arera Colony</a>
+                    <a href="location-hoshangabad.html" class="block px-6 py-3 border-b border-gray-100 hover:bg-cream hover:text-green transition-colors normal-case">Hoshangabad Rd</a>
+                    <a href="location-10-no.html" class="block px-6 py-3 border-b border-gray-100 hover:bg-cream hover:text-green transition-colors normal-case">10 No. Market</a>
+                    <a href="location-fortune.html" class="block px-6 py-3 hover:bg-cream hover:text-green transition-colors normal-case">Fortune Arcade</a>
+                </div>
+            </div>
+            
+            <div class="relative group h-full flex items-center">
+                <button class="hover:text-green transition-colors cursor-pointer flex items-center gap-1 focus:outline-none uppercase whitespace-nowrap">
+                    MORE
+                    <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                </button>
+                <div class="absolute top-[60px] -left-4 w-48 bg-white border border-ink shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 transform group-hover:translate-y-0 translate-y-2 z-50">
+                    <a href="events.html" class="block px-6 py-3 border-b border-gray-100 hover:bg-cream hover:text-green transition-colors normal-case">Events</a>
+                    <a href="amenities-perks.html" class="block px-6 py-3 border-b border-gray-100 hover:bg-cream hover:text-green transition-colors normal-case">Amenities & Perks</a>
+                    <a href="blogs.html" class="block px-6 py-3 border-b border-gray-100 hover:bg-cream hover:text-green transition-colors normal-case">Blogs</a>
+                    <a href="gallery.html" class="block px-6 py-3 border-b border-gray-100 hover:bg-cream hover:text-green transition-colors normal-case">Gallery</a>
+                    <a href="faqs.html" class="block px-6 py-3 hover:bg-cream hover:text-green transition-colors normal-case">FAQs</a>
+                </div>
+            </div>
+
+            <a href="tel:+918989898040" class="border border-ink px-4 lg:px-6 py-2 hover:bg-ink hover:text-white transition-all text-center whitespace-nowrap">
+                Call Now
+            </a>
+        </div>
+        
+        <button id="mobile-menu-btn" class="md:hidden p-2">
+            <div class="w-8 h-0.5 bg-ink mb-1.5"></div>
+            <div class="w-8 h-0.5 bg-ink mb-1.5"></div>
+            <div class="w-8 h-0.5 bg-ink"></div>
+        </button>
+    </div>
+    
+    <div id="mobile-menu" class="hidden bg-cream border-t border-ink absolute w-full left-0 h-screen z-50 overflow-y-auto pb-20">
+        <div class="flex flex-col p-8 space-y-8 text-2xl font-serif">
+            <a href="about.html" class="block">About Us</a>
+            
+            <div class="w-full">
+                <details class="group">
+                    <summary class="flex justify-between items-center cursor-pointer list-none focus:outline-none">
+                        <span>Offerings</span>
+                        <svg class="w-4 h-4 transition-transform duration-300 group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                    </summary>
+                    
+                    <div class="pl-4 mt-4 space-y-4 font-sans text-lg text-gray-600 border-l-2 border-gray-200 ml-1">
+                        <details class="group/nested">
+                            <summary class="flex justify-between items-center cursor-pointer list-none py-2 px-3 rounded-md hover:bg-[#A7B68F] hover:text-white transition-colors focus:outline-none">
+                                <span>Coworking Plans</span>
+                                <svg class="w-3 h-3 transition-transform duration-300 group-open/nested:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                            </summary>
+                            <div class="pl-4 mt-2 space-y-3 text-base text-gray-500">
+                                <a href="dedicated-workspaces.html" class="block">Dedicated Workspaces</a>
+                                <a href="private-office.html" class="block">Private Office</a>
+                                <a href="private-cabins.html" class="block">Private Cabins</a>
+                            </div>
+                        </details>
+
+                        <a href="meeting-rooms.html" class="block px-3">Meeting Rooms</a>
+                        <a href="virtual-office.html" class="block px-3">Virtual Office</a>
+                        <a href="community.html" class="block px-3">Community & Spaces</a>
+                    </div>
+                </details>
+            </div>
+
+            <div class="w-full">
+                <details class="group">
+                    <summary class="flex justify-between items-center cursor-pointer list-none focus:outline-none">
+                        <span>Locations</span>
+                        <svg class="w-4 h-4 transition-transform duration-300 group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                    </summary>
+                    <div class="pl-4 mt-4 space-y-4 font-sans text-lg text-gray-600 border-l-2 border-gray-200 ml-1">
+                        <a href="location-arera.html" class="block px-3">Arera Colony</a>
+                        <a href="location-hoshangabad.html" class="block px-3">Hoshangabad Rd</a>
+                        <a href="location-10-no.html" class="block px-3">10 No. Market</a>
+                        <a href="location-fortune.html" class="block px-3">Fortune Arcade</a>
+                    </div>
+                </details>
+            </div>
+            
+            <div class="w-full">
+                <details class="group">
+                    <summary class="flex justify-between items-center cursor-pointer list-none focus:outline-none">
+                        <span>More</span>
+                        <svg class="w-4 h-4 transition-transform duration-300 group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                    </summary>
+                    <div class="pl-4 mt-4 space-y-4 font-sans text-lg text-gray-600 border-l-2 border-gray-200 ml-1">
+                        <a href="events.html" class="block px-3 hover:text-ink transition-colors">Events</a>
+                        <a href="amenities-perks.html" class="block px-3 hover:text-ink transition-colors">Amenities & Perks</a>
+                        <a href="blogs.html" class="block px-3 hover:text-ink transition-colors">Blogs</a>
+                        <a href="gallery.html" class="block px-3 hover:text-ink transition-colors">Gallery</a>
+                        <a href="faqs.html" class="block px-3 hover:text-ink transition-colors">FAQs</a>
+                    </div>
+                </details>
+            </div>
+
+            <div class="pt-4 border-t border-gray-300">
+                <a href="tel:+918989898040" class="bg-green text-white py-4 font-sans text-xl font-bold uppercase tracking-widest text-center block w-full hover:bg-ink transition-colors">Call Now</a>
+            </div>
+        </div>
+    </div>
+</nav>
+
+
+
+
+
+
+<section class="bg-green py-16 md:py-24 text-center px-6 md:px-12 lg:px-16">
+            <div class="container mx-auto max-w-7xl">
+                <h1 class="text-5xl md:text-8xl text-black font-serif mb-4 md:mb-6">Terms of Service</h1>
+                
+                <p class="text-base md:text-xl text-black font-sans tracking-wide max-w-4xl mx-auto">
+                    All memberships and services are subject to the following terms.
+                </p>
+            </div>
+        </section>
+
+
+
+       <section class="border-y border-ink bg-cream py-16 md:py-24 px-6">
+    <div class="container mx-auto max-w-8xl"> 
+        
+        <div class="text-base md:text-xl leading-relaxed text-gray-800 mb-12 space-y-6 md:space-y-8 font-sans text-left">
+            
+            <p>
+                <strong class="text-lg md:text-xl font-sans text-ink mr-2">1. Term:</strong> This Agreement will be effective when signed by both parties (“Monthly Usage Charge Commencement Date”); provided that we have no obligations to provide you with the Services until the later of:<br>
+                a) the date on which payment of your Interest Free Refundable Security Deposit and first month’s Membership Fee has been received by us or<br>
+                b) the Monthly Usage Charge Commencement Date. The initial Agreement Term and all subsequent Renewal Terms shall constitute the “Term”.
+            </p>
+
+            <p class="mt-8 md:mt-10">
+                <strong class="text-lg md:text-xl font-sans text-ink mr-2">2.  Lock-in Period:</strong> The Lock-in Period is indicated on your Membership Agreement or Quotation, if no Lock-in Period is indicated on your Membership Agreement, the default Lock-in Period shall commence on the Monthly Usage Charge Commencement Date and end one (1) month after the Monthly Usage Charge Commencement Date. This Agreement will continue until terminated in accordance with this Agreement.    
+            </p>
+
+            <p class="mt-8 md:mt-10">
+                <strong class="text-lg md:text-xl font-sans text-ink mr-2">3.  Cancellation Prior to Monthly Usage Charge Commencement Date by You:</strong> You cannot terminate this Agreement prior to the Monthly Usage Charge Commencement Date. In the event, you default w.r.t. moving in to the Work Space after signing of the Membership Agreement, you shall be liable to pay Monthly Usage Charges for the lock -in period.    
+            </p>
+
+             <p class="mt-8 md:mt-10">
+                <strong class="text-lg md:text-xl font-sans text-ink mr-2">4.  Termination by You:</strong> You may terminate this Agreement by delivering to us written notice of the period agreed under the Membership Agreement and the termination will be effective on the later of the last Regular Business Day of the Termination Effective Month and the expiration of the Lock-in Period. No termination by you shall be effective during the Lock-in Period, and termination by you during the Lock-in Period is a breach of this Agreement. If you terminate this Agreement prior to the end of the Lock-in Period, your Monthly Membership Fee obligations for the remaining Lock-in Period shall become immediately due. In addition to any rights, claims and remedies we choose to pursue in our discretion, your Interest Free Refundable Security Deposit shall be forfeited immediately as a result of your breach.    
+            </p>
+
+            <p class="mt-8 md:mt-10">
+                <strong class="text-lg md:text-xl font-sans text-ink mr-2">5.  Termination or Suspension by Us:</strong> We may withhold Services or immediately terminate this Agreement:<br>
+                a) upon breach of this Agreement by you or any Member;<br>
+                b) upon termination, expiration or material loss of our rights in the Premises;<br>
+                c) if any outstanding fees are still due after we provide notice to you;<br>
+                d) if you or any of your members fail to comply with the terms and conditions of your Membership and House Rules, or any other policies or instructions provided by us or applicable to you; or<br>
+                e) at any other time, when we, in our sole discretion, see fit to do so. You will remain liable for past due amounts, and we may exercise our rights to collect due payment, despite termination or expiration of this Agreement.
+            </p>
+
+            <p class="mt-8 md:mt-10">
+                <strong class="text-lg md:text-xl font-sans text-ink mr-2">6.  Removal of property upon Termination:</strong> Prior to the termination or expiration of this Agreement, you will remove all of yours, your members’, and your or their guests’ property from the Work Space and Building Premises. After providing you with reasonable notice, we will be entitled to dispose of any property remaining in or on the Work Space or Building Premises after the termination or expiration of this Agreement and will not have any obligation to store such property, and you waive any claims or demands regarding such property or our handling of such property. You will be responsible for paying any fees reasonably incurred by us regarding such removal. Following the termination or expiration of this Agreement, we will not forward or hold mail or other packages delivered to us.
+            </p>
+
+            <p class="mt-8 md:mt-10">
+                <strong class="text-lg md:text-xl font-sans text-ink mr-2">7.  Interest Free Refundable Security Deposit (IFRSD): </strong> The IFRSD will be held as a retainer for performance of all your obligations under the Agreement, including the Membership Fee Obligations, and is not intended to be a reserve from which Membership Fees or any other fees may be paid. In the event you owe us other fees, you may not rely on deducting them from the IFRSD, but must pay them separately. We will return the IFRSD, or any balance after deducting outstanding fees and other costs due to you by bank transfer or other method that we communicate to you within thirty (30) days (or earlier if required by applicable law) after the later of<br>
+                a) the termination or expiration of this Agreement and vacation of the Work Space by you and<br>
+                b) the date on which you provide to us all account information necessary for us to make such payment. Return of the IFRSD is also subject to your complete performance of all your obligations under this Agreement, including any obligations in relation to the transfer of your registered office from Our address upon termination and the provision of documentary evidence of the same to us, full satisfaction of your Membership Fee Obligations and any other obligations applicable following termination or expiration of this Agreement.
+            </p>
+
+            <p class="mt-8 md:mt-10">
+                <strong class="text-lg md:text-xl font-sans text-ink mr-2">8.  Delay in Handover of Work Space:</strong> In the event of any delays by you in handing over the Work Space to us after the termination or expiration of the Agreement, you agree to pay twice the applicable Membership Fee for every day of un-authorized occupation, beyond the date of expiry or termination of this Agreement. You agree and acknowledge that the damages provided for in clause are a genuine and reasonable pre-estimate of the damages that we may suffer as a result of your delay and failure to comply with your obligations in the manner contemplated and is not a penalty.
+            </p>
+
+            <p class="mt-8 md:mt-10">
+                <strong class="text-lg md:text-xl font-sans text-ink mr-2">9. Information Technology:</strong> Regarding the foregoing, you agree that we and our affiliates: Are not responsible for any damage to any Member’s computer, tablet, mobile device or other electronic equipment, or otherwise to Member’s system, related to such technical support or downloading and installation of any software;<br>
+                a) Are not responsible for any malware/ spyware/ virus attack and other internet threats via shared internet connection provided to you.<br>
+                b) Do not assume any liability or warranty in the event that any manufacturer warranties are voided; and<br>
+                c) Do not offer any verbal or written warranty, either expressed or implied, regarding the success of any technical support.The Company provides shared Internet access to Members via a wired or wireless network connection. For those Members wishing to implement a private wired network, the Company m ay allow you to install a firewall device for your exclusive access and use, subject to Company IT approval, and you will be responsible for removal of the same. Prior to any such installation or removal, you shall coordinate with the Company IT team to discuss the actual setup, appropriate time, manner and means for such installation or removal and any additional fees that may result from the request.<br>
+                d) To the extent that we incur any costs in connection with such installation or removal, which are not otherwise paid by you, we shall deduct such costs from the Interest Free Refundable Security Deposit. You shall also be responsible for any monthly fees incurred relating to your private, secured wired network.
+            </p>
+
+             <p class="mt-8 md:mt-10">
+                <strong class="text-lg md:text-xl font-sans text-ink mr-2">10. Fair Usage Policy: </strong> Under No circumstance will the Premises and its facilities be used for:<br>
+                a) Cyber-terrorism -  which includes a person who denies access to authorized personnel to a computer resource, accesses a protected system or introduces contaminant into a system, with the intention of threatening the unity, integrity, sovereignty or security of another entity or the country including and not limited to hacking or social engineering or phishing<br>
+                b) Cyberbullying-  which includes but not restricted to sending, posting, or sharing negative, harmful, false about someone else such as personal or private information about someone else causing embarrassment or humiliation.<br>
+                c) Cyber-Porn –  Which includes but not restricted to capturing, transmitting or publishing images of a person's private parts without his/her consent or knowledge, publishing or transmitting images containing a sexually explicit act or conduct.<br>
+                d) Cheating or Cyber Fraud –  which includes cheating using computer/internet resource or communication channel or general public Internet Protocol (IP). <br>
+                e) Any act Prohibited under the provisions of the Information Technology Act, 2008 or any amendment thereto.<br>
+                f) Members are prohibited to gain unauthorized access to any Services, or accounts, computer systems or networks connected to any of our server or to any of the Services, or to other co-working associate’s resources through hacking, password mining or any other means.<br>
+                g) Video/Audio Streaming is disabled for the Members for Non-Educational Sites (ex-Netflix, Prime etc).<br>
+                h) Members are recommended to have an antivirus installed on all computers to prevent mass infection via virus outbreak.<br>
+                i) Members are liable for the physical safety and maintenance of the IT assets which are brought by them to the Premises. The building staff will assist in the event of a mis-happening or loss by making available CCTV footage up to available days of the day of the incident.
+            </p>
+
+            <p class="mt-8 md:mt-10">
+                <strong class="text-lg md:text-xl font-sans text-ink mr-2">11. Benefits of Membership: </strong><br>
+                a) Non-exclusive access to the Premises.<br>
+                b) Regular maintenance of the Work Space, consistent with the maintenance services to similar work spaces in the Premises, provided we will not be responsible for damages exceeding normal wear and tear.<br>
+                c) Furnishings for the Work Space of the quality and in the quantity typically provided to other Member Companies with similar work space, workstations, and/or other work space, as applicable, in the Premises.<br>
+                d) Access to and use of the shared Internet connection. <br>
+                e) Use of the printers, copiers and/or scanners available to our Members and Member Companies at the Premises.<br>
+                f) Use of the conference rooms in the Premises and use of conference rooms and other Value-Added Services, in each case subject to requisite payment (if any), availability and your prior reservation of such facility.<br>
+                g) Air-conditioning in the Work Space.<br>
+                h) Electricity for reasonably acceptable office use.<br>
+                i) Acceptance of mail and deliveries on behalf of your business during Regular Business Hours on Regular Business Days, provided that we are not liable for any mail or packages received without a Company employee’s or representative’s signature indicating acceptance. Packages should be collected by the following day and storage fee may apply if packages remain uncollected over 48 hours. <br>
+                j) Each month, you will receive a certain number of credits for conference/meeting room use and a certain number of credits for black and white copies and printouts, access to pantry equipment like Coffee Machine, microwave, water dispenser and other products and services we may offer from time to time as specified & agreed under the Membership Agreement (These credits will not be rolled over from month to month. If these allocated credits are exceeded, you will be responsible for paying fees for such overages as per applicable rates at that time). 
+            </p>
+
+             <p class="mt-8 md:mt-10">
+                <strong class="text-lg md:text-xl font-sans text-ink mr-2">12.  House Rules: </strong><br>
+                a) Noise/ Communication - Be mindful and precise while engaging with other co-workers, not to use passages for calls and meetings this may disturb you and other co-workers as well and can hamper productivity.<br>
+                b) Silence - Silence is the place productive people go to think. Please communicate freely at our meeting rooms or phone booth.<br>
+                c) Tidy Desk, Tidy Mind - Please keep your workspace clean, tidy and neat, make sure no damages, vandalism.<br>
+                d) Harassment - Please refrain from the acts of intimidation, harassment or discrimination in our space, online networks, and in all related events. <br>
+                e) Collaborate - Make the best use of events and grow your network. We do not promote multi-level-marketing approach in our Premises. Kindly contact our community manager in order to facilitate promotion of your product/ services.<br>
+                f) Take Care of Your Belongings - Stay cautious with your valuables. We shall not be responsible for any of your personal belongings.<br>
+                g) Allotment of Working Space - Please adhere to the allotment of your original workspaces, Lunching and munching requested to be limited to dedicated lunch areas only.<br>
+                h) Timings of Co-working – Kindly adhere to the standard operating hours of the facility, extra usage is subject to availability and will be charged extra.<br>
+                i) Parking Services: Please take care of belongings inside the car and it is advised to park your car at a proper designated place, we will not be responsible for any kind of damage or loss. <br>
+                j) Smoking and Alcohol Consumption is no allowed on the Premises.
+            </p>
+
+            <p class="mt-8 md:mt-10">
+                <strong class="text-lg md:text-xl font-sans text-ink mr-2">13.  You acknowledge and agree that: </strong><br>
+                a) Keys, access/key cards and other such items used to gain physical access to the Premises, or the Work Space remain our property. You will cause your members to safeguard Our property and you will be liable for replacement fees should any such property be lost, stolen or destroyed;<br>
+                b) You shall promptly notify us of any change to your contact and payment information;<br>
+                c) We will provide notice to you of any changes to services, fees, or other updates by emailing the email addresses provided by you. It is your responsibility to read such emails and to ensure your members are aware of any changes, even if we notify such Members directly;<br>
+                d) All of your Members are at least 18 years of age; <br>
+                e) Common spaces are to be enjoyed by all our Member Companies, members and guests unless otherwise instructed by us, and are for temporary use and not as a place for continuous, everyday work;<br>
+                f) You will provide us with reasonable notice of and complete all required paperwork prior to hosting any event at the Premises;<br>
+                g) You will be responsible for any damage to your Work Space exceeding normal wear and tear;<br>
+                h) You cannot make any structural or non-structural alterations or installations of wall attachments, furniture or antennae in the Work Space or elsewhere in the Premises. In the event that any alterations or installations are made, you shall be responsible for the full cost and expense of the removal of such items and the restoration necessitated by any such alterations. To the extent that we incur any costs in connection with such alteration, installation or removal which are not otherwise paid by you we shall deduct such costs from the Interest Free Refundable Security Deposit. In no event are you permitted to perform any of these actions.;<br>
+                i) You and your Members’ computers, tablets, mobile devices and other electronic equipment must be kept clean of any malware, viruses, spyware, worms, trojans, or anything that is designed to perform malicious, hostile and/or intrusive operations. We reserve the right to remove any device from our networks that poses a threat to our networks or users until the threat is remediated; and <br>
+                j) For security reasons, we may, but have no obligation to, regularly record certain areas in the Premises via video; <br>
+                k) We may disclose information about you or your members as necessary to satisfy any applicable law, rule, regulation, legal process or government request or as we otherwise deem reasonably necessary for the protection of us, other Member Companies or other members; <br>
+                l) You consent to our non-exclusive, non-transferable use of your Member Company name and/or logo in connection with identifying you as a Member Company, alongside those of other Member Companies, on a public-facing “Membership” display, as well as in other marketing materials. You warrant that your logo does not infringe upon the rights of any third party and that you have full authority to provide this consent. You may terminate this consent at any time upon thirty (30) days’ prior notice. <br>
+                m) You and your Members will abide by other rules and regulations as determined by us and communicated to you, including by email. We may add, delete or amend the rules and regulations at our reasonable discretion and with notice to you, provided that neither the enforcement of such rules nor the additions, deletions or amendments of such rules shall be discriminatory—that is, such rules or additions will similarly apply to all other Members and Member Companies with Work Space in the Premises receiving similar services.
+            </p>
+
+            <p class="mt-8 md:mt-10">
+                <strong class="text-lg md:text-xl font-sans text-ink mr-2">14.  No Member Will: </strong><br>
+                a) Perform any activity or cause or permit anything that is reasonably likely to be disruptive or dangerous to Us or any other Member Companies, or our or their employees, guests or property, including without limitation the Work Space or the Premises;<br>
+                b) Use the Services, the Premises or the Work Space to conduct or pursue any illegal or offensive activities or comport themselves to the community in a similar manner;<br>
+                c) Take, copy or use any information or intellectual property belonging to other Member Companies or their Members or guests, including without limitation any confidential or proprietary information, personal names, likenesses, voices, business names, trademarks, service marks, logos, trade dress, other identifiers or other intellectual property, or modified or altered versions of the same, and this provision will survive termination of this Agreement;<br>
+                d) Take, copy or use for any purpose Our name or any of Our other business names, trademarks, service marks, logos, trade dress, other identifiers or other intellectual property or modified or altered versions of the same, or take, copy or use for any purpose any pictures or illustrations of any portion of the Premises, without our prior consent, and this provision will survive termination of this Agreement; <br>
+                e) Use the Work Space in a “retail,” “medical,” or other nature involving frequent visits by members of the public;<br>
+                f) Sell, manufacture or distribute any controlled substance, including alcoholic beverages, from the Work Space, or obtain a license for such sale, manufacture, importation, or distribution using the Work Space or the address of the Premises;<br>
+                g) Use our mail and deliveries services for fraudulent or unlawful purposes, and we shall not be liable for any such use;<br>
+                h) Make any copies of any keys, access/key cards or other means of entry to the Work Space or the Premises or lend, share or transfer any keys or access/key cards to any third party, unless authorized by us in advance;<br>
+                i) Install any locks to access the Work Space or anywhere within the Premises, unless authorized by us in advance or <br>
+                j) Bring any weapons of any kind, or any other offensive, dangerous, inflammable or explosive materials into the Work Space or the Premises. <br>
+                k) You are responsible for ensuring your members comply with all House Rules.
+            </p>
+
+            <p class="mt-8 md:mt-10">
+                <strong class="text-lg md:text-xl font-sans text-ink mr-2">15. Membership Fees: </strong><br>
+                a) Membership fee. During the Term of this Agreement, your Membership Fee will be due monthly and in advance as of the fifth (5th) day of each month. You are obligated to make payment of all Membership Fees owed throughout the Lock-in Period and this obligation is absolute notwithstanding any early termination of the Agreement by you (“Membership Fee Obligations”). You agree to pay promptly: (i) all applicable taxes which you are required to pay to any other governmental authority (and, at our request, will provide to us evidence of such payment) and (ii) all taxes attributable to your Membership as shown on your invoice. The Membership Fee set forth on the Membership Agreement covers the Services for only the number of seats indicated in the Membership Agreement. Additional seats will result in additional fees as set forth by Company from time to time.<br>
+                b) On each anniversary of the Monthly Usage Charge Commencement Date (including during any Lock -in Period) the Membership Fee will be subject to escalation at the rate mention ed in the Membership Agreement. Following any Lock-in Period, we reserve the right to further increase or decrease the Membership Fee at our sole discretion upon thirty (30) days’ prior notice to you.<br>
+                c) Invoices. The Company will send or otherwise provide invoices and other billing-related documents, information and notices to the Primary Member, unless a different Billing Contact is indicated on the Membership Agreement. Change of the Billing Contact will require notice from the Authorized Signatory in accordance with this Agreement.<br>
+                d) Payment. We accept payment of all amounts specified in this Agreement solely by the methods we communicate to you during the membership sign up process or from time to time during the Term. <br>
+                e) Outstanding Fees. Any outstanding fees will be charged in arrears on a monthly basis. When we receive funds from you, we will first apply funds to any balances which are in. Once past balances are satisfied, any remaining portion of the funds will be applied to current fees due. If any payments remain outstanding after we provide notice to you, we may, in our sole discretion, withhold Services or terminate the Membership Agreement in accordance therewith.<br>
+                f) No Refunds Except after expiration of Lock-in period or Termination or Suspension by Us of this Agreement, there are no refunds of any fees or other amounts paid by you or your members in connection with the Services.<br>
+                g) Cross Default. You agree that, if you are under default under the Membership Agreement with Company, at a different office location, (“Different Location Agreement”) to the Office Location/Number specified in the Agreement, that the Company may recover any unpaid sums due to Different Location Agreement from you under this Agreement and that the Company may, in particular (but not limited to), with hold services under this Agreement or deduct sums from the Interest Free Refundable Security Deposit held in this Agreement in respect of such unpaid sums.
+            </p>
+
+            <p class="mt-8 md:mt-10">
+                <strong class="text-lg md:text-xl font-sans text-ink mr-2">16.  Changes to or Removal of Primary Member or Authorized Signatory:</strong> An Authorized Signatory generally has the sole authority to make changes to or terminate this Agreement. A Primary Member will generally serve as Company’s primary contact regarding matters that involve your members, the physical Work Space or the Premises. We will be entitled to rely on communications to or from the Authorized Signatory or Primary Member as notice to or from the applicable Member Company.
+            </p>
+
+            <p class="mt-8 md:mt-10">
+                <strong class="text-lg md:text-xl font-sans text-ink mr-2">17.  Updating the Member List: </strong> Only those individuals set forth on the Member List will be deemed to be “Members” and entitled to the benefits described in this Agreement. Your members will be able to begin using, accessing, and/or receiving the Services on the later of<br>
+                a) The Monthly Usage Charge Commencement Date or<br>
+                b) The date we confirm the addition of such individual to the Member List. You are responsible for maintaining the accuracy of the Member List. To add new Members to your Member List in excess of the number allocated on the Membership Agreement, you must have your Primary Member send an email, from the Primary Member’s email account on file with Company, to the Company. The email requesting the change must include the name(s) and email address(es) of the departing and new Member(s) and the effective date of the change.
+            </p>
+
+            <p class="mt-8 md:mt-10">
+                <strong class="text-lg md:text-xl font-sans text-ink mr-2">18.  Our Reserved Rights:</strong> We are entitled to access your Work Space, with or without Notice, in connection with our provision of the Services, for safety or emergency purposes or for any other purposes. We reserve the right to alter your Work Space, provided that we will not do so in a manner that substantially decreases the square footage of your assigned Work Space or related amenities. We may also modify or reduce the list of Services or furnishings provided for your Work Space at any time. The Services may be provided by us, an affiliate or a third party.
+            </p>
+
+            <p class="mt-8 md:mt-10">
+                <strong class="text-lg md:text-xl font-sans text-ink mr-2">19.  Harassment:</strong> The Member Company and its Members shall be prohibited from participating any type of harassing, discriminatory, or abusive behavior to the Company employees & representatives, other Members or invitees, verbal or physical in our center for any reason. Any breach of this condition is material breach of the Agreement (not capable of remedy) and the Agreement may be terminated immediately and services will be suspended without further notice.
+            </p>
+
+            <p class="mt-8 md:mt-10">
+                <strong class="text-lg md:text-xl font-sans text-ink mr-2">20.  Fraud:</strong> We reserve the right to immediately suspend the services and/or terminate the Agreement if they determine that their facility or address is being used in connection with possible fraudulent activity or activity may be violation of laws or government regulations.
+            </p>
+
+            <div class="mt-12 md:mt-16 p-6 bg-cream border border-ink text-center">
+                <p class="mb-0 font-bold text-ink">If you have any questions regarding these Terms, please contact us at <a href="mailto:hello@oneworx.in" class="text-terra hover:underline">hello@oneworx.in</a>.</p>
+            </div>
+
+        </div>
+    </div>
+</section>
+    </main>
+
+    <footer class="bg-ink text-cream pt-20 pb-10">
+        <div class="container mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-20">
+                <div class="col-span-1 md:col-span-2">
+                    <img src="assets/images/logo-light.png" alt="OneWorx" class="h-6 md:h-10 mb-6 md:mb-8 object-contain">
+                    
+                    <p class="max-w-md text-gray-400 text-sm md:text-lg leading-relaxed">Work shouldn't feel like work. Join a community that balances professional growth with personal well-being, comfort, and connection.</p>
+                </div>
+                <div>
+                    <h4 class="font-sans text-xs text-gray-500 mb-6 uppercase tracking-widest">Links</h4>
+                    
+                    <ul class="space-y-2 text-sm md:text-lg">
+                        <li><a href="terms-of-service.html" class="hover:text-green transition-colors">Terms Of Service</a></li>
+                        <li><a href="Privacy-policy.html" class="hover:text-green transition-colors">Privacy Policy</a></li>
+                        <li><a href="assets/docs/Oneworx Brochure.pdf" target="_blank" class="hover:text-green transition-colors">Brochure</a></li>
+                        <li><a href="#" class="open-booking-modal hover:text-green transition-colors">Book Tour</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-sans text-xs text-gray-500 mb-6 uppercase tracking-widest">Connect</h4>
+                    
+                    <ul class="space-y-2 text-sm md:text-lg">
+                        <li><a href="https://www.instagram.com/oneworx_" target="_blank" class="hover:text-green transition-colors">Instagram</a></li>
+                        <li><a href="https://www.linkedin.com/company/oneworx" target="_blank" class="hover:text-green transition-colors">LinkedIn</a></li>
+                        <li><a href="https://wa.me/918989898040" target="_blank" class="hover:text-green transition-colors">WhatsApp</a></li>
+                        <li><a href="mailto:hello@oneworx.in" class="hover:text-green transition-colors">Email</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between text-xs font-mono text-gray-500">
+                <p>&copy; 2024 oneworx. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+
+    <a href="https://wa.me/918989898040" target="_blank" class="fixed bottom-6 right-6 z-50 group">
+    <div class="relative w-24 h-24 md:w-32 md:h-32 bg-ink rounded-full flex items-center justify-center shadow-lg hover:scale-110 transition-transform duration-300">
+        <svg class="absolute w-full h-full animate-spin-slow p-2" viewBox="0 0 100 100">
+            <defs><path id="circlePath" d="M 50, 50 m -37, 0 a 37,37 0 1,1 74,0 a 37,37 0 1,1 -74,0" /></defs>
+            <text font-size="10.5" font-family="monospace" font-weight="bold" fill="white" letter-spacing="1.5"><textPath xlink:href="#circlePath"> • MAKE AN ENQUIRY • BOOK A TOUR </textPath></text>
+        </svg>
+        <img src="assets/images/logo-icon.png" alt="Go" class="w-10 h-10 md:w-20 md:h-20 object-contain">
+    </div>
+</a>
+
+
+    <div id="booking-modal" class="opacity-0 pointer-events-none fixed inset-0 z-[100] flex items-center justify-center bg-ink bg-opacity-95 transition-opacity duration-300 backdrop-blur-sm">
+        <div class="bg-cream w-full max-w-lg mx-4 p-8 md:p-12 relative border border-white shadow-2xl transform scale-95 transition-transform duration-300" id="modal-content">
+            <button id="close-modal" class="absolute top-6 right-6 text-4xl leading-none hover:text-green transition-colors">&times;</button>
+            <h2 class="text-4xl mb-2 font-serif">Join Us.</h2>
+            <p class="text-gray-500 mb-8 font-sans">Elevate your workspace experience.</p>
+
+                    <form id="booking-form" class="space-y-6">
+    
+    <input type="text" placeholder="Full Name" required class="w-full bg-transparent border-b border-ink px-2 py-3 focus:outline-none focus:border-green placeholder-gray-400 font-sans">
+    
+    <input type="email" placeholder="Email Address" required class="w-full bg-transparent border-b border-ink px-2 py-3 focus:outline-none focus:border-green placeholder-gray-400 font-sans">
+
+     <div class="grid grid-cols-2 gap-6">
+    <input type="tel" placeholder="Phone Number" required class="w-full bg-transparent border-b border-ink px-2 py-3 focus:outline-none focus:border-green placeholder-gray-400 font-sans">
+
+    <input type="number" placeholder="No. of Seats Required" min="1" class="w-full bg-transparent border-b border-ink px-2 py-3 focus:outline-none focus:border-green placeholder-gray-400 font-sans">
+ </div>
+
+    <div class="relative" id="location-select-container">
+        <select class="w-full bg-transparent border-b border-ink px-2 py-3 focus:outline-none focus:border-green text-gray-700 appearance-none rounded-none font-sans">
+            <option value="" disabled selected>Which Location?</option>
+            <option>Arera Colony</option>
+            <option>Hoshangabad Rd</option>
+            <option>10 Number Market</option>
+            <option>Fortune Arcade</option>
+        </select>
+        <span class="absolute right-2 top-4 pointer-events-none text-xs">▼</span>
+    </div>
+
+    <button type="submit" class="w-full bg-ink text-white py-4 font-bold hover:bg-green transition-colors mt-4 text-lg font-sans">Submit Request</button>
+</form>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Mobile Menu
+            const menuBtn = document.getElementById('mobile-menu-btn');
+            const menu = document.getElementById('mobile-menu');
+            if(menuBtn && menu) {
+                menuBtn.addEventListener('click', () => { 
+                    menu.classList.toggle('hidden'); 
+                    document.body.classList.toggle('overflow-hidden'); 
+                });
+            }
+
+            // Modal Logic
+            const modal = document.getElementById('booking-modal');
+            const modalContent = document.getElementById('modal-content');
+            const closeBtn = document.getElementById('close-modal');
+            const openBtns = document.querySelectorAll('.open-booking-modal');
+
+            const toggleModal = () => {
+                const isOpen = !modal.classList.contains('opacity-0');
+                if (isOpen) {
+                    modal.classList.add('opacity-0', 'pointer-events-none');
+                    modalContent.classList.remove('scale-100');
+                    modalContent.classList.add('scale-95');
+                } else {
+                    modal.classList.remove('opacity-0', 'pointer-events-none');
+                    modalContent.classList.remove('scale-95');
+                    modalContent.classList.add('scale-100');
+                }
+            };
+
+            if(openBtns.length > 0) {
+                openBtns.forEach(btn => btn.addEventListener('click', (e) => { e.preventDefault(); toggleModal(); }));
+            }
+            if(closeBtn) closeBtn.addEventListener('click', toggleModal);
+            if(modal) modal.addEventListener('click', (e) => { if(e.target === modal) toggleModal(); });
+        });
+    </script>
+</body>
+</html>
