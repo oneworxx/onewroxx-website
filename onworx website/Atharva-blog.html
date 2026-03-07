@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Building Big Dreams from Bhopal | Oneworx</title> 
     
-    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- <script src="https://cdn.tailwindcss.com"></script> -->
     <script>
       tailwind.config = {
         theme: {
@@ -32,28 +32,7 @@
         /* FONTS */
         @font-face { font-family: 'Plantagenet'; src: url('assets/fonts/plantagenet.ttf') format('truetype'); font-weight: normal; font-style: normal; }
         @font-face { font-family: 'AzoSans'; src: url('assets/fonts/azosans.otf') format('opentype'); font-weight: normal; font-style: normal; }
-
-        body { font-family: 'AzoSans', sans-serif; background-color: #FDFBF7; color: #1A1A1A; }
-        h1, h2, h3, h4, h5, h6 { font-family: 'Plantagenet', serif; font-weight: 400; }
-        
-        /* Article specific typography */
-        article p { margin-bottom: 1.5rem; line-height: 1.8; font-size: 1.125rem; }
-        article h2 { font-size: 2.25rem; margin-top: 3rem; margin-bottom: 1.5rem; }
-        article h3 { font-size: 1.5rem; margin-top: 2rem; margin-bottom: 1rem; font-weight: bold; font-family: 'AzoSans', sans-serif; }
-        article blockquote { border-left: 4px solid #A7B68F; padding-left: 1.5rem; margin: 2rem 0; font-style: italic; color: #555; }
-     </style>
-</head>
-<body class="flex flex-col min-h-screen">
-
-    <nav class="bg-cream border-b border-ink sticky top-0 z-40 transition-all duration-300" id="navbar">
-    <div class="w-full px-8 lg:px-20 h-20 flex items-center justify-between">
-        
-        <a href="index.html" class="block flex-shrink-0">
-            <img src="assets/images/logo.png" alt="OneWorx" class="h-[19.3px] w-auto object-contain">
-        </a>
-        
-        <div class="hidden md:flex items-center space-x-4 lg:space-x-8 text-sm font-medium uppercase tracking-wide h-full">
-            <a href="about.html" class="hover:text-green transition-colors cursor-pointer whitespace-nowrap">About Us</a>
+        <link rel="stylesheet" href="assets/css/input.css">
 
             <div class="relative group h-full flex items-center">
                 <a href="offerings.html" class="hover:text-[#A7B68F] transition-colors cursor-pointer flex items-center gap-1 focus:outline-none uppercase h-full whitespace-nowrap">
