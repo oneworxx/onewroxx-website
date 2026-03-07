@@ -4,11 +4,15 @@
   "description": "Oneworxx coworking space website",
   "scripts": {
     "dev": "npx tailwindcss -i ./assets/css/input.css -o ./assets/css/output.css --watch",
-    "build": "npx tailwindcss -i ./assets/css/input.css -o ./assets/css/output.css --minify"
+    "build": "npx tailwindcss -i ./assets/css/input.css -o ./assets/css/output.css --minify",
+    "start": "serve . -p ${PORT:-8080}"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
+  "dependencies": {
+    "serve": "^14.2.1"
+  },
   "devDependencies": {
     "tailwindcss": "^3.4.0"
   }
