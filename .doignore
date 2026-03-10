@@ -1,0 +1,14 @@
+# DigitalOcean ignore file
+# Exclude development files from deployment
+
+node_modules/
+.git/
+.gitignore
+package.json
+package-lock.json
+tailwind.config.js
+Procfile
+assets/css/input.css
+*.lnk
+
+# Keep only compiled CSS, exclude source
