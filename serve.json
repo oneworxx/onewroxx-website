@@ -1,0 +1,24 @@
+{
+    "rewrites": [
+          { "source": "/about", "destination": "/about.html" },
+          { "source": "/offerings", "destination": "/offerings.html" },
+          { "source": "/locations", "destination": "/locations.html" },
+          { "source": "/blogs", "destination": "/blogs.html" },
+          { "source": "/events", "destination": "/events.html" },
+          { "source": "/gallery", "destination": "/gallery.html" },
+          { "source": "/community", "destination": "/community.html" },
+          { "source": "/faqs", "destination": "/faqs.html" },
+          { "source": "/meeting-rooms", "destination": "/meeting-rooms.html" },
+          { "source": "/amenities-perks", "destination": "/amenities-perks.html" },
+          { "source": "/dedicated-workspaces", "destination": "/dedicated-workspaces.html" },
+          { "source": "/private-cabins", "destination": "/private-cabins.html" },
+          { "source": "/private-office", "destination": "/private-office.html" },
+          { "source": "/virtual-office", "destination": "/virtual-office.html" },
+          { "source": "/location-10-no", "destination": "/location-10-no.html" },
+          { "source": "/location-arera", "destination": "/location-arera.html" },
+          { "source": "/location-fortune", "destination": "/location-fortune.html" },
+          { "source": "/location-hoshangabad", "destination": "/location-hoshangabad.html" },
+          { "source": "/Privacy-policy", "destination": "/Privacy-policy.html" },
+          { "source": "/terms-of-service", "destination": "/terms-of-service.html" }
+    ]
+}
