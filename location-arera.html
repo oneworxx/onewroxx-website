@@ -5,27 +5,56 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Arera Colony | Oneworx</title> 
     
-    <link rel="stylesheet" href="assets/css/output.css">
-<link rel="stylesheet" href="assets/css/input.css">
+   <link rel="stylesheet" href="assets/css/output.css">
 
-<style>
-/* FONTS */
-@font-face { 
-    font-family: 'Plantagenet'; 
-    src: url('assets/fonts/plantagenet.ttf') format('truetype'); 
-    font-weight: normal; 
-    font-style: normal; 
-}
 
-@font-face { 
-    font-family: 'AzoSans'; 
-    src: url('assets/fonts/azosans.otf') format('opentype'); 
-    font-weight: normal; 
-    font-style: normal; 
-}
-</style>
+    <style>
+        /* FONTS */
+        @font-face { font-family: 'Plantagenet'; src: url('assets/fonts/plantagenet.ttf') format('truetype'); font-weight: normal; font-style: normal; }
+        @font-face { font-family: 'AzoSans'; src: url('assets/fonts/azosans.otf') format('opentype'); font-weight: normal; font-style: normal; }
+
+        body { font-family: 'AzoSans', sans-serif; background-color: #FDFBF7; color: #1A1A1A; }
+        h1, h2, h3, h4 { font-family: 'Plantagenet', serif; font-weight: 400; }
+        
+        /* Smooth Accordion Transition */
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out, opacity 0.3s ease-out;
+            opacity: 0;
+        }
+        .faq-answer.open {
+            max-height: 500px; /* Arbitrary large height */
+            opacity: 1;
+        }
+        .icon-rotate {
+            transition: transform 0.3s ease;
+        }
+        .icon-rotate.open {
+            transform: rotate(45deg);
+        }
+
+/* Smooth Accordion Transition */
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out, opacity 0.3s ease-out;
+            opacity: 0;
+        }
+        .faq-answer.open {
+            max-height: 500px; /* Arbitrary large height */
+            opacity: 1;
+        }
+        .icon-rotate {
+            transition: transform 0.3s ease;
+        }
+        .icon-rotate.open {
+            transform: rotate(45deg);
+        }
+
+
+     </style>
 </head>
-
 <body class="flex flex-col min-h-screen">
 
     <nav class="bg-cream border-b border-ink sticky top-0 z-40 transition-all duration-300" id="navbar">
