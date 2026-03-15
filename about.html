@@ -325,7 +325,13 @@ src="https://www.facebook.com/tr?id=26272972155656765&ev=PageView&noscript=1"
 
     <script src="assets/js/main.js"></script>
 
-  <a href="https://wa.me/918989898040" target="_blank" class="fixed bottom-6 right-6 z-50 group">
+<script>
+document.getElementById("booking-form").addEventListener("submit", function() {
+fbq('track', 'Lead');
+});
+</script>
+
+  <a href="https://wa.me/918989898040" target="_blank" onclick="fbq('track', 'Lead');" class="fixed bottom-6 right-6 z-50 group">
     <div class="relative w-24 h-24 md:w-32 md:h-32 bg-ink rounded-full flex items-center justify-center shadow-lg hover:scale-110 transition-transform duration-300">
         <svg class="absolute w-full h-full animate-spin-slow p-2" viewBox="0 0 100 100">
             <defs><path id="circlePath" d="M 50, 50 m -37, 0 a 37,37 0 1,1 74,0 a 37,37 0 1,1 -74,0" /></defs>
