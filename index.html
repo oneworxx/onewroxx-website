@@ -527,10 +527,6 @@ src="https://www.facebook.com/tr?id=26272972155656765&ev=PageView&noscript=1"
         </section>
 
 
-
-
-
-
 <section class="bg-white py-24 border-b border-ink">
     <div class="container mx-auto">
         <div class="text-center mb-16 max-w-4xl mx-auto reveal">
@@ -822,32 +818,57 @@ vibe. Working here is so peaceful, it feels like meditating. It's the perfect mi
             <h2 class="text-4xl mb-2 font-serif">Join Us.</h2>
             <p class="text-gray-500 mb-8 font-sans">Elevate your workspace experience.</p>
 
-            
-                    <form id="booking-form" class="space-y-6">
-    
-    <input type="text" placeholder="Full Name" required class="w-full bg-transparent border-b border-ink px-2 py-3 focus:outline-none focus:border-green placeholder-gray-400 font-sans">
-    
-    <input type="email" placeholder="Email Address" required class="w-full bg-transparent border-b border-ink px-2 py-3 focus:outline-none focus:border-green placeholder-gray-400 font-sans">
+                    <form id="booking-form"
+action="https://script.google.com/macros/library/d/1KzLmPKXtFJpozT8VjFlmppTTwjZJWwckGdI4c9x9Rsyf705Va-DwL1iG/1"
+method="POST"
+target="hidden_iframe"
+class="space-y-6">
 
-     <div class="grid grid-cols-2 gap-6">
-    <input type="tel" placeholder="Phone Number" required class="w-full bg-transparent border-b border-ink px-2 py-3 focus:outline-none focus:border-green placeholder-gray-400 font-sans">
+<iframe name="hidden_iframe" style="display:none;"></iframe>
 
-    <input type="number" placeholder="No. of Seats Required" min="1" class="w-full bg-transparent border-b border-ink px-2 py-3 focus:outline-none focus:border-green placeholder-gray-400 font-sans">
- </div>
+<input type="hidden" name="page" value="Footer">
 
-    <div class="relative" id="location-select-container">
-        <select class="w-full bg-transparent border-b border-ink px-2 py-3 focus:outline-none focus:border-green text-gray-700 appearance-none rounded-none font-sans">
-            <option value="" disabled selected>Which Location?</option>
-            <option>Arera Colony</option>
-            <option>Hoshangabad Rd</option>
-            <option>10 Number Market</option>
-            <option>Fortune Arcade</option>
-        </select>
-        <span class="absolute right-2 top-4 pointer-events-none text-xs">▼</span>
-    </div>
+<input type="text" name="name" placeholder="Full Name" required
+class="w-full bg-transparent border-b border-ink px-2 py-3 focus:outline-none focus:border-green placeholder-gray-400 font-sans">
 
-    <button type="submit" class="w-full bg-ink text-white py-4 font-bold hover:bg-green transition-colors mt-4 text-lg font-sans">Submit Request</button>
+<input type="email" name="email" placeholder="Email Address" required
+class="w-full bg-transparent border-b border-ink px-2 py-3 focus:outline-none focus:border-green placeholder-gray-400 font-sans">
+
+<div class="grid grid-cols-2 gap-6">
+
+<input type="tel" name="phone" placeholder="Phone Number" required
+class="w-full bg-transparent border-b border-ink px-2 py-3 focus:outline-none focus:border-green placeholder-gray-400 font-sans">
+
+<input type="number" name="seats" placeholder="No. of Seats Required" min="1"
+class="w-full bg-transparent border-b border-ink px-2 py-3 focus:outline-none focus:border-green placeholder-gray-400 font-sans">
+
+</div>
+
+<div class="relative">
+
+<select name="location"
+class="w-full bg-transparent border-b border-ink px-2 py-3 focus:outline-none focus:border-green text-gray-700 appearance-none rounded-none font-sans">
+
+<option value="" disabled selected>Which Location?</option>
+<option>Arera Colony</option>
+<option>Hoshangabad Rd</option>
+<option>10 Number Market</option>
+<option>Fortune Arcade</option>
+
+</select>
+
+<span class="absolute right-2 top-4 pointer-events-none text-xs">▼</span>
+
+</div>
+
+<button type="submit"
+class="w-full bg-ink text-white py-4 font-bold hover:bg-green transition-colors mt-4 text-lg font-sans">
+Submit Request
+</button>
+
 </form>
+
+
         </div>
     </div>
 
@@ -1114,6 +1135,32 @@ fbq('track', 'Lead');
 }
         });
     </script>
+
+<script>
+
+document.addEventListener("DOMContentLoaded", function(){
+
+const form = document.getElementById("booking-form");
+
+if(form){
+
+form.addEventListener("submit", function(){
+
+setTimeout(function(){
+
+alert("Thank you! Our team will contact you shortly.");
+
+form.reset();
+
+}, 500);
+
+});
+
+}
+
+});
+
+</script>
 
 </body>
 </html>
