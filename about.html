@@ -314,7 +314,7 @@ class="space-y-6">
     <input type="email" name="email" placeholder="Email Address" required class="w-full bg-transparent border-b border-ink px-2 py-3 focus:outline-none focus:border-green placeholder-gray-400 font-sans">
 
      <div class="grid grid-cols-2 gap-6">
-    <input type="tel" name="tel" placeholder="Phone Number" required class="w-full bg-transparent border-b border-ink px-2 py-3 focus:outline-none focus:border-green placeholder-gray-400 font-sans">
+    <input type="tel" name="phone" placeholder="Phone Number" required class="w-full bg-transparent border-b border-ink px-2 py-3 focus:outline-none focus:border-green placeholder-gray-400 font-sans">
 
     <input type="number" name="seats" placeholder="No. of Seats Required" min="1" class="w-full bg-transparent border-b border-ink px-2 py-3 focus:outline-none focus:border-green placeholder-gray-400 font-sans">
  </div>
@@ -338,30 +338,24 @@ class="space-y-6">
     <script src="assets/js/main.js"></script>
 
 <script>
-document.getElementById("booking-form").addEventListener("submit", function() {
-fbq('track', 'Lead');
-});
-
-
-<script>
-
 const form = document.getElementById("booking-form");
 
-if(form){
+if (form) {
+  form.addEventListener("submit", function() {
 
-form.addEventListener("submit", function(){
+    // Track Meta Lead event
+    if (typeof fbq !== "undefined") {
+      fbq('track', 'Lead');
+    }
 
-setTimeout(function(){
+    // Success message + reset form
+    setTimeout(function(){
+      alert("Thank you! Our team will contact you shortly.");
+      form.reset();
+    }, 800);
 
-alert("Thank you! Our team will contact you shortly.");
-form.reset();
-
-},1000);
-
-});
-
+  });
 }
-
 </script>
 
 
