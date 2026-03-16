@@ -834,13 +834,13 @@ vibe. Working here is so peaceful, it feels like meditating. It's the perfect mi
     <input type="number" name="seats" placeholder="No. of Seats Required" min="1" class="w-full bg-transparent border-b border-ink px-2 py-3 focus:outline-none focus:border-green placeholder-gray-400 font-sans">
  </div>
 
-    <div class="relative" name="location" id="location-select-container">
-        <select class="w-full bg-transparent border-b border-ink px-2 py-3 focus:outline-none focus:border-green text-gray-700 appearance-none rounded-none font-sans">
+    <div class="relative" id="location-select-container">
+        <select name="location" class="w-full bg-transparent border-b border-ink px-2 py-3 focus:outline-none focus:border-green text-gray-700 appearance-none rounded-none font-sans">
             <option value="" disabled selected>Which Location?</option>
-            <option>Arera Colony</option>
-            <option>Hoshangabad Rd</option>
-            <option>10 Number Market</option>
-            <option>Fortune Arcade</option>
+            <option value="arera">Arera Colony</option>
+            <option value="hoshangabad">Hoshangabad Rd</option>
+            <option value="10no">10 Number Market</option>
+            <option value="fortune">Fortune Arcade</option>
         </select>
         <span class="absolute right-2 top-4 pointer-events-none text-xs">▼</span>
     </div>
