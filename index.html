@@ -729,24 +729,15 @@ vibe. Working here is so peaceful, it feels like meditating. It's the perfect mi
                             Nestled in the city's heart, oneworx brings you closer to everything that matters — great coffee, great company, and a workspace that simply feels right.
                         </p>
 
-<iframe name="hidden_iframe" style="display:none;"></iframe>
-
-                        <form id="hero-form"
-action="https://script.google.com/macros/s/AKfycbz1P_ilwvDmdfqok-jWjt7WRDRUqy1_2nHx5Prd-FhTH3i-dYdTJvufSusEzEV338IedA/exec"
-method="POST"
-target="hidden_iframe"
-class="space-y-6">
-
-<input type="hidden" name="formtype" value="Hero">
-
+                        <form class="space-y-6">
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                         <div class="flex flex-col">
                             <label class="text-sm font-bold text-gray-700 mb-2">Full Name</label>
-                            <input type="text" name="name" class="border border-gray-300 p-3 rounded-md focus:outline-none focus:border-green bg-white-50" placeholder="Full Name">
+                            <input type="text" class="border border-gray-300 p-3 rounded-md focus:outline-none focus:border-green bg-white-50" placeholder="Full Name">
                         </div>
                         <div class="flex flex-col">
          <label class="text-sm font-bold text-gray-700 mb-2">No. of Seats Required</label>
-                            <input type="text" name="seats" class="border border-gray-300 p-3 rounded-md focus:outline-none focus:border-green bg-white-50" placeholder="1-20" min="1">
+                            <input type="text" class="border border-gray-300 p-3 rounded-md focus:outline-none focus:border-green bg-white-50" placeholder="1-20" min="1"">
 
                         </div>
                     </div>
@@ -754,16 +745,16 @@ class="space-y-6">
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                         <div class="flex flex-col">
                             <label class="text-sm font-bold text-gray-700 mb-2">Email Address</label>
-                            <input type="email" name="email" class="border border-gray-300 p-3 rounded-md focus:outline-none focus:border-green bg-white-50" placeholder="email@company.com">
+                            <input type="email" class="border border-gray-300 p-3 rounded-md focus:outline-none focus:border-green bg-white-50" placeholder="email@company.com">
                         </div>
                         
                         <div class="flex flex-col">
                             <label class="text-sm font-bold text-gray-700 mb-2">Phone Number</label>
-                            <input type="tel" name="phone" class="border border-gray-300 p-3 rounded-md focus:outline-none focus:border-green bg-white-50" placeholder="+91 89898 98040">
+                            <input type="tel" class="border border-gray-300 p-3 rounded-md focus:outline-none focus:border-green bg-white-50" placeholder="+91 89898 98040">
                         </div>
                     </div>
 
-                    <button type="submit" class="w-full bg-ink text-white font-bold py-4 rounded-md hover:bg-green transition-colors text-lg">
+                    <button class="w-full bg-ink text-white font-bold py-4 rounded-md hover:bg-green transition-colors text-lg">
                         Submit
                     </button>
                 </form>
@@ -1131,26 +1122,6 @@ fbq('track', 'Lead');
 }
         });
     </script>
-
-
-<script>
-const form = document.getElementById("booking-form");
-
-if (form) {
-  form.addEventListener("submit", function() {
-
-    if (typeof fbq !== "undefined") {
-      fbq('track', 'Lead');
-    }
-
-    setTimeout(function(){
-      alert("Thank you! Our team will contact you shortly.");
-      form.reset();
-    }, 800);
-
-  });
-}
-</script>
 
 </body>
 </html>
