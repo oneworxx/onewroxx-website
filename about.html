@@ -343,6 +343,29 @@ fbq('track', 'Lead');
 });
 </script>
 
+<script>
+
+const form = document.getElementById("booking-form");
+
+if(form){
+
+form.addEventListener("submit", function(){
+
+setTimeout(function(){
+
+alert("Thank you! Our team will contact you shortly.");
+
+form.reset();
+
+}, 1000);
+
+});
+
+}
+
+</script>
+
+
 <a href="https://wa.me/918989898040" target="_blank" onclick="fbq('track', 'Lead');" class="fixed bottom-6 right-6 z-50 group">
     <div class="relative w-24 h-24 md:w-32 md:h-32 bg-ink rounded-full flex items-center justify-center shadow-lg hover:scale-110 transition-transform duration-300">
         <svg class="absolute w-full h-full animate-spin-slow p-2" viewBox="0 0 100 100">
