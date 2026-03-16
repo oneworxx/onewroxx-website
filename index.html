@@ -1136,34 +1136,20 @@ fbq('track', 'Lead');
 <script>
 const form = document.getElementById("booking-form");
 
-<script>
+if (form) {
+  form.addEventListener("submit", function() {
 
-function attachFormHandler(formId){
+    if (typeof fbq !== "undefined") {
+      fbq('track', 'Lead');
+    }
 
-const form = document.getElementById(formId);
+    setTimeout(function(){
+      alert("Thank you! Our team will contact you shortly.");
+      form.reset();
+    }, 800);
 
-if(form){
-
-form.addEventListener("submit", function(){
-
-if(typeof fbq !== "undefined"){
-fbq('track','Lead');
+  });
 }
-
-setTimeout(function(){
-alert("Thank you! Our team will contact you shortly.");
-form.reset();
-},800);
-
-});
-
-}
-
-}
-
-attachFormHandler("booking-form"); // footer modal
-attachFormHandler("hero-form");    // hero section
-
 </script>
 
 </body>
