@@ -733,11 +733,11 @@ vibe. Working here is so peaceful, it feels like meditating. It's the perfect mi
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                         <div class="flex flex-col">
                             <label class="text-sm font-bold text-gray-700 mb-2">Full Name</label>
-                            <input type="text" name="name" class="border border-gray-300 p-3 rounded-md focus:outline-none focus:border-green bg-white-50" placeholder="Full Name">
+                            <input type="text" class="border border-gray-300 p-3 rounded-md focus:outline-none focus:border-green bg-white-50" placeholder="Full Name">
                         </div>
                         <div class="flex flex-col">
          <label class="text-sm font-bold text-gray-700 mb-2">No. of Seats Required</label>
-                            <input type="number" name="seats" class="border border-gray-300 p-3 rounded-md focus:outline-none focus:border-green bg-white-50" placeholder="1-20" min="1">
+                            <input type="text" class="border border-gray-300 p-3 rounded-md focus:outline-none focus:border-green bg-white-50" placeholder="1-20" min="1"">
 
                         </div>
                     </div>
@@ -745,16 +745,16 @@ vibe. Working here is so peaceful, it feels like meditating. It's the perfect mi
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                         <div class="flex flex-col">
                             <label class="text-sm font-bold text-gray-700 mb-2">Email Address</label>
-                            <input type="email" name="email" class="border border-gray-300 p-3 rounded-md focus:outline-none focus:border-green bg-white-50" placeholder="email@company.com">
+                            <input type="email" class="border border-gray-300 p-3 rounded-md focus:outline-none focus:border-green bg-white-50" placeholder="email@company.com">
                         </div>
                         
                         <div class="flex flex-col">
                             <label class="text-sm font-bold text-gray-700 mb-2">Phone Number</label>
-                            <input type="tel" name="phone" class="border border-gray-300 p-3 rounded-md focus:outline-none focus:border-green bg-white-50" placeholder="+91 89898 98040">
+                            <input type="tel" class="border border-gray-300 p-3 rounded-md focus:outline-none focus:border-green bg-white-50" placeholder="+91 89898 98040">
                         </div>
                     </div>
 
-                    <button type="submit" class="w-full bg-ink text-white font-bold py-4 rounded-md hover:bg-green transition-colors text-lg">
+                    <button class="w-full bg-ink text-white font-bold py-4 rounded-md hover:bg-green transition-colors text-lg">
                         Submit
                     </button>
                 </form>
@@ -824,23 +824,23 @@ vibe. Working here is so peaceful, it feels like meditating. It's the perfect mi
 
                     <form id="booking-form" class="space-y-6">
     
-    <input type="text" name="name" placeholder="Full Name" required class="w-full bg-transparent border-b border-ink px-2 py-3 focus:outline-none focus:border-green placeholder-gray-400 font-sans">
+    <input type="text" placeholder="Full Name" required class="w-full bg-transparent border-b border-ink px-2 py-3 focus:outline-none focus:border-green placeholder-gray-400 font-sans">
     
-    <input type="email" name="email" placeholder="Email Address" required class="w-full bg-transparent border-b border-ink px-2 py-3 focus:outline-none focus:border-green placeholder-gray-400 font-sans">
+    <input type="email" placeholder="Email Address" required class="w-full bg-transparent border-b border-ink px-2 py-3 focus:outline-none focus:border-green placeholder-gray-400 font-sans">
 
      <div class="grid grid-cols-2 gap-6">
-    <input type="tel" name="phone" placeholder="Phone Number" required class="w-full bg-transparent border-b border-ink px-2 py-3 focus:outline-none focus:border-green placeholder-gray-400 font-sans">
+    <input type="tel" placeholder="Phone Number" required class="w-full bg-transparent border-b border-ink px-2 py-3 focus:outline-none focus:border-green placeholder-gray-400 font-sans">
 
-    <input type="number" name="seats" placeholder="No. of Seats Required" min="1" class="w-full bg-transparent border-b border-ink px-2 py-3 focus:outline-none focus:border-green placeholder-gray-400 font-sans">
+    <input type="number" placeholder="No. of Seats Required" min="1" class="w-full bg-transparent border-b border-ink px-2 py-3 focus:outline-none focus:border-green placeholder-gray-400 font-sans">
  </div>
 
     <div class="relative" id="location-select-container">
-        <select name="location" class="w-full bg-transparent border-b border-ink px-2 py-3 focus:outline-none focus:border-green text-gray-700 appearance-none rounded-none font-sans">
+        <select class="w-full bg-transparent border-b border-ink px-2 py-3 focus:outline-none focus:border-green text-gray-700 appearance-none rounded-none font-sans">
             <option value="" disabled selected>Which Location?</option>
-            <option value="arera">Arera Colony</option>
-            <option value="hoshangabad">Hoshangabad Rd</option>
-            <option value="10no">10 Number Market</option>
-            <option value="fortune">Fortune Arcade</option>
+            <option>Arera Colony</option>
+            <option>Hoshangabad Rd</option>
+            <option>10 Number Market</option>
+            <option>Fortune Arcade</option>
         </select>
         <span class="absolute right-2 top-4 pointer-events-none text-xs">▼</span>
     </div>
@@ -1111,44 +1111,8 @@ bookingForm.addEventListener("submit", function() {
 fbq('track', 'Lead');
 });
 }
-
-// =============================
-// BOOKING FORM → GOOGLE SHEETS
-// =============================
-
-const scriptURL = "https://script.google.com/macros/s/AKfycbyuJn2VNsfxxlGQQSD4dQCON329zikUc_lOPbp1RDJsJe5b0T2YI-lNppb5c26q5c31/exec";
-const form = document.getElementById("booking-form");
-
-form.addEventListener("submit", e => {
-e.preventDefault();
-
-const formData = new FormData(form);
-
-const data = {
-name: formData.get("name"),
-email: formData.get("email"),
-phone: formData.get("phone"),
-seats: formData.get("seats"),
-location: formData.get("location")
-};
-
-fetch(scriptURL, {
-method: "POST",
-body: JSON.stringify(data)
-})
-.then(() => {
-
-fbq('track','Lead');
-
-alert("Thank you! We'll contact you soon.");
-
-form.reset();
-
-});
-
-});
-
-</script>
+        });
+    </script>
 
 </body>
 </html>
