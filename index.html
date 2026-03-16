@@ -824,17 +824,17 @@ vibe. Working here is so peaceful, it feels like meditating. It's the perfect mi
 
                     <form id="booking-form" class="space-y-6">
     
-    <input type="text" placeholder="Full Name" required class="w-full bg-transparent border-b border-ink px-2 py-3 focus:outline-none focus:border-green placeholder-gray-400 font-sans">
+    <input type="text" name="name" placeholder="Full Name" required class="w-full bg-transparent border-b border-ink px-2 py-3 focus:outline-none focus:border-green placeholder-gray-400 font-sans">
     
-    <input type="email" placeholder="Email Address" required class="w-full bg-transparent border-b border-ink px-2 py-3 focus:outline-none focus:border-green placeholder-gray-400 font-sans">
+    <input type="email" name="email" placeholder="Email Address" required class="w-full bg-transparent border-b border-ink px-2 py-3 focus:outline-none focus:border-green placeholder-gray-400 font-sans">
 
      <div class="grid grid-cols-2 gap-6">
-    <input type="tel" placeholder="Phone Number" required class="w-full bg-transparent border-b border-ink px-2 py-3 focus:outline-none focus:border-green placeholder-gray-400 font-sans">
+    <input type="tel" name="phone" placeholder="Phone Number" required class="w-full bg-transparent border-b border-ink px-2 py-3 focus:outline-none focus:border-green placeholder-gray-400 font-sans">
 
-    <input type="number" placeholder="No. of Seats Required" min="1" class="w-full bg-transparent border-b border-ink px-2 py-3 focus:outline-none focus:border-green placeholder-gray-400 font-sans">
+    <input type="number" name="seats" placeholder="No. of Seats Required" min="1" class="w-full bg-transparent border-b border-ink px-2 py-3 focus:outline-none focus:border-green placeholder-gray-400 font-sans">
  </div>
 
-    <div class="relative" id="location-select-container">
+    <div class="relative" name="location" id="location-select-container">
         <select class="w-full bg-transparent border-b border-ink px-2 py-3 focus:outline-none focus:border-green text-gray-700 appearance-none rounded-none font-sans">
             <option value="" disabled selected>Which Location?</option>
             <option>Arera Colony</option>
@@ -1111,6 +1111,45 @@ bookingForm.addEventListener("submit", function() {
 fbq('track', 'Lead');
 });
 }
+
+// =============================
+// BOOKING FORM → GOOGLE SHEETS
+// =============================
+
+const scriptURL = "https://script.google.com/macros/s/AKfycbyuJn2VNsfxxlGQQSD4dQCON329zikUc_lOPbp1RDJsJe5b0T2YI-lNppb5c26q5c31/exec";
+const form = document.getElementById("booking-form");
+
+form.addEventListener("submit", e => {
+e.preventDefault();
+
+const formData = new FormData(form);
+
+const data = {
+name: formData.get("name"),
+email: formData.get("email"),
+phone: formData.get("phone"),
+seats: formData.get("seats"),
+location: formData.get("location")
+};
+
+fetch(scriptURL, {
+method: "POST",
+body: JSON.stringify(data)
+})
+.then(() => {
+
+fbq('track','Lead');
+
+alert("Thank you! We'll contact you soon.");
+
+form.reset();
+
+});
+
+});
+
+</script>
+
         });
     </script>
 
