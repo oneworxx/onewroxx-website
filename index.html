@@ -818,13 +818,13 @@ vibe. Working here is so peaceful, it feels like meditating. It's the perfect mi
             <h2 class="text-4xl mb-2 font-serif">Join Us.</h2>
             <p class="text-gray-500 mb-8 font-sans">Elevate your workspace experience.</p>
 
+<iframe name="hidden_iframe" style="display:none;"></iframe>
+
                     <form id="booking-form"
 action="https://script.google.com/macros/library/d/1KzLmPKXtFJpozT8VjFlmppTTwjZJWwckGdI4c9x9Rsyf705Va-DwL1iG/1"
 method="POST"
 target="hidden_iframe"
 class="space-y-6">
-
-<iframe name="hidden_iframe" style="display:none;"></iframe>
 
 <input type="hidden" name="page" value="Footer">
 
@@ -1137,29 +1137,24 @@ fbq('track', 'Lead');
     </script>
 
 <script>
-
-document.addEventListener("DOMContentLoaded", function(){
-
 const form = document.getElementById("booking-form");
 
-if(form){
+if (form) {
+  form.addEventListener("submit", function() {
 
-form.addEventListener("submit", function(){
+    // Track Meta Lead event
+    if (typeof fbq !== "undefined") {
+      fbq('track', 'Lead');
+    }
 
-setTimeout(function(){
+    // Success message + reset form
+    setTimeout(function(){
+      alert("Thank you! Our team will contact you shortly.");
+      form.reset();
+    }, 800);
 
-alert("Thank you! Our team will contact you shortly.");
-
-form.reset();
-
-}, 500);
-
-});
-
+  });
 }
-
-});
-
 </script>
 
 </body>
