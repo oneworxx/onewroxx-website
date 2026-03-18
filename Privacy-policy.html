@@ -415,20 +415,29 @@ src="https://www.facebook.com/tr?id=26272972155656765&ev=PageView&noscript=1"
             <h2 class="text-4xl mb-2 font-serif">Join Us.</h2>
             <p class="text-gray-500 mb-8 font-sans">Elevate your workspace experience.</p>
 
-                    <form id="booking-form" class="space-y-6">
+
+<iframe name="hidden_iframe" style="display:none;"></iframe>
+
+                    <form id="booking-form"
+action="https://script.google.com/macros/s/AKfycbz1P_ilwvDmdfqok-jWjt7WRDRUqy1_2nHx5Prd-FhTH3i-dYdTJvufSusEzEV338IedA/exec"
+method="POST"
+target="hidden_iframe"
+class="space-y-6">
     
-    <input type="text" placeholder="Full Name" required class="w-full bg-transparent border-b border-ink px-2 py-3 focus:outline-none focus:border-green placeholder-gray-400 font-sans">
+<input type="hidden" name="formtype" value="Footer">
+
+    <input type="text" name="name" placeholder="Full Name" required class="w-full bg-transparent border-b border-ink px-2 py-3 focus:outline-none focus:border-green placeholder-gray-400 font-sans">
     
-    <input type="email" placeholder="Email Address" required class="w-full bg-transparent border-b border-ink px-2 py-3 focus:outline-none focus:border-green placeholder-gray-400 font-sans">
+    <input type="email" name="email" placeholder="Email Address" required class="w-full bg-transparent border-b border-ink px-2 py-3 focus:outline-none focus:border-green placeholder-gray-400 font-sans">
 
      <div class="grid grid-cols-2 gap-6">
-    <input type="tel" placeholder="Phone Number" required class="w-full bg-transparent border-b border-ink px-2 py-3 focus:outline-none focus:border-green placeholder-gray-400 font-sans">
+    <input type="tel" name="phone" placeholder="Phone Number" required class="w-full bg-transparent border-b border-ink px-2 py-3 focus:outline-none focus:border-green placeholder-gray-400 font-sans">
 
-    <input type="number" placeholder="No. of Seats Required" min="1" class="w-full bg-transparent border-b border-ink px-2 py-3 focus:outline-none focus:border-green placeholder-gray-400 font-sans">
+    <input type="number" name="seats" placeholder="No. of Seats Required" min="1" class="w-full bg-transparent border-b border-ink px-2 py-3 focus:outline-none focus:border-green placeholder-gray-400 font-sans">
  </div>
 
     <div class="relative" id="location-select-container">
-        <select class="w-full bg-transparent border-b border-ink px-2 py-3 focus:outline-none focus:border-green text-gray-700 appearance-none rounded-none font-sans">
+        <select name="location" class="w-full bg-transparent border-b border-ink px-2 py-3 focus:outline-none focus:border-green text-gray-700 appearance-none rounded-none font-sans">
             <option value="" disabled selected>Which Location?</option>
             <option>Arera Colony</option>
             <option>Hoshangabad Rd</option>
@@ -481,5 +490,27 @@ src="https://www.facebook.com/tr?id=26272972155656765&ev=PageView&noscript=1"
             if(modal) modal.addEventListener('click', (e) => { if(e.target === modal) toggleModal(); });
         });
     </script>
+
+<script>
+const form = document.getElementById("booking-form");
+
+if (form) {
+  form.addEventListener("submit", function() {
+
+    // Track Meta Lead event
+    if (typeof fbq !== "undefined") {
+      fbq('track', 'Lead');
+    }
+
+    // Success message + reset form
+    setTimeout(function(){
+      alert("Thank you! Our team will contact you shortly.");
+      form.reset();
+    }, 800);
+
+  });
+}
+</script>
+
 </body>
 </html>
