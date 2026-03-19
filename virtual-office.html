@@ -459,30 +459,44 @@ src="https://www.facebook.com/tr?id=26272972155656765&ev=PageView&noscript=1"
 
     <div id="booking-modal" class="opacity-0 pointer-events-none fixed inset-0 z-[100] flex items-center justify-center bg-ink bg-opacity-95 transition-opacity duration-300 backdrop-blur-sm">
         <div class="bg-cream w-full max-w-lg mx-4 p-8 md:p-12 relative border border-white shadow-2xl transform scale-95 transition-transform duration-300" id="modal-content">
-            <button id="close-modal" class="absolute top-6 right-6 text-4xl leading-none hover:text-green transition-colors">×</button>
+            <button id="close-modal" class="absolute top-6 right-6 text-4xl leading-none hover:text-green transition-colors">&times;</button>
             <h2 class="text-4xl mb-2 font-serif">Join Us.</h2>
             <p class="text-gray-500 mb-8 font-sans">Elevate your workspace experience.</p>
-            <form id="booking-form" class="space-y-6">
-                <div class="grid grid-cols-2 gap-6">
-                    <input type="text" placeholder="First Name" required class="w-full bg-transparent border-b border-ink px-2 py-3 focus:outline-none focus:border-green placeholder-gray-400 font-sans">
-                    <input type="text" placeholder="Last Name" required class="w-full bg-transparent border-b border-ink px-2 py-3 focus:outline-none focus:border-green placeholder-gray-400 font-sans">
-                </div>
-                
-                <input type="email" placeholder="Email Address" required class="w-full bg-transparent border-b border-ink px-2 py-3 focus:outline-none focus:border-green placeholder-gray-400 font-sans">
-                
-                <input type="tel" placeholder="Phone Number" required class="w-full bg-transparent border-b border-ink px-2 py-3 focus:outline-none focus:border-green placeholder-gray-400 font-sans">
 
-                <div class="relative">
-                    <select class="w-full bg-transparent border-b border-ink px-2 py-3 focus:outline-none focus:border-green text-gray-700 appearance-none rounded-none font-sans">
-                        <option value="" disabled selected>Which Location?</option>
-                        <option>Arera Colony</option>
-                        <option>Hoshangabad Rd</option>
-                        <option>10 Number Market</option>
-                    </select>
-                    <span class="absolute right-2 top-4 pointer-events-none text-xs">▼</span>
-                </div>
-                <button type="submit" class="w-full bg-ink text-white py-4 font-bold hover:bg-green transition-colors mt-4 text-lg font-sans">Submit Request</button>
-            </form>
+
+<iframe name="hidden_iframe" style="display:none;"></iframe>
+
+                    <form id="booking-form"
+action="https://script.google.com/macros/s/AKfycbz1P_ilwvDmdfqok-jWjt7WRDRUqy1_2nHx5Prd-FhTH3i-dYdTJvufSusEzEV338IedA/exec"
+method="POST"
+target="hidden_iframe"
+class="space-y-6">
+    
+<input type="hidden" name="formtype" value="Footer">
+
+    <input type="text" name="name" placeholder="Full Name" required class="w-full bg-transparent border-b border-ink px-2 py-3 focus:outline-none focus:border-green placeholder-gray-400 font-sans">
+    
+    <input type="email" name="email" placeholder="Email Address" required class="w-full bg-transparent border-b border-ink px-2 py-3 focus:outline-none focus:border-green placeholder-gray-400 font-sans">
+
+     <div class="grid grid-cols-2 gap-6">
+    <input type="tel" name="phone" placeholder="Phone Number" required class="w-full bg-transparent border-b border-ink px-2 py-3 focus:outline-none focus:border-green placeholder-gray-400 font-sans">
+
+    <input type="number" name="seats" placeholder="No. of Seats Required" min="1" class="w-full bg-transparent border-b border-ink px-2 py-3 focus:outline-none focus:border-green placeholder-gray-400 font-sans">
+ </div>
+
+    <div class="relative" id="location-select-container">
+        <select name="location" class="w-full bg-transparent border-b border-ink px-2 py-3 focus:outline-none focus:border-green text-gray-700 appearance-none rounded-none font-sans">
+            <option value="" disabled selected>Which Location?</option>
+            <option>Arera Colony</option>
+            <option>Hoshangabad Rd</option>
+            <option>10 Number Market</option>
+            <option>Fortune Arcade</option>
+        </select>
+        <span class="absolute right-2 top-4 pointer-events-none text-xs">▼</span>
+    </div>
+
+    <button type="submit" class="w-full bg-ink text-white py-4 font-bold hover:bg-green transition-colors mt-4 text-lg font-sans">Submit Request</button>
+</form>
         </div>
     </div>
     
@@ -552,6 +566,27 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         });
 
+</script>
+
+<script>
+const form = document.getElementById("booking-form");
+
+if (form) {
+  form.addEventListener("submit", function() {
+
+    // Track Meta Lead event
+    if (typeof fbq !== "undefined") {
+      fbq('track', 'Lead');
+    }
+
+    // Success message + reset form
+    setTimeout(function(){
+      alert("Thank you! Our team will contact you shortly.");
+      form.reset();
+    }, 800);
+
+  });
+}
 </script>
 
 </body>
