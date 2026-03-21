@@ -758,24 +758,46 @@ document.addEventListener('DOMContentLoaded', () => {
 </script>
 
 <script>
-const form = document.getElementById("booking-form");
 
-if (form) {
+const forms = document.querySelectorAll("form");
+
+forms.forEach((form) => {
+
   form.addEventListener("submit", function() {
 
-    // Track Meta Lead event
+    // Meta Pixel tracking
     if (typeof fbq !== "undefined") {
       fbq('track', 'Lead');
     }
 
-    // Success message + reset form
+    // Confirmation message
     setTimeout(function(){
-      alert("Thank you! Our team will contact you shortly.");
+
+      const msg = document.createElement("div");
+      msg.innerText = "🎉 Thank you! We'll contact you shortly.";
+      
+      msg.style.position = "fixed";
+      msg.style.bottom = "20px";
+      msg.style.right = "20px";
+      msg.style.background = "#1A1A1A";
+      msg.style.color = "#fff";
+      msg.style.padding = "12px 20px";
+      msg.style.borderRadius = "6px";
+      msg.style.zIndex = "9999";
+      msg.style.fontSize = "14px";
+
+      document.body.appendChild(msg);
+
+      setTimeout(() => msg.remove(), 3000);
+
       form.reset();
+
     }, 800);
 
   });
-}
+
+});
+
 </script>
 
 </body>
