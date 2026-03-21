@@ -765,18 +765,34 @@ forms.forEach((form) => {
 
   form.addEventListener("submit", function() {
 
-    if (typeof fbq !== "undefined") {
-      fbq('track', 'Lead');
-    }
-
-    // Success message + reset form
     setTimeout(function(){
-      alert("Thank you! Our team will contact you shortly.");
+
+      const msg = document.createElement("div");
+
+      msg.innerText = "Request received. Our team will connect with you shortly.";
+
+      msg.style.position = "fixed";
+      msg.style.top = "20px";
+      msg.style.left = "50%";
+      msg.style.transform = "translateX(-50%)";
+      msg.style.background = "#1A1A1A";
+      msg.style.color = "#fff";
+      msg.style.padding = "14px 22px";
+      msg.style.borderRadius = "10px";
+      msg.style.zIndex = "9999";
+
+      document.body.appendChild(msg);
+
+      setTimeout(() => msg.remove(), 3000);
+
       form.reset();
-    }, 800);
+
+    }, 500);
 
   });
-}
+
+});
+
 </script>
 
 </body>
