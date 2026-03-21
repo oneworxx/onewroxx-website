@@ -377,26 +377,36 @@ src="https://www.facebook.com/tr?id=26272972155656765&ev=PageView&noscript=1"
                             <h3 class="text-3xl font-serif text-ink mb-2">Book a Tour</h3>
                             <p class="text-sm text-gray-600 font-sans mb-6">Come see the space for yourself.</p>
                             
-                            <form class="space-y-4 font-sans">
+                            <form  id="booking-form"
+action="https://script.google.com/macros/s/AKfycbz1P_ilwvDmdfqok-jWjt7WRDRUqy1_2nHx5Prd-FhTH3i-dYdTJvufSusEzEV338IedA/exec"
+method="POST"
+target="hidden_iframe"
+class="space-y-4 font-sans">
+
+<iframe name="hidden_iframe" style="display:none;"></iframe>
+
+<input type="hidden" name="formtype" value="Tour Form">
+<input type="text" name="website" style="display:none">
+
                                 <div>
-                                    <input type="text" placeholder="Full Name*" required class="w-full border border-gray-300 p-3 text-sm focus:outline-none focus:border-green focus:ring-1 focus:ring-green transition-all bg-cream">
+                                    <input type="text" name="name" placeholder="Full Name*" required class="w-full border border-gray-300 p-3 text-sm focus:outline-none focus:border-green focus:ring-1 focus:ring-green transition-all bg-cream">
                                 </div>
                                 <div>
-                                    <input type="email" placeholder="Email Address*" required class="w-full border border-gray-300 p-3 text-sm focus:outline-none focus:border-green focus:ring-1 focus:ring-green transition-all bg-cream">
+                                    <input type="email" name="email" placeholder="Email Address*" required class="w-full border border-gray-300 p-3 text-sm focus:outline-none focus:border-green focus:ring-1 focus:ring-green transition-all bg-cream">
                                 </div>
                                 <div>
-                                    <input type="tel" placeholder="Phone Number*" required class="w-full border border-gray-300 p-3 text-sm focus:outline-none focus:border-green focus:ring-1 focus:ring-green transition-all bg-cream">
+                                    <input type="tel" name="phone" placeholder="Phone Number*" required class="w-full border border-gray-300 p-3 text-sm focus:outline-none focus:border-green focus:ring-1 focus:ring-green transition-all bg-cream">
                                 </div>
                                 
                                 <div class="relative">
-                                    <select required class="w-full border border-gray-300 p-3 text-sm focus:outline-none focus:border-green focus:ring-1 focus:ring-green transition-all bg-cream appearance-none text-gray-700">
+                                    <select name="plan" required class="w-full border border-gray-300 p-3 text-sm focus:outline-none focus:border-green focus:ring-1 focus:ring-green transition-all bg-cream appearance-none text-gray-700">
                                         <option value="" disabled selected>Membership Plan*</option>
-                                        <option value="dedicated-desk">Dedicated Desk</option>
-                                        <option value="private-office">Private Office</option>
-                                        <option value="private-cabin">Private Cabin</option>
-                                        <option value="day-pass">Day Pass</option>
-                                        <option value="meeting-room">Meeting Room</option>
-                                        <option value="virtual-office">Virtual Office</option>
+                                        <option value="dedicated-desks" class="text-ink">Dedicated Desks</option>
+                                        <option value="private-cabins" class="text-ink">Private Cabins</option>
+                                        <option value="private-offices" class="text-ink">Private Offices</option>
+                                        <option value="day-pass" class="text-ink">Day Pass</option>
+                                        <option value="meeting-rooms" class="text-ink">Meeting Rooms</option>
+                                        <option value="virtual-office" class="text-ink">Virtual Office</option>
                                     </select>
                                     <span class="absolute right-3 top-3.5 pointer-events-none text-xs text-gray-500">▼</span>
                                 </div>
@@ -405,7 +415,7 @@ src="https://www.facebook.com/tr?id=26272972155656765&ev=PageView&noscript=1"
                                     <input type="date" required class="w-full border border-gray-300 p-3 text-sm focus:outline-none focus:border-green focus:ring-1 focus:ring-green transition-all bg-cream text-gray-700">
                                 </div>
 
-                                <button type="button" class="w-full bg-ink text-white py-4 mt-2 font-bold uppercase tracking-widest hover:bg-green transition-colors">
+                                <button type="submit" class="w-full bg-ink text-white py-4 mt-2 font-bold uppercase tracking-widest hover:bg-green transition-colors">
                                     Schedule a Tour
                                 </button>
 
