@@ -282,7 +282,7 @@ src="https://www.facebook.com/tr?id=26272972155656765&ev=PageView&noscript=1"
                         </div>
                         <div class="md:text-right flex-shrink-0 md:min-w-[140px] pt-4 md:pt-0 border-t md:border-t-0 border-gray-100">
                             <p class="text-[10px] md:text-xs text-gray-500 uppercase tracking-widest mb-1">Starting at</p>
-                            <p class="font-sans font-bold text-lg md:text-xl text-ink">₹18,000<span class="text-xs md:text-sm font-normal text-gray-500">/seat</span></p>
+                            <p class="font-sans font-bold text-lg md:text-xl text-ink">₹18,000<span class="text-xs md:text-sm font-normal text-gray-500">/cabin</span></p>
                         </div>
                     </div>
 
@@ -298,7 +298,7 @@ src="https://www.facebook.com/tr?id=26272972155656765&ev=PageView&noscript=1"
                         </div>
                         <div class="md:text-right flex-shrink-0 md:min-w-[140px] pt-4 md:pt-0 border-t md:border-t-0 border-gray-100">
                             <p class="text-[10px] md:text-xs text-gray-500 uppercase tracking-widest mb-1">Starting at</p>
-                            <p class="font-sans font-bold text-lg md:text-xl text-ink">₹40,000<span class="text-xs md:text-sm font-normal text-gray-500">/seat</span></p>
+                            <p class="font-sans font-bold text-lg md:text-xl text-ink">₹40,000<span class="text-xs md:text-sm font-normal text-gray-500">/office</span></p>
                         </div>
                     </div>
                 </div>
@@ -309,35 +309,41 @@ src="https://www.facebook.com/tr?id=26272972155656765&ev=PageView&noscript=1"
                     <h3 class="text-2xl md:text-3xl font-serif text-ink mb-2">Book a Tour</h3>
                     <p class="text-xs md:text-sm text-gray-600 font-sans mb-6">Come see the space for yourself.</p>
                     
-                    <form class="space-y-4 font-sans">
+                    <form 
+action="https://script.google.com/macros/s/AKfycbz1P_ilwvDmdfqok-jWjt7WRDRUqy1_2nHx5Prd-FhTH3i-dYdTJvufSusEzEV338IedA/exec"
+method="POST"
+target="hidden_iframe"
+class="space-y-4 font-sans">
+
+<iframe name="hidden_iframe" style="display:none;"></iframe>
+
+<input type="hidden" name="formtype" value="Tour Form">
+<input type="text" name="website" style="display:none">
+
                         <div>
-                            <input type="text" placeholder="Full Name*" required class="w-full border border-gray-300 p-3 text-sm focus:outline-none focus:border-green focus:ring-1 focus:ring-green transition-all bg-white">
+                            <input type="text" name="name" placeholder="Full Name*" required class="w-full border border-gray-300 p-3 text-sm focus:outline-none focus:border-green focus:ring-1 focus:ring-green transition-all bg-white">
                         </div>
                         <div>
-                            <input type="email" placeholder="Email Address*" required class="w-full border border-gray-300 p-3 text-sm focus:outline-none focus:border-green focus:ring-1 focus:ring-green transition-all bg-white">
+                            <input type="email" name="email" placeholder="Email Address*" required class="w-full border border-gray-300 p-3 text-sm focus:outline-none focus:border-green focus:ring-1 focus:ring-green transition-all bg-white">
                         </div>
                         <div>
-                            <input type="tel" placeholder="Phone Number*" required class="w-full border border-gray-300 p-3 text-sm focus:outline-none focus:border-green focus:ring-1 focus:ring-green transition-all bg-white">
+                            <input type="tel" name="phone" placeholder="Phone Number*" required class="w-full border border-gray-300 p-3 text-sm focus:outline-none focus:border-green focus:ring-1 focus:ring-green transition-all bg-white">
                         </div>
                         
                         <div class="relative">
-                            <select required class="w-full border border-gray-300 p-3 text-sm focus:outline-none focus:border-green focus:ring-1 focus:ring-green transition-all bg-white appearance-none text-gray-500">
+                            <select name="plan" required class="w-full border border-gray-300 p-3 text-sm focus:outline-none focus:border-green focus:ring-1 focus:ring-green transition-all bg-white appearance-none text-gray-500">
                                 <option value="" disabled selected>Membership Plan*</option>
-                                <option value="dedicated-desk" class="text-ink">Dedicated Desk</option>
+                                <option value="4-seater-executive-cabins" class="text-ink">4 Seater Executive Cabins</option>
                                 <option value="private-office" class="text-ink">Private Office</option>
-                                <option value="private-cabin" class="text-ink">Private Cabin</option>
-                                <option value="day-pass" class="text-ink">Day Pass</option>
-                                <option value="meeting-room" class="text-ink">Meeting Room</option>
-                                <option value="virtual-office" class="text-ink">Virtual Office</option>
                             </select>
                             <span class="absolute right-3 top-3.5 pointer-events-none text-xs text-gray-500">▼</span>
                         </div>
 
                         <div class="relative">
-                            <input type="date" required class="w-full border border-gray-300 p-3 text-sm focus:outline-none focus:border-green focus:ring-1 focus:ring-green transition-all bg-white text-gray-500">
+                            <input type="date" name="date" required class="w-full border border-gray-300 p-3 text-sm focus:outline-none focus:border-green focus:ring-1 focus:ring-green transition-all bg-white text-gray-500">
                         </div>
 
-                        <button type="button" class="w-full bg-ink text-white py-3 md:py-4 mt-2 text-sm md:text-base font-bold uppercase tracking-widest hover:bg-green transition-colors">
+                        <button type="submit"> class="w-full bg-ink text-white py-3 md:py-4 mt-2 text-sm md:text-base font-bold uppercase tracking-widest hover:bg-green transition-colors">
                             Schedule a Tour
                         </button>
 
