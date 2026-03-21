@@ -762,21 +762,16 @@ document.addEventListener('DOMContentLoaded', () => {
 </script>
 
 <script>
-document.querySelectorAll("form").forEach(form => {
-  form.addEventListener("submit", function() {
+document.getElementById("tour-form").addEventListener("submit", function() {
 
-    // Meta pixel
-    if (typeof fbq !== "undefined") {
-      fbq('track', 'Lead');
-    }
+  if (typeof fbq !== "undefined") {
+    fbq('track', 'Lead');
+  }
 
-    // Success message
-    setTimeout(() => {
-      alert("Thank you! Our team will contact you shortly.");
-      form.reset();
-    }, 800);
+  setTimeout(function(){
+    alert("Thank you! Our team will contact you shortly.");
+  }, 800);
 
-  });
 });
 </script>
 
