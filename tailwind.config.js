@@ -14,7 +14,6 @@ module.exports = {
       colors: {
         'cream': '#FDFBF7',
         'ink': '#1A1A1A',
-        'terra': '#D95D39',
         'green': '#afbe9d',
         'sage': '#E3E8E3',
       },
