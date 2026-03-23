@@ -309,18 +309,18 @@ src="https://www.facebook.com/tr?id=26272972155656765&ev=PageView&noscript=1"
                     <h3 class="text-2xl md:text-3xl font-serif text-ink mb-2">Book a Tour</h3>
                     <p class="text-xs md:text-sm text-gray-600 font-sans mb-6">Come see the space for yourself.</p>
                     
+
+<iframe name="hidden_iframe" style="display:none;"></iframe>
+
                     <form  id="tour-form"
                     action="https://script.google.com/macros/s/AKfycbz1P_ilwvDmdfqok-jWjt7WRDRUqy1_2nHx5Prd-FhTH3i-dYdTJvufSusEzEV338IedA/exec"
                     method="POST"
                     target="hidden_iframe"
                     class="space-y-4 font-sans">
 
-                    <!-- Hidden iframe -->
-                    <iframe name="hidden_iframe" style="display:none;"></iframe>
-
                     <!-- 🔒 HIDDEN FIELDS (PUT HERE ONLY) -->
                     <input type="hidden" name="formtype" value="Tour Form">
-                    <input type="text" name="website" style="display:none">
+                    <input type="text" name="website" style="opacity:0; position:absolute; top:0; left:0; height:0; width:0; z-index:-1;" tabindex="-1" autocomplete="off">
                     <input type="hidden" name="page" value="Arera Page">
 
                     <!-- 👇 VISIBLE FIELDS START -->
@@ -656,13 +656,14 @@ src="https://www.facebook.com/tr?id=26272972155656765&ev=PageView&noscript=1"
             <p class="text-gray-500 mb-8 font-sans">Elevate your workspace experience.</p>
 
 
-<iframe name="hidden_iframe" style="display:none;"></iframe>
 
                     <form id="footer-form" action="https://script.google.com/macros/s/AKfycbz1P_ilwvDmdfqok-jWjt7WRDRUqy1_2nHx5Prd-FhTH3i-dYdTJvufSusEzEV338IedA/exec" method="POST" target="hidden_iframe" class="space-y-6">
     
     <input type="hidden" name="formtype" value="Footer">
     <input type="hidden" name="page" value="Arera Page">
-    <input type="text" name="website" style="display:none"> <input type="text" name="name" placeholder="Full Name" required class="w-full bg-transparent border-b border-ink px-2 py-3 focus:outline-none focus:border-green placeholder-gray-400 font-sans">
+    <input type="text" name="website" style="opacity:0; position:absolute; top:0; left:0; height:0; width:0; z-index:-1;" tabindex="-1" autocomplete="off">
+    
+    <input type="text" name="name" placeholder="Full Name" required class="w-full bg-transparent border-b border-ink px-2 py-3 focus:outline-none focus:border-green placeholder-gray-400 font-sans">
     
     <input type="email" name="email" placeholder="Email Address" required class="w-full bg-transparent border-b border-ink px-2 py-3 focus:outline-none focus:border-green placeholder-gray-400 font-sans">
 
