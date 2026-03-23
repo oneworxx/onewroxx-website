@@ -219,6 +219,8 @@ src="https://www.facebook.com/tr?id=26272972155656765&ev=PageView&noscript=1"
 
     <div class="flex flex-col sm:flex-row items-center justify-center gap-6 md:gap-8">
         
+<iframe name="hidden_iframe" style="display:none;"></iframe>
+
         <form 
     action="https://script.google.com/macros/s/AKfycbz1P_ilwvDmdfqok-jWjt7WRDRUqy1_2nHx5Prd-FhTH3i-dYdTJvufSusEzEV338IedA/exec" 
     method="POST" 
@@ -346,24 +348,22 @@ class="space-y-6">
 </a>
 
 <script>
-const form = document.getElementById("booking-form");
-
-if (form) {
+document.querySelectorAll("form").forEach(form => {
   form.addEventListener("submit", function() {
 
-    // Track Meta Lead event
+    // Meta pixel
     if (typeof fbq !== "undefined") {
       fbq('track', 'Lead');
     }
 
-    // Success message + reset form
-    setTimeout(function(){
+    // Success message
+    setTimeout(() => {
       alert("Thank you! Our team will contact you shortly.");
       form.reset();
     }, 800);
 
   });
-}
+});
 </script>
 
 </body>
