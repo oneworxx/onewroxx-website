@@ -342,10 +342,10 @@ class="space-y-6">
 
         <svg class="absolute w-full h-full animate-spin-slow p-2" viewBox="0 0 100 100">
             <defs>
-                <path id="circlePath" d="M 50,50 m -37,0 a 37,37 0 1,1 74,0 a 37,37 0 1,1 -74,0" />
+                <path id="badgeCirclePath" d="M 50,50 m -37,0 a 37,37 0 1,1 74,0 a 37,37 0 1,1 -74,0" />
             </defs>
             <text font-family="monospace" font-weight="bold" fill="white" font-size="10.5" letter-spacing="1.5">
-                <textPath xlink:href="#circlePath"> • MAKE AN ENQUIRY • BOOK A TOUR </textPath>
+                <textPath xlink:href="#badgeCirclePath"> • MAKE AN ENQUIRY • BOOK A TOUR </textPath>
             </text>
         </svg>
 
@@ -357,7 +357,7 @@ class="space-y-6">
   (function() {
     var badge = document.currentScript.previousElementSibling;
     var textEl = badge.querySelector('text');
-    var pathEl = badge.querySelector('#circlePath');
+    var pathEl = badge.querySelector('#badgeCirclePath');
 
     function resize() {
       if (window.innerWidth < 768) {
