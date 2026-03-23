@@ -357,16 +357,14 @@ class="space-y-6">
   (function() {
     var badge = document.currentScript.previousElementSibling;
     var textEl = badge.querySelector('text');
-    var pathEl = badge.querySelector('#badgeCirclePath');
+    var pathEl = badge.querySelector('svg path'); // ← this line changed
 
     function resize() {
       if (window.innerWidth < 768) {
-        // Smaller circle + smaller text for mobile
         textEl.setAttribute('font-size', '8');
         textEl.setAttribute('letter-spacing', '2');
         pathEl.setAttribute('d', 'M 50,50 m -30,0 a 30,30 0 1,1 60,0 a 30,30 0 1,1 -60,0');
       } else {
-        // Original size for desktop
         textEl.setAttribute('font-size', '10.5');
         textEl.setAttribute('letter-spacing', '1.5');
         pathEl.setAttribute('d', 'M 50,50 m -37,0 a 37,37 0 1,1 74,0 a 37,37 0 1,1 -74,0');
