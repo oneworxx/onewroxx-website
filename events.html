@@ -340,15 +340,12 @@ class="space-y-6">
   <a href="https://wa.me/918989898040" target="_blank" onclick="fbq('track', 'Lead');" class="fixed bottom-6 right-6 z-50 group">
     <div class="relative w-24 h-24 md:w-32 md:h-32 bg-ink rounded-full flex items-center justify-center shadow-lg hover:scale-110 transition-transform duration-300">
 
-        <!-- ONE SVG that adapts to both sizes -->
         <svg class="absolute w-full h-full animate-spin-slow p-2" viewBox="0 0 100 100">
             <defs>
                 <path id="circlePath" d="M 50, 50 m -37, 0 a 37,37 0 1,1 74,0 a 37,37 0 1,1 -74,0" />
             </defs>
-            <text font-family="monospace" font-weight="bold" fill="white">
-                <textPath xlink:href="#circlePath">
-                    <tspan id="badge-text"> • MAKE AN ENQUIRY • BOOK A TOUR </tspan>
-                </textPath>
+            <text font-family="monospace" font-weight="bold" fill="white" font-size="10.5" letter-spacing="1.5">
+                <textPath xlink:href="#circlePath"> • MAKE AN ENQUIRY • BOOK A TOUR </textPath>
             </text>
         </svg>
 
@@ -356,21 +353,23 @@ class="space-y-6">
     </div>
 </a>
 
-<style>
-  /* Mobile */
-  #badge-text {
-    font-size: 8.5px;
-    letter-spacing: 2.8px;
-  }
-
-  /* Desktop */
-  @media (min-width: 768px) {
-    #badge-text {
-      font-size: 10.5px;
-      letter-spacing: 1.5px;
+<script>
+  (function() {
+    var svg = document.currentScript.previousElementSibling.querySelector('text');
+    function resize() {
+      if (window.innerWidth < 768) {
+        svg.setAttribute('font-size', '8');
+        svg.setAttribute('letter-spacing', '3.2');
+      } else {
+        svg.setAttribute('font-size', '10.5');
+        svg.setAttribute('letter-spacing', '1.5');
+      }
     }
-  }
-</style>
+    resize();
+    window.addEventListener('resize', resize);
+  })();
+</script>
+
 <script>
 document.querySelectorAll("form").forEach(form => {
   form.addEventListener("submit", function() {
