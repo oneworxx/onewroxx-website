@@ -44,7 +44,7 @@
 
   :root {
     --bg: #FDFBF7;
-    --card-bg: #f5f3ef;
+    --card-bg: #ffffff;
     --border: #d4cfc7;
     --text-dark: #1A1A1A;
     --text-mid: #4a4540;
@@ -117,7 +117,7 @@
   }
 
   .plan-col {
-    width: 240px;
+    width: 300px;
     display: flex;
     flex-direction: column;
     border-right: 1px solid var(--border);
@@ -125,7 +125,7 @@
   }
 
   .plan-col:last-child { border-right: none; }
-  .plan-col:hover { background: #efede8; }
+  
 
   /* ── Plan head ── */
   .plan-head {
@@ -139,8 +139,8 @@
   }
 
   .plan-name {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 22px;
+    font-family: 'Plantagenet', serif;
+    font-size: 26px;
     font-weight: 400;
     color: var(--text-dark);
     letter-spacing: 0.01em;
@@ -150,12 +150,12 @@
     display: flex;
     align-items: baseline;
     gap: 4px;
-    margin-top: 4px;
+    margin-top: 8px;
   }
 
   .price-amount {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 32px;
+    font-family: 'Plantagenet', serif;
+    font-size: 30px;
     font-weight: 300;
     color: var(--text-dark);
   }
@@ -166,6 +166,15 @@
     font-weight: 300;
     letter-spacing: 0.02em;
   }
+
+.price-starting {
+  font-size: 10px;
+  color: var(--text-light);
+  letter-spacing: 0.08em;
+  font-weight: 300;
+  margin-bottom: 1px;
+  display: block;
+}
 
   .plan-billing {
     font-size: 11.5px;
@@ -205,6 +214,7 @@
     padding: 22px 24px;
     margin-top: auto;
     border-top: 1px solid var(--border);
+    margin-top: 80px;
   }
 
   .btn-enquiry {
@@ -383,6 +393,8 @@ src="https://www.facebook.com/tr?id=26272972155656765&ev=PageView&noscript=1"
                 </div>
             </div>
 
+            <a href="pricing.html" class="hover:text-green transition-colors cursor-pointer whitespace-nowrap">Pricing</a>
+
             <div class="relative group h-full flex items-center">
                 <a href="locations.html" class="hover:text-green transition-colors cursor-pointer flex items-center gap-1 focus:outline-none uppercase h-full whitespace-nowrap">
                     Locations
@@ -491,241 +503,316 @@ src="https://www.facebook.com/tr?id=26272972155656765&ev=PageView&noscript=1"
     </div>
 </nav>
     </header>
-
-    <section class="max-w-[1700px] mx-auto px-6 lg:px-12 py-24 relative">
-        
-        <svg class="absolute top-10 right-20 w-32 h-32 text-sage opacity-40" fill="none" viewBox="0 0 100 100">
-            <path stroke="currentColor" stroke-width="0.75" d="M50 0L57.5 42.5L100 50L57.5 57.5L50 100L42.5 57.5L0 50L42.5 42.5z"></path>
-        </svg>
-
-        <h1 class="text-6xl font-serif text-ink mb-20 relative">Our Pricing</h1>
-
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 xl:grid-cols-7 border border-ink bg-ink gap-px">
-
-            <div class="bg-white p-8 group transition-all duration-300 hover:z-10 shadow-[0px_0px_0px_0px_#afbe9d] hover:translate-y-[-6px] hover:translate-x-[-6px] hover:shadow-[6px_6px_0px_0px_#afbe9d]">
-                <h3 class="text-3xl font-serif mb-6 text-ink">Meeting</h3>
-                <div class="mb-8">
-                    <span class="text-5xl font-bold text-ink">₹600</span>
-                    <span class="text-base text-gray-500">(ex. GST)</span>
-                    <p class="text-base text-gray-600 mt-1">per person, per hour</p>
-                </div>
-                <div class="space-y-4 text-[15px] text-gray-600 leading-relaxed mb-10 min-h-[160px]">
-                    <p class="border-b border-gray-100 pb-2">Access Mon-Fri, from 9am till 5pm</p>
-                    <p class="border-b border-gray-100 pb-2">Ergonomic seating with proper desks and natural lighting</p>
-                    <p>Bookable meeting rooms up to 3 days in advance</p>
-                </div>
-                <a href="#" class="btn-primary w-full text-center" onclick="openModalWithContext('Pricing - Meeting')">Book A Room</a>
+<main>
+    
+<section class="border-b border-ink bg-green py-16 md:py-24 text-center px-6 md:px-12 lg:px-16">
+            <div class="container mx-auto max-w-7xl">
+                <h1 class="text-5xl md:text-8xl text-black font-serif mb-4 md:mb-6">Our Pricing</h1>
+                
+                <p class="text-base md:text-xl text-black font-sans tracking-wide max-w-4xl mx-auto">
+                    From flexible plans to long-term setups—find what fits your workflow.
+                </p>
             </div>
+        </section>
 
-            <div class="bg-white p-8 group transition-all duration-300 hover:z-10 shadow-[0px_0px_0px_0px_#afbe9d] hover:translate-y-[-6px] hover:translate-x-[-6px] hover:shadow-[6px_6px_0px_0px_#afbe9d]">
-                <h3 class="text-3xl font-serif mb-6 text-ink">Day Pass</h3>
-                <div class="mb-8">
-                    <span class="text-5xl font-bold text-ink">₹3,000</span>
-                    <span class="text-base text-gray-500">(ex. GST)</span>
-                    <p class="text-base text-gray-600 mt-1">per person, per day</p>
-                </div>
-                <div class="space-y-4 text-[15px] text-gray-600 leading-relaxed mb-10 min-h-[160px]">
-                    <p class="border-b border-gray-100 pb-2">Access Mon-Fri, from 9am till 5pm</p>
-                    <p class="border-b border-gray-100 pb-2">Ergonomic seating with proper desks and natural lighting</p>
-                    <p>Bookable meeting rooms up to 3 days in advance</p>
-                </div>
-                <a href="#" class="btn-primary w-full text-center" onclick="openModalWithContext('Pricing - Day Pass')">Buy Pass</a>
-            </div>
+<div class="pricing-section">
+            <div class="container mx-auto max-w-8xl"> 
 
-            <div class="bg-white p-8 group transition-all duration-300 hover:z-10 shadow-[0px_0px_0px_0px_#afbe9d] hover:translate-y-[-6px] hover:translate-x-[-6px] hover:shadow-[6px_6px_0px_0px_#afbe9d]">
-                <h3 class="text-3xl font-serif mb-6 text-ink">Day Office</h3>
-                <div class="mb-8">
-                    <span class="text-5xl font-bold text-ink">₹5,000</span>
-                    <span class="text-base text-gray-500">(ex. GST)</span>
-                    <p class="text-base text-gray-600 mt-1">per person, per day</p>
-                </div>
-                <div class="space-y-4 text-[15px] text-gray-600 leading-relaxed mb-10 min-h-[160px]">
-                    <p class="border-b border-gray-100 pb-2">Access Mon-Fri, from 9am till 5pm</p>
-                    <p class="border-b border-gray-100 pb-2">Ergonomic seating with proper desks and natural lighting</p>
-                    <p>Bookable meeting rooms up to 3 days in advance</p>
-                </div>
-                <a href="#" class="btn-primary w-full text-center" onclick="openModalWithContext('Pricing - Day Office')">Book Office</a>
-            </div>
 
-            <div class="bg-white p-8 group transition-all duration-300 hover:z-10 shadow-[0px_0px_0px_0px_#afbe9d] hover:translate-y-[-6px] hover:translate-x-[-6px] hover:shadow-[6px_6px_0px_0px_#afbe9d]">
-                <h3 class="text-3xl font-serif mb-6 text-ink">Side Hustler</h3>
-                <div class="mb-8">
-                    <span class="text-5xl font-bold text-ink">₹11,000</span>
-                    <span class="text-base text-gray-500">(ex. GST)</span>
-                    <p class="text-base text-gray-600 mt-1">per person, per month</p>
-                </div>
-                <div class="space-y-4 text-[15px] text-gray-600 leading-relaxed mb-10 min-h-[160px]">
-                    <p class="text-gray-400">1 month refundable deposit, paid in advance</p>
-                    <p class="border-b border-gray-100 pb-2">Access after 5.30pm on weekdays and all days on weekends</p>
-                    <p class="border-b border-gray-100 pb-2">Ergonomic seating with proper desks and natural lighting</p>
-                    <p>Bookable meeting rooms up to 3 days in advance</p>
-                </div>
-                <a href="#" class="btn-primary w-full text-center" onclick="openModalWithContext('Pricing - Side Hustler')">Start Hustling</a>
-            </div>
+<!-- Pricing Table -->
+<div class="pricing-scroll">
+  <div class="pricing-table">
 
-            <div class="bg-white p-8 group transition-all duration-300 hover:z-10 shadow-[0px_0px_0px_0px_#afbe9d] hover:translate-y-[-6px] hover:translate-x-[-6px] hover:shadow-[6px_6px_0px_0px_#afbe9d]">
-                <h3 class="text-3xl font-serif mb-6 text-ink">Desk Hop</h3>
-                <div class="mb-8">
-                    <span class="text-5xl font-bold text-ink">₹25,000</span>
-                    <span class="text-base text-gray-500">(ex. GST)</span>
-                    <p class="text-base text-gray-600 mt-1">per person, per month</p>
-                </div>
-                <div class="space-y-4 text-[15px] text-gray-600 leading-relaxed mb-10 min-h-[160px]">
-                    <p class="text-gray-400">1 month refundable deposit, paid in advance</p>
-                    <p class="border-b border-gray-100 pb-2">Ergonomic seating with proper desks and natural lighting</p>
-                    <p class="border-b border-gray-100 pb-2">Bookable meeting rooms up to 3 days in advance</p>
-                    <p class="border-b border-gray-100 pb-2">Day Use Lockers to store essentials</p>
-                    <p>2 free day passes per year to use at other Oneworx locations</p>
-                </div>
-                <a href="#" class="btn-primary w-full text-center" onclick="openModalWithContext('Pricing - Desk Hop')">Secure A Desk</a>
-            </div>
-
-            <div class="bg-white p-8 group transition-all duration-300 hover:z-10 shadow-[0px_0px_0px_0px_#afbe9d] hover:translate-y-[-6px] hover:translate-x-[-6px] hover:shadow-[6px_6px_0px_0px_#afbe9d]">
-                <h3 class="text-3xl font-serif mb-6 text-ink">Open Studio</h3>
-                <div class="mb-8">
-                    <span class="text-5xl font-bold text-ink">₹37,500</span>
-                    <span class="text-base text-gray-500">(ex. GST)</span>
-                    <p class="text-base text-gray-600 mt-1">per desk, per month</p>
-                </div>
-                <div class="space-y-4 text-[15px] text-gray-600 leading-relaxed mb-10 min-h-[160px]">
-                    <p class="text-gray-400">1 month refundable deposit, paid in advance</p>
-                    <p class="border-b border-gray-100 pb-2">2 free duvet days in the hotel per year</p>
-                    <p class="border-b border-gray-100 pb-2">Semi-private fixed desks</p>
-                    <p class="border-b border-gray-100 pb-2">Lockable food drawer and ability to leave items on desktop</p>
-                    <p>Bookable meeting rooms up to 14 days in advance</p>
-                </div>
-                <a href="#" class="btn-primary w-full text-center" onclick="openModalWithContext('Pricing - Open Studio')">Join The Studio</a>
-            </div>
-
-            <div class="bg-white p-8 group transition-all duration-300 hover:z-10 shadow-[0px_0px_0px_0px_#afbe9d] hover:translate-y-[-6px] hover:translate-x-[-6px] hover:shadow-[6px_6px_0px_0px_#afbe9d]">
-                <h3 class="text-3xl font-serif mb-6 text-ink">Private Studio</h3>
-                <div class="mb-8">
-                    <span class="text-5xl font-bold text-ink">₹45,000</span>
-                    <span class="text-base text-gray-500">(ex. GST)</span>
-                    <p class="text-base text-gray-600 mt-1">Starting price, per desk, per month</p>
-                </div>
-                <div class="space-y-4 text-[15px] text-gray-600 leading-relaxed mb-10 min-h-[160px]">
-                    <p class="text-gray-400">2 months refundable deposit paid in advance</p>
-                    <p class="border-b border-gray-100 pb-2">2 free duvet days in the hotel per year</p>
-                    <p class="border-b border-gray-100 pb-2">Secure private VLAN</p>
-                    <p class="border-b border-gray-100 pb-2">Completely private, lockable space</p>
-                    <p>Flexibility to bring what you want into your office</p>
-                </div>
-                <a href="#" class="btn-primary w-full text-center" onclick="openModalWithContext('Pricing - Private Studio')">Secure Your Studio</a>
-            </div>
-
+    <!-- Hot Desk -->
+    <div class="plan-col">
+      <div class="plan-head">
+        <div class="plan-name">Hot Desk</div>
+        <span class="price-starting">Starting from</span>
+        <div class="plan-price">
+          <span class="price-amount">₹499</span>
+          <span class="price-label">per day</span>
         </div>
-    </section>
+      </div>
+      <div class="plan-features">
+        <div class="feature-row">Flexible seating in a shared workspace</div>
+        <div class="feature-row">Ergonomic desks complemented by ample natural daylight</div>
+        <div class="feature-row">High-speed connectivity with uninterrupted power</div>
+        <div class="feature-row">Access to shared lounges and One Deli</div>
+      </div>
+      <div class="plan-cta">
+         <button class="btn-enquiry open-booking-modal">
+                        Make enquiry
+                    </button>
+      </div>
+    </div>
 
-    <a href="javascript:void(0)" onclick="toggleBookingModal()" class="fixed bottom-6 right-6 lg:bottom-12 lg:right-12 z-[100] group">
-        <div class="relative w-[130px] h-[130px] flex items-center justify-center">
-            <svg class="absolute inset-0 w-full h-full text-ink scale-110 group-hover:scale-100 group-hover:opacity-50 transition-all duration-500 ease-out" viewBox="0 0 100 100" style="animation: spin 30s linear infinite;">
-                <defs><path id="circlePath" d="M50 15a35 35 0 110 70 35 35 0 010-70"></path></defs>
-                <text fill="currentColor" class="font-sans text-[11px] font-bold tracking-[0.2em]">
-                    <textPath href="#circlePath" startOffset="0%">MAKE AN ENQUIRY • BOOK A TOUR • </textPath>
-                </text>
-            </svg>
-            <div class="relative bg-ink rounded-full w-24 h-24 flex items-center justify-center shadow-xl transition-all duration-300 group-hover:scale-105 group-hover:bg-green">
-                <span class="text-cream text-5xl font-bold font-sans">w</span>
+    <!-- Dedicated Desk -->
+    <div class="plan-col">
+      <div class="plan-head">
+        <a href="dedicated-workspaces.html" class="plan-name block hover:text-green transition-colors cursor-pointer">Dedicated Desk</a>
+        <span class="price-starting">Starting from</span>
+        <div class="plan-price">
+          <span class="price-amount">₹5,500</span>
+          <span class="price-label">per month</span>
+        </div>
+      </div>
+      <div class="plan-features">
+        <div class="feature-row">A fixed desk, reserved exclusively for you</div>
+        <div class="feature-row">Lockable storage with an ergonomic, thoughtfully designed setup</div>
+        <div class="feature-row">High-speed Wi-Fi, printing credits & power backup</div>
+        <div class="feature-row">Monthly meeting room credits</div>
+        <div class="feature-row">Access to nap room, One Deli & community events</div>
+        <div class="feature-row">Ideal for individuals and small teams looking for a dedicated, everyday workspace</div>
+      </div>
+      <div class="plan-cta">
+        <button class="btn-enquiry open-booking-modal">
+                        Make enquiry
+                    </button>
+      </div>
+    </div>
+
+    <!-- Private Cabin -->
+    <div class="plan-col">
+      <div class="plan-head">
+        <a href="private-cabins.html" class="plan-name block hover:text-green transition-colors cursor-pointer">Private Cabin</a>
+        <span class="price-starting">Starting from</span>
+        <div class="plan-price">
+          <span class="price-amount">₹18,000</span>
+          <span class="price-label">per month</span>
+        </div>
+      </div>
+      <div class="plan-features">
+        <div class="feature-row">Fully enclosed, lockable cabins</div>
+        <div class="feature-row">Ergonomic interiors designed for everyday comfort</div>
+        <div class="feature-row">Soundproofed for focus & confidential meetings</div>
+        <div class="feature-row">Monthly meeting room credits</div>
+        <div class="feature-row">Access to nap room, One Deli & community events</div>
+        <div class="feature-row">Ideal for small teams and professionals who need privacy with flexibility</div>
+      </div>
+      <div class="plan-cta">
+         <button class="btn-enquiry open-booking-modal">
+                        Make enquiry
+                    </button>
+      </div>
+    </div>
+
+    <!-- Private Office -->
+    <div class="plan-col">
+      <div class="plan-head">
+        <a href="private-offices.html" class="plan-name block hover:text-green transition-colors cursor-pointer">Private Office</a>
+        <span class="price-starting">Starting from</span>
+        <div class="plan-price">
+          <span class="price-amount">₹40,000</span>
+          <span class="price-label">per month</span>
+        </div>
+      </div>
+      <div class="plan-features">
+        <div class="feature-row">Fully furnished, move-in ready office</div>
+        <div class="feature-row">Branding opportunities & layout customisation</div>
+        <div class="feature-row">Housekeeping, reception & printing support, handled professionally</div>
+        <div class="feature-row">Monthly meeting room credits</div>
+        <div class="feature-row">Access to nap room, One Deli & community events</div>
+        <div class="feature-row">Flexibility to grow your workspace alongside your team</div>
+        <div class="feature-row">Ideal for startups & growing teams</div>
+      </div>
+      <div class="plan-cta">
+         <button class="btn-enquiry open-booking-modal">
+                        Make enquiry
+                    </button>
+      </div>
+    </div>
+
+    <!-- Meeting Room -->
+    <div class="plan-col">
+      <div class="plan-head">
+       <a href="meeting-rooms.html" class="plan-name block hover:text-green transition-colors cursor-pointer">Meeting Room</a>
+        <span class="price-starting">Starting from</span>
+        <div class="plan-price">
+          <span class="price-amount">₹500</span>
+          <span class="price-label">per hour</span>
+        </div>
+      </div>
+      <div class="plan-features">
+        <div class="feature-row">Available to members & non-members</div>
+        <div class="feature-row">Equipped with large displays for presentations</div>
+        <div class="feature-row">High-speed internet for seamless virtual meetings</div>
+        <div class="feature-row">Whiteboards & stationery provided</div>
+        <div class="feature-row">Flexible booking by the hour or day</div>
+        
+      </div>
+      <div class="plan-cta">
+         <button class="btn-enquiry open-booking-modal">
+                        Make enquiry
+                    </button>
+      </div>
+    </div>
+
+    <!-- Virtual Office -->
+    <div class="plan-col">
+      <div class="plan-head">
+        <a href="virtual-office.html" class="plan-name block hover:text-green transition-colors cursor-pointer">Virtual Office</a>
+        <span class="price-starting">Starting from</span>
+        <div class="plan-price">
+          <span class="price-amount">₹1,500</span>
+          <span class="price-label">per month</span>
+        </div>
+      </div>
+      <div class="plan-features">
+        <div class="feature-row">Professional business address in Bhopal</div>
+        <div class="feature-row">GST & ROC registration support</div>
+        <div class="feature-row">Professional mail & courier handling</div>
+        <div class="feature-row">Reception support & call forwarding</div>
+        <div class="feature-row">Meeting room access on demand</div>
+      </div>
+      <div class="plan-cta">
+         <button class="btn-enquiry open-booking-modal">
+                        Make enquiry
+                    </button>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- Scroll hint -->
+<div class="scroll-hint">
+  <svg width="20" height="12" viewBox="0 0 20 12" fill="none">
+    <path d="M1 6H19M14 1l5 5-5 5" stroke="#1a1814" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
+  </svg>
+  Scroll to see all plans
+</div>
+</div>
+</div><!-- /pricing-section -->
+
+<footer class="bg-ink text-cream pt-20 pb-10">
+        <div class="container mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-20">
+                <div class="col-span-1 md:col-span-2">
+                    <img src="assets/images/logo-light.png" alt="OneWorx" class="h-6 md:h-10 mb-6 md:mb-8 object-contain">
+                    
+                    <p class="max-w-md text-gray-400 text-sm md:text-lg leading-relaxed">Work shouldn't feel like work. Join a community that balances professional growth with personal well-being, comfort, and connection.</p>
+                </div>
+                <div>
+                    <h4 class="font-sans text-xs text-gray-500 mb-6 uppercase tracking-widest">Links</h4>
+                    
+                    <ul class="space-y-2 text-sm md:text-lg">
+                        <li><a href="terms-of-service.html" class="hover:text-green transition-colors">Terms Of Service</a></li>
+                        <li><a href="Privacy-policy.html" class="hover:text-green transition-colors">Privacy Policy</a></li>
+                        <li><a href="assets/docs/oneworx-brochure.pdf" target="_blank" class="hover:text-green transition-colors">Brochure</a></li>
+                        <li><a href="#" class="open-booking-modal hover:text-green transition-colors">Book Tour</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-sans text-xs text-gray-500 mb-6 uppercase tracking-widest">Connect</h4>
+                    
+                    <ul class="space-y-2 text-sm md:text-lg">
+                        <li><a href="https://www.instagram.com/oneworx_" target="_blank" class="hover:text-green transition-colors">Instagram</a></li>
+                        <li><a href="https://www.linkedin.com/company/oneworx" target="_blank" class="hover:text-green transition-colors">LinkedIn</a></li>
+                        <li><a href="https://wa.me/918989898040" target="_blank" class="hover:text-green transition-colors">WhatsApp</a></li>
+                        <li><a href="mailto:hello@oneworx.in" class="hover:text-green transition-colors">Email</a></li>
+                    </ul>
+                </div>
             </div>
+            <div class="border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between text-xs font-mono text-gray-500">
+                <p>&copy; 2024 oneworx. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+</main>
+
+   <div id="booking-modal" class="opacity-0 pointer-events-none fixed inset-0 z-[100] flex items-center justify-center bg-ink bg-opacity-95 transition-opacity duration-300 backdrop-blur-sm">
+        <div class="bg-cream w-full max-w-lg mx-4 p-8 md:p-12 relative border border-white shadow-2xl transform scale-95 transition-transform duration-300" id="modal-content">
+            <button id="close-modal" class="absolute top-6 right-6 text-4xl leading-none hover:text-green transition-colors">&times;</button>
+            <h2 class="text-4xl mb-2 font-serif">Join Us.</h2>
+            <p class="text-gray-500 mb-8 font-sans">Elevate your workspace experience.</p>
+
+
+<iframe name="hidden_iframe" style="display:none;"></iframe>
+
+                    <form id="booking-form"
+action="https://script.google.com/macros/s/AKfycbz1P_ilwvDmdfqok-jWjt7WRDRUqy1_2nHx5Prd-FhTH3i-dYdTJvufSusEzEV338IedA/exec"
+method="POST"
+target="hidden_iframe"
+class="space-y-6">
+    
+<input type="hidden" name="formtype" value="Footer">
+<input type="text" name="website" style="display:none">
+
+    <input type="text" name="name" placeholder="Full Name" required class="w-full bg-transparent border-b border-ink px-2 py-3 focus:outline-none focus:border-green placeholder-gray-400 font-sans">
+    
+    <input type="email" name="email" placeholder="Email Address" required class="w-full bg-transparent border-b border-ink px-2 py-3 focus:outline-none focus:border-green placeholder-gray-400 font-sans">
+
+     <div class="grid grid-cols-2 gap-6">
+    <input type="tel" name="phone" placeholder="Phone Number" required class="w-full bg-transparent border-b border-ink px-2 py-3 focus:outline-none focus:border-green placeholder-gray-400 font-sans">
+
+    <input type="number" name="seats" placeholder="No. of Seats Required" min="1" class="w-full bg-transparent border-b border-ink px-2 py-3 focus:outline-none focus:border-green placeholder-gray-400 font-sans">
+ </div>
+
+    <div class="relative" id="location-select-container">
+        <select name="location" class="w-full bg-transparent border-b border-ink px-2 py-3 focus:outline-none focus:border-green text-gray-700 appearance-none rounded-none font-sans">
+            <option value="" disabled selected>Which Location?</option>
+            <option>Arera Colony</option>
+            <option>Hoshangabad Rd</option>
+            <option>10 Number Market</option>
+            <option>Fortune Arcade</option>
+        </select>
+        <span class="absolute right-2 top-4 pointer-events-none text-xs">▼</span>
+    </div>
+
+    <button type="submit" class="w-full bg-ink text-white py-4 font-bold hover:bg-green transition-colors mt-4 text-lg font-sans">Submit Request</button>
+</form>
+    </div>
+</div>
+
+    <script src="assets/js/main.js"></script>
+
+  <a href="https://wa.me/918989898040" target="_blank" onclick="fbq('track', 'Lead');" class="fixed bottom-6 right-6 z-50 group">
+        <div class="relative w-24 h-24 md:w-32 md:h-32 bg-ink rounded-full flex items-center justify-center shadow-lg hover:scale-110 transition-transform duration-300">
+            <svg class="absolute w-full h-full animate-spin-slow p-2" viewBox="0 0 100 100">
+                <defs><path id="circlePath" d="M 50, 50 m -37, 0 a 37,37 0 1,1 74,0 a 37,37 0 1,1 -74,0" /></defs>
+                <text font-size="10.5" font-family="monospace" font-weight="bold" fill="white" letter-spacing="1.5"><textPath xlink:href="#circlePath"> • MAKE AN ENQUIRY • BOOK A TOUR </textPath></text>
+            </svg>
+            <img src="assets/images/logo-icon.png" alt="Go" class="w-10 h-10 md:w-20 md:h-20 object-contain">
         </div>
     </a>
 
-    <div id="booking-modal" class="opacity-0 pointer-events-none fixed inset-0 z-[1000] flex items-center justify-center bg-ink bg-opacity-95 transition-opacity duration-300 backdrop-blur-sm">
-        <div class="bg-cream w-full max-w-lg mx-4 p-8 md:p-12 relative border border-white shadow-2xl transform scale-95 transition-transform duration-300" id="modal-content">
-            <button id="close-modal" class="absolute top-6 right-6 text-4xl leading-none hover:text-green transition-colors">&times;</button>
-            <h2 class="text-4xl mb-2 font-serif">Plan Your Move.</h2>
-            <p class="text-gray-500 mb-8 font-sans">Elevate your workspace experience. We will guide you from here.</p>
+<script>
+  // Mobile menu toggle
+  const btn = document.getElementById('mobile-menu-btn');
+  const menu = document.getElementById('mobile-menu');
+  btn.addEventListener('click', () => menu.classList.toggle('hidden'));
 
-            <iframe name="hidden_iframe_modal" style="display:none;"></iframe>
+  // Modal
+  function openModal(plan) {
+    document.getElementById('modal-plan-label').textContent = plan;
+    document.getElementById('modal').classList.add('open');
+  }
+  function closeModal() {
+    document.getElementById('modal').classList.remove('open');
+  }
+  function closeOnOverlay(e) {
+    if (e.target === document.getElementById('modal')) closeModal();
+  }
+</script>
 
-            <form id="footer-form" action="https://script.google.com/macros/s/AKfycbz1P_ilwvDmdfqok-jWjt7WRDRUqy1_2nHx5Prd-FhTH3i-dYdTJvufSusEzEV338IedA/exec" method="POST" target="hidden_iframe_modal" class="space-y-6">
+<script>
+document.querySelectorAll("form").forEach(form => {
+  form.addEventListener("submit", function() {
 
-                <input type="hidden" name="formtype" value="Pricing Modal">
-                <input type="hidden" name="page" value="Pricing Page">
-                
-                <input type="hidden" name="context" id="modal-context-plan" value="">
-                
-                <input type="text" name="website" style="display:none"> <input type="text" name="name" placeholder="Full Name" required class="w-full bg-transparent border-b border-ink px-2 py-3 focus:outline-none focus:border-green placeholder-gray-400 font-sans">
-                
-                <input type="email" name="email" placeholder="Email Address" required class="w-full bg-transparent border-b border-ink px-2 py-3 focus:outline-none focus:border-green placeholder-gray-400 font-sans">
+    // Meta pixel
+    if (typeof fbq !== "undefined") {
+      fbq('track', 'Lead');
+    }
 
-                 <div class="grid grid-cols-2 gap-6">
-                    <input type="tel" name="phone" placeholder="Phone Number" required class="w-full bg-transparent border-b border-ink px-2 py-3 focus:outline-none focus:border-green placeholder-gray-400 font-sans">
+    // Success message
+    setTimeout(() => {
+      alert("Thank you! Our team will contact you shortly.");
+      form.reset();
+    }, 800);
 
-                    <input type="number" name="seats" placeholder="No. of Seats Required" min="1" class="w-full bg-transparent border-b border-ink px-2 py-3 focus:outline-none focus:border-green placeholder-gray-400 font-sans">
-                 </div>
+  });
+});
+</script>
 
-                <div class="relative" id="location-select-container">
-                    <select name="location" class="w-full bg-transparent border-b border-ink px-2 py-3 focus:outline-none focus:border-green text-gray-700 appearance-none rounded-none font-sans">
-                        <option value="" disabled selected>Which Location?</option>
-                        <option value="Arera Colony">Arera Colony</option>
-                        <option value="Hoshangabad Rd">Hoshangabad Rd</option>
-                        <option value="10 Number Market">10 Number Market</option>
-                        <option value="Fortune Arcade">Fortune Arcade</option>
-                    </select>
-                    <span class="absolute right-2 top-4 pointer-events-none text-xs">▼</span>
-                </div>
-
-                <button type="submit" class="w-full bg-ink text-white py-4 font-bold hover:bg-green transition-colors mt-4 text-lg font-sans">Submit Request</button>
-            </form>
-        </div>
-    </div>
-
-    <footer class="bg-white border-t border-gray-100 py-10 px-6 lg:px-12 max-w-[1700px] mx-auto text-center">
-        <p class="text-[13px] text-gray-500 font-medium">© 2026 Oneworx Workspace Solutions. All prices exclude GST. Standard terms apply.</p>
-    </footer>
-
-    <script>
-        const modal = document.getElementById('booking-modal');
-        const modalContent = document.getElementById('modal-content');
-        const modalContextPlanInput = document.getElementById('modal-context-plan');
-
-        // Toggle Modal Function
-        function toggleBookingModal() {
-            modal.classList.toggle('opacity-0');
-            modal.classList.toggle('pointer-events-none');
-            modalContent.classList.toggle('scale-95');
-        }
-
-        // Open Modal and Set which plan triggered it
-        function openModalWithContext(planName) {
-            modalContextPlanInput.value = planName; // Set the hidden input value
-            toggleBookingModal();
-        }
-
-        // Close button listener
-        document.getElementById('close-modal').addEventListener('click', toggleBookingModal);
-        
-        // Close modal if clicking outside content
-        modal.addEventListener('click', (e) => {
-            if (e.target === modal) toggleBookingModal();
-        });
-
-        // Close on escape key
-        document.addEventListener('keydown', (e) => {
-            if (e.key === 'Escape' && !modal.classList.contains('opacity-0')) toggleBookingModal();
-        });
-
-        // Form Submit Handler
-        document.querySelectorAll("form").forEach(form => {
-          form.addEventListener("submit", function() {
-
-            // Meta pixel Lead event (fires when lead submitted)
-            if (typeof fbq !== "undefined") {
-              fbq('track', 'Lead');
-            }
-
-            // Simple browser alert on success (after brief delay so it feels organic)
-            setTimeout(() => {
-              alert("Thank you for your enquiry. Our team will review your request for the " + modalContextPlanInput.value + " plan and connect with you shortly.");
-              form.reset(); // Clear the form
-              if (!modal.classList.contains('opacity-0')) toggleBookingModal(); // Close the modal
-            }, 800);
-
-          });
-        });
-        
-    </script>
 </body>
 </html>
