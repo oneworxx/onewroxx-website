@@ -338,8 +338,8 @@ class="space-y-6">
     <script src="assets/js/main.js"></script>
 
   <a id="spinning-badge" href="https://wa.me/918989898040" target="_blank" onclick="fbq('track', 'Lead');" class="fixed bottom-6 right-6 z-50 group">
-    <div class="relative w-24 h-24 md:w-32 md:h-32 bg-ink rounded-full flex items-center justify-center shadow-lg hover:scale-110 transition-transform duration-300" style="overflow:visible">
-        <svg class="absolute w-full h-full animate-spin-slow" viewBox="0 0 100 100" style="overflow:visible; padding:0">
+    <div class="relative w-28 h-28 md:w-32 md:h-32 bg-ink rounded-full flex items-center justify-center shadow-lg hover:scale-110 transition-transform duration-300">
+        <svg class="absolute w-full h-full animate-spin-slow" viewBox="0 0 100 100" style="overflow:visible">
             <defs>
                 <path id="badgeCirclePath" d="M 50,50 m -37,0 a 37,37 0 1,1 74,0 a 37,37 0 1,1 -74,0" />
             </defs>
@@ -347,36 +347,9 @@ class="space-y-6">
                 <textPath xlink:href="#badgeCirclePath"> • MAKE AN ENQUIRY • BOOK A TOUR </textPath>
             </text>
         </svg>
-        <img src="assets/images/logo-icon.png" alt="Go" class="w-10 h-10 md:w-14 md:h-14 object-contain">
+        <img src="assets/images/logo-icon.png" alt="Go" class="w-10 h-10 md:w-14 md:h-14 object-contain relative z-10">
     </div>
 </a>
-
-<script>
-(function() {
-  // ✅ Target by ID - no more previousElementSibling guessing
-  var badge = document.getElementById('spinning-badge');
-  var textEl = badge.querySelector('text');
-  var pathEl = badge.querySelector('path');
-  var textPath = badge.querySelector('textPath');
-
-  function resize() {
-    if (window.innerWidth < 768) {
-      textEl.setAttribute('font-size', '8');
-      textEl.setAttribute('letter-spacing', '1.5');
-      pathEl.setAttribute('d', 'M 50,50 m -30,0 a 30,30 0 1,1 60,0 a 30,30 0 1,1 -60,0');
-      textPath.textContent = ' • MAKE AN ENQUIRY • BOOK A TOUR ';
-    } else {
-      textEl.setAttribute('font-size', '10.5');
-      textEl.setAttribute('letter-spacing', '1.5');
-      pathEl.setAttribute('d', 'M 50,50 m -37,0 a 37,37 0 1,1 74,0 a 37,37 0 1,1 -74,0');
-      textPath.textContent = ' • MAKE AN ENQUIRY • BOOK A TOUR ';
-    }
-  }
-
-  resize();
-  window.addEventListener('resize', resize);
-})();
-</script>
 
 <script>
 document.querySelectorAll("form").forEach(form => {
