@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Events | Oneworx</title> 
+    <title>Our Pricing | Oneworx</title> 
     
     <link rel="stylesheet" href="assets/css/output.css">
 
@@ -38,7 +38,294 @@
         /* 3. UTILITIES */
         .reveal { opacity: 0; transform: translateY(40px); transition: all 1s cubic-bezier(0.16, 1, 0.3, 1); }
         .reveal.active { opacity: 1; transform: translateY(0); }
-     </style>
+
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --bg: #FDFBF7;
+    --card-bg: #f5f3ef;
+    --border: #d4cfc7;
+    --text-dark: #1A1A1A;
+    --text-mid: #4a4540;
+    --text-light: #8a847c;
+    --accent: #1A1A1A;
+    --btn-border: #1A1A1A;
+    --highlight-bg: #1A1A1A;
+    --highlight-text: #f5f3ef;
+  }
+
+  body {
+    background: var(--bg);
+    font-family: 'AzoSans', 'Jost', sans-serif;
+    font-weight: 300;
+    color: var(--text-dark);
+    min-height: 100vh;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Plantagenet', 'Cormorant Garamond', serif;
+    font-weight: 400;
+  }
+
+  .pricing-section {
+    padding: 60px 40px 80px;
+  }
+
+  /* ── Header ── */
+  .section-header {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    margin-bottom: 36px;
+  }
+
+  .asterisk {
+    width: 48px;
+    height: 48px;
+    flex-shrink: 0;
+    opacity: 0.55;
+  }
+
+  .section-header h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 300;
+    font-size: clamp(28px, 3vw, 38px);
+    letter-spacing: 0.01em;
+    color: var(--text-dark);
+  }
+
+  /* ── Scroll container ── */
+  .pricing-scroll {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: thin;
+    scrollbar-color: var(--border) transparent;
+    padding-bottom: 12px;
+  }
+
+  .pricing-scroll::-webkit-scrollbar { height: 4px; }
+  .pricing-scroll::-webkit-scrollbar-track { background: transparent; }
+  .pricing-scroll::-webkit-scrollbar-thumb { background: var(--border); border-radius: 4px; }
+
+  /* ── Table layout ── */
+  .pricing-table {
+    display: flex;
+    min-width: max-content;
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+  }
+
+  .plan-col {
+    width: 240px;
+    display: flex;
+    flex-direction: column;
+    border-right: 1px solid var(--border);
+    transition: background 0.2s ease;
+  }
+
+  .plan-col:last-child { border-right: none; }
+  .plan-col:hover { background: #efede8; }
+
+  /* ── Plan head ── */
+  .plan-head {
+    padding: 28px 24px 20px;
+    border-bottom: 1px solid var(--border);
+    min-height: 160px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: 8px;
+  }
+
+  .plan-name {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 22px;
+    font-weight: 400;
+    color: var(--text-dark);
+    letter-spacing: 0.01em;
+  }
+
+  .plan-price {
+    display: flex;
+    align-items: baseline;
+    gap: 4px;
+    margin-top: 4px;
+  }
+
+  .price-amount {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 32px;
+    font-weight: 300;
+    color: var(--text-dark);
+  }
+
+  .price-label {
+    font-size: 12px;
+    color: var(--text-light);
+    font-weight: 300;
+    letter-spacing: 0.02em;
+  }
+
+  .plan-billing {
+    font-size: 11.5px;
+    color: var(--text-light);
+    letter-spacing: 0.03em;
+    line-height: 1.5;
+    font-weight: 300;
+  }
+
+  /* ── Features ── */
+  .plan-features {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .feature-row {
+    padding: 13px 24px;
+    font-size: 12px;
+    color: var(--text-mid);
+    border-bottom: 1px solid var(--border);
+    line-height: 1.5;
+    font-weight: 300;
+    min-height: 48px;
+    display: flex;
+    align-items: center;
+  }
+
+  .feature-row.empty {
+    background: transparent;
+    color: transparent;
+    user-select: none;
+  }
+
+  /* ── CTA ── */
+  .plan-cta {
+    padding: 22px 24px;
+    margin-top: auto;
+    border-top: 1px solid var(--border);
+  }
+
+  .btn-enquiry {
+    display: inline-block;
+    padding: 10px 20px;
+    border: 1px solid var(--btn-border);
+    background: transparent;
+    color: var(--text-dark);
+    font-family: 'Jost', sans-serif;
+    font-size: 12px;
+    font-weight: 400;
+    letter-spacing: 0.06em;
+    cursor: pointer;
+    text-transform: none;
+    transition: background 0.2s ease, color 0.2s ease;
+    white-space: nowrap;
+  }
+
+  .btn-enquiry:hover {
+    background: var(--highlight-bg);
+    color: var(--highlight-text);
+  }
+
+  /* ── Scroll hint ── */
+  .scroll-hint {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: 18px;
+    font-size: 11.5px;
+    color: var(--text-light);
+    letter-spacing: 0.05em;
+  }
+
+  .scroll-hint svg { opacity: 0.5; }
+
+  /* ── Enquiry Modal ── */
+  .modal-overlay {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(26,24,20,0.55);
+    z-index: 100;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .modal-overlay.open { display: flex; }
+
+  .modal {
+    background: var(--card-bg);
+    padding: 44px 40px;
+    width: 420px;
+    max-width: 92vw;
+    position: relative;
+    animation: fadeUp 0.25s ease;
+  }
+
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(16px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+  .modal-close {
+    position: absolute;
+    top: 16px; right: 20px;
+    background: none; border: none;
+    font-size: 20px; cursor: pointer;
+    color: var(--text-light);
+    line-height: 1;
+  }
+
+  .modal h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 300;
+    font-size: 26px;
+    margin-bottom: 6px;
+  }
+
+  .modal-plan {
+    font-size: 12px;
+    color: var(--text-light);
+    letter-spacing: 0.06em;
+    margin-bottom: 28px;
+    text-transform: uppercase;
+  }
+
+  .modal input, .modal select {
+    width: 100%;
+    border: none;
+    border-bottom: 1px solid var(--border);
+    background: transparent;
+    padding: 10px 0;
+    margin-bottom: 20px;
+    font-family: 'Jost', sans-serif;
+    font-size: 13px;
+    font-weight: 300;
+    color: var(--text-dark);
+    outline: none;
+    appearance: none;
+  }
+
+  .modal input::placeholder { color: var(--text-light); }
+
+  .modal button[type="submit"] {
+    width: 100%;
+    padding: 13px;
+    background: var(--highlight-bg);
+    color: var(--highlight-text);
+    border: none;
+    font-family: 'Jost', sans-serif;
+    font-size: 12px;
+    letter-spacing: 0.1em;
+    cursor: pointer;
+    margin-top: 8px;
+    transition: opacity 0.2s;
+  }
+
+  .modal button[type="submit"]:hover { opacity: 0.85; }
+</style>
+
 
 <!-- Meta Pixel Code -->
 <script>
@@ -203,60 +490,185 @@ src="https://www.facebook.com/tr?id=26272972155656765&ev=PageView&noscript=1"
         </div>
     </div>
 </nav>
+    </header>
 
+    <div class="pricing-section">
 
-<main>
-       <section class="bg-cream pt-16 pb-24 md:py-32 px-6 md:px-12 lg:px-16 min-h-[60vh] md:min-h-[80vh] flex flex-col items-center justify-center border-b border-ink relative overflow-hidden">
-            
-    <h1 class="text-4xl md:text-7xl font-serif text-ink mb-6 leading-tight text-center">
-        We're brewing up <br>
-        <span class="italic text-green">something special.</span>
-    </h1>
+<!-- Header -->
+<div class="section-header">
+  <svg class="asterisk" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <line x1="24" y1="2" x2="24" y2="46" stroke="#1a1814" stroke-width="1.2"/>
+    <line x1="2" y1="24" x2="46" y2="24" stroke="#1a1814" stroke-width="1.2"/>
+    <line x1="6.5" y1="6.5" x2="41.5" y2="41.5" stroke="#1a1814" stroke-width="1.2"/>
+    <line x1="41.5" y1="6.5" x2="6.5" y2="41.5" stroke="#1a1814" stroke-width="1.2"/>
+    <line x1="4" y1="16" x2="44" y2="32" stroke="#1a1814" stroke-width="0.8" opacity="0.5"/>
+    <line x1="44" y1="16" x2="4" y2="32" stroke="#1a1814" stroke-width="0.8" opacity="0.5"/>
+  </svg>
+  <h2>Our Pricing</h2>
+</div>
 
-    <p class="text-base md:text-xl text-gray-600 font-sans mb-12 max-w-2xl mx-auto leading-relaxed text-center">
-        Our events calendar is taking a short coffee break. But not for long—we’re brewing up a fresh lineup of workshops, community mixers, and insightful talks you definitely won’t want to miss. Stay tuned.
-    </p>
+<!-- Pricing Table -->
+<div class="pricing-scroll">
+  <div class="pricing-table">
 
-    <div class="flex flex-col sm:flex-row items-center justify-center gap-6 md:gap-8">
-        
-<iframe name="hidden_iframe" style="display:none;"></iframe>
-
-        <form 
-    action="https://script.google.com/macros/s/AKfycbz1P_ilwvDmdfqok-jWjt7WRDRUqy1_2nHx5Prd-FhTH3i-dYdTJvufSusEzEV338IedA/exec" 
-    method="POST" 
-    target="hidden_iframe" 
-    class="flex w-full sm:w-auto border border-ink bg-white p-1 shadow-[6px_6px_0px_0px_#afbe9d] focus-within:translate-y-1 focus-within:translate-x-1 focus-within:shadow-[0px_0px_0px_0px_#afbe9d] transition-all duration-300"
->
-    <input type="hidden" name="formtype" value="Event Notification">
-    <input type="hidden" name="page" value="Events Page">
-    <input type="text" name="website" style="display:none"> <input 
-        type="email" 
-        name="email"
-        placeholder="Drop your email..." 
-        required 
-        class="bg-transparent px-4 py-3 outline-none font-sans w-full sm:w-64 text-ink placeholder-gray-400"
-    >
-    
-    <button 
-        type="submit" 
-        class="bg-ink text-cream font-bold font-sans px-6 py-3 hover:bg-green transition-colors whitespace-nowrap"
-    >
-        Notify Me
-    </button>
-</form>
-
-        <span class="text-gray-400 font-serif italic text-xl hidden sm:block">or</span>
-
-        <a href="https://wa.me/918989898040?text=Hi!%20I%E2%80%99m%20interested%20in%20hosting%20an%20event%20at%20Oneworx.%20Could%20you%20please%20guide%20me%20through%20the%20process,%20availability,%20and%20pricing%20details?" target="_blank" class="group flex items-center gap-2 text-ink font-bold font-sans border-b-2 border-ink pb-1 hover:text-green hover:border-green transition-colors text-lg">
-            Host your own event 
-            <svg class="w-5 h-5 transform group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
-        </a>
-        
+    <!-- Hot Desk -->
+    <div class="plan-col">
+      <div class="plan-head">
+        <div class="plan-name">Hot Desk</div>
+        <div class="plan-price">
+          <span class="price-amount">₹499</span>
+          <span class="price-label">per day</span>
+        </div>
+        <div class="plan-billing">per person, per day</div>
+      </div>
+      <div class="plan-features">
+        <div class="feature-row">Access Mon–Sat, 9am to 7pm</div>
+        <div class="feature-row">Ergonomic seating with proper desks and natural lighting</div>
+        <div class="feature-row">High-speed Wi-Fi & power backup</div>
+        <div class="feature-row">Access to common areas & One Deli café</div>
+        <div class="feature-row empty">—</div>
+        <div class="feature-row empty">—</div>
+        <div class="feature-row empty">—</div>
+      </div>
+      <div class="plan-cta">
+        <button class="btn-enquiry" onclick="openModal('Hot Desk')">Make Enquiry</button>
+      </div>
     </div>
-</section>
-    </main>
 
-    <footer class="bg-ink text-cream pt-20 pb-10">
+    <!-- Dedicated Desk -->
+    <div class="plan-col">
+      <div class="plan-head">
+        <div class="plan-name">Dedicated Desk</div>
+        <div class="plan-price">
+          <span class="price-amount">₹5,500</span>
+          <span class="price-label">per month</span>
+        </div>
+        <div class="plan-billing">per person, per month<br>1 month refundable deposit</div>
+      </div>
+      <div class="plan-features">
+        <div class="feature-row">24/7 biometric access</div>
+        <div class="feature-row">Fixed desk with lockable storage & ergonomic setup</div>
+        <div class="feature-row">High-speed Wi-Fi, printing credits & power backup</div>
+        <div class="feature-row">Complimentary meeting room credits per month</div>
+        <div class="feature-row">Access to nap room, café & community events</div>
+        <div class="feature-row empty">—</div>
+        <div class="feature-row empty">—</div>
+      </div>
+      <div class="plan-cta">
+        <button class="btn-enquiry" onclick="openModal('Dedicated Desk')">Make Enquiry</button>
+      </div>
+    </div>
+
+    <!-- Private Cabin -->
+    <div class="plan-col">
+      <div class="plan-head">
+        <div class="plan-name">Private Cabin</div>
+        <div class="plan-price">
+          <span class="price-amount">₹12,000</span>
+          <span class="price-label">per month</span>
+        </div>
+        <div class="plan-billing">per cabin, per month<br>2 months refundable deposit</div>
+      </div>
+      <div class="plan-features">
+        <div class="feature-row">24/7 biometric access</div>
+        <div class="feature-row">Lockable, fully furnished cabin with ergonomic seating</div>
+        <div class="feature-row">Soundproofed for focus & confidential meetings</div>
+        <div class="feature-row">Complimentary meeting room credits per month</div>
+        <div class="feature-row">Access to nap room, café & community events</div>
+        <div class="feature-row">Ideal for executives, managers & small teams</div>
+        <div class="feature-row empty">—</div>
+      </div>
+      <div class="plan-cta">
+        <button class="btn-enquiry" onclick="openModal('Private Cabin')">Make Enquiry</button>
+      </div>
+    </div>
+
+    <!-- Private Office -->
+    <div class="plan-col">
+      <div class="plan-head">
+        <div class="plan-name">Private Office</div>
+        <div class="plan-price">
+          <span class="price-amount">₹25,000</span>
+          <span class="price-label">per month</span>
+        </div>
+        <div class="plan-billing">starting price, per office<br>2 months refundable deposit</div>
+      </div>
+      <div class="plan-features">
+        <div class="feature-row">24/7 biometric & secure VLAN access</div>
+        <div class="feature-row">Fully furnished, move-in ready enclosed office</div>
+        <div class="feature-row">Branding opportunities & layout customisation</div>
+        <div class="feature-row">Complimentary meeting room hours per month</div>
+        <div class="feature-row">Housekeeping, reception & printing support</div>
+        <div class="feature-row">Access to nap room, café & community events</div>
+        <div class="feature-row">Flexibility to scale — upgrade as team grows</div>
+      </div>
+      <div class="plan-cta">
+        <button class="btn-enquiry" onclick="openModal('Private Office')">Make Enquiry</button>
+      </div>
+    </div>
+
+    <!-- Meeting Room -->
+    <div class="plan-col">
+      <div class="plan-head">
+        <div class="plan-name">Meeting Room</div>
+        <div class="plan-price">
+          <span class="price-amount">₹400</span>
+          <span class="price-label">per hour</span>
+        </div>
+        <div class="plan-billing">per booking, per hour</div>
+      </div>
+      <div class="plan-features">
+        <div class="feature-row">Available to members & non-members</div>
+        <div class="feature-row">High-speed video conferencing & presentation screens</div>
+        <div class="feature-row">Whiteboards & stationery provided</div>
+        <div class="feature-row">Bookable up to 3 days in advance</div>
+        <div class="feature-row empty">—</div>
+        <div class="feature-row empty">—</div>
+        <div class="feature-row empty">—</div>
+      </div>
+      <div class="plan-cta">
+        <button class="btn-enquiry" onclick="openModal('Meeting Room')">Make Enquiry</button>
+      </div>
+    </div>
+
+    <!-- Virtual Office -->
+    <div class="plan-col">
+      <div class="plan-head">
+        <div class="plan-name">Virtual Office</div>
+        <div class="plan-price">
+          <span class="price-amount">₹1,500</span>
+          <span class="price-label">per month</span>
+        </div>
+        <div class="plan-billing">per address, per month<br>Annual plans available</div>
+      </div>
+      <div class="plan-features">
+        <div class="feature-row">Prime business address for GST & ROC registration</div>
+        <div class="feature-row">Professional mail & courier handling</div>
+        <div class="feature-row">Reception support & call forwarding</div>
+        <div class="feature-row">Meeting room access on demand (chargeable)</div>
+        <div class="feature-row">Ideal for startups, freelancers & remote teams</div>
+        <div class="feature-row empty">—</div>
+        <div class="feature-row empty">—</div>
+      </div>
+      <div class="plan-cta">
+        <button class="btn-enquiry" onclick="openModal('Virtual Office')">Make Enquiry</button>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- Scroll hint -->
+<div class="scroll-hint">
+  <svg width="20" height="12" viewBox="0 0 20 12" fill="none">
+    <path d="M1 6H19M14 1l5 5-5 5" stroke="#1a1814" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
+  </svg>
+  Scroll to see all plans
+</div>
+
+</div><!-- /pricing-section -->
+
+<footer class="bg-ink text-cream pt-20 pb-10">
         <div class="container mx-auto px-6">
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-20">
                 <div class="col-span-1 md:col-span-2">
@@ -341,11 +753,30 @@ class="space-y-6">
         <div class="relative w-24 h-24 md:w-32 md:h-32 bg-ink rounded-full flex items-center justify-center shadow-lg hover:scale-110 transition-transform duration-300">
             <svg class="absolute w-full h-full animate-spin-slow p-2" viewBox="0 0 100 100">
                 <defs><path id="circlePath" d="M 50, 50 m -37, 0 a 37,37 0 1,1 74,0 a 37,37 0 1,1 -74,0" /></defs>
-                <text font-size="10.5" font-family="monospace" font-weight="bold" fill="white" letter-spacing="1.5"><textPath xlink:href="#circlePath"> • MAKE AN ENQUIRY • BOOK A TOUR </textPath></text>
+                <text font-size="10.5" font-family="monospace" font-weight="bold" fill="white" letter-spacing="0.5"><textPath xlink:href="#circlePath"> • MAKE AN ENQUIRY • BOOK A TOUR </textPath></text>
             </svg>
             <img src="assets/images/logo-icon.png" alt="Go" class="w-10 h-10 md:w-20 md:h-20 object-contain">
         </div>
     </a>
+
+<script>
+  // Mobile menu toggle
+  const btn = document.getElementById('mobile-menu-btn');
+  const menu = document.getElementById('mobile-menu');
+  btn.addEventListener('click', () => menu.classList.toggle('hidden'));
+
+  // Modal
+  function openModal(plan) {
+    document.getElementById('modal-plan-label').textContent = plan;
+    document.getElementById('modal').classList.add('open');
+  }
+  function closeModal() {
+    document.getElementById('modal').classList.remove('open');
+  }
+  function closeOnOverlay(e) {
+    if (e.target === document.getElementById('modal')) closeModal();
+  }
+</script>
 
 <script>
 document.querySelectorAll("form").forEach(form => {
