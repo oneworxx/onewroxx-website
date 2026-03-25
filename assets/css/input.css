@@ -23,7 +23,7 @@ h1, h2, h3, h4, h5, h6 {
   @apply inline-block border border-ink bg-ink text-cream px-8 py-3 text-lg transition-all duration-300;
 }
 .btn-primary:hover {
-  @apply bg-terra border-terra text-white transform -translate-y-1;
+    @apply bg-ink border-ink text-white transform translate-y-1;
 }
 
 .btn-outline {
