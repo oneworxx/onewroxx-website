@@ -896,34 +896,43 @@ vibe. Working here is so peaceful, it feels like meditating. It's the perfect mi
                             Nestled in the city's heart, oneworx brings you closer to everything that matters — great coffee, great company, and a workspace that simply feels right.
                         </p>
 
-                        <form class="space-y-6">
+                        <iframe name="hidden_iframe_cta" style="display:none;"></iframe>
+
+                        <form id="homepage-cta-form"
+                            action="https://script.google.com/macros/s/AKfycbz1P_ilwvDmdfqok-jWjt7WRDRUqy1_2nHx5Prd-FhTH3i-dYdTJvufSusEzEV338IedA/exec"
+                            method="POST"
+                            target="hidden_iframe_cta"
+                            class="space-y-6">
+
+                            <input type="hidden" name="formtype" value="Homepage CTA">
+                            <input type="text" name="website" style="display:none">
+
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                         <div class="flex flex-col">
                             <label class="text-sm font-bold text-gray-700 mb-2">Full Name</label>
-                            <input type="text" class="border border-gray-300 p-3 rounded-md focus:outline-none focus:border-green bg-white-50" placeholder="Full Name">
+                            <input type="text" name="name" required class="border border-gray-300 p-3 rounded-md focus:outline-none focus:border-green bg-white-50" placeholder="Full Name">
                         </div>
                         <div class="flex flex-col">
-         <label class="text-sm font-bold text-gray-700 mb-2">No. of Seats Required</label>
-                            <input type="text" class="border border-gray-300 p-3 rounded-md focus:outline-none focus:border-green bg-white-50" placeholder="1-20" min="1"">
-
+                            <label class="text-sm font-bold text-gray-700 mb-2">No. of Seats Required</label>
+                            <input type="number" name="seats" min="1" class="border border-gray-300 p-3 rounded-md focus:outline-none focus:border-green bg-white-50" placeholder="1-20">
                         </div>
                     </div>
-                    
+
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                         <div class="flex flex-col">
                             <label class="text-sm font-bold text-gray-700 mb-2">Email Address</label>
-                            <input type="email" class="border border-gray-300 p-3 rounded-md focus:outline-none focus:border-green bg-white-50" placeholder="email@company.com">
+                            <input type="email" name="email" required class="border border-gray-300 p-3 rounded-md focus:outline-none focus:border-green bg-white-50" placeholder="email@company.com">
                         </div>
-                        
                         <div class="flex flex-col">
                             <label class="text-sm font-bold text-gray-700 mb-2">Phone Number</label>
-                            <input type="tel" class="border border-gray-300 p-3 rounded-md focus:outline-none focus:border-green bg-white-50" placeholder="+91 89898 98040">
+                            <input type="tel" name="phone" required class="border border-gray-300 p-3 rounded-md focus:outline-none focus:border-green bg-white-50" placeholder="+91 89898 98040">
                         </div>
                     </div>
 
-                    <button class="w-full bg-ink text-white font-bold py-4 rounded-md hover:bg-green transition-colors text-lg">
+                    <button type="submit" id="homepage-cta-submit" class="w-full bg-ink text-white font-bold py-4 rounded-md hover:bg-green transition-colors text-lg">
                         Submit
                     </button>
+                    <p id="homepage-cta-success" class="hidden text-green font-sans text-center text-sm pt-1">Thank you! We'll be in touch shortly.</p>
                 </form>
                     </div>
 
@@ -1303,6 +1312,27 @@ if (form) {
     setTimeout(function(){
       alert("Thank you! Our team will contact you shortly.");
       form.reset();
+    }, 800);
+
+  });
+}
+
+const ctaForm = document.getElementById("homepage-cta-form");
+
+if (ctaForm) {
+  ctaForm.addEventListener("submit", function() {
+
+    if (typeof fbq !== "undefined") {
+      fbq('track', 'Lead');
+    }
+
+    setTimeout(function(){
+      ctaForm.reset();
+      const successMsg = document.getElementById("homepage-cta-success");
+      if (successMsg) {
+        successMsg.classList.remove("hidden");
+        setTimeout(function(){ successMsg.classList.add("hidden"); }, 5000);
+      }
     }, 800);
 
   });
