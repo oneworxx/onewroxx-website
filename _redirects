@@ -1,3 +1,6 @@
+http://oneworx.in/*     https://oneworx.in/:splat     301
+http://www.oneworx.in/* https://oneworx.in/:splat     301
+
 /about              /about.html              200
 /offerings          /offerings.html          200
 /locations          /locations.html          200
