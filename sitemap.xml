@@ -1,187 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset
-      xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
-      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-      xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
-            http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
-<!-- created with Free Online Sitemap Generator www.xml-sitemaps.com -->
-
-
-<url>
-  <loc>https://oneworx.in/</loc>
-  <lastmod>2026-03-30T11:09:12+00:00</lastmod>
-  <priority>1.00</priority>
-</url>
-<url>
-  <loc>https://oneworx.in/index.html</loc>
-  <lastmod>2026-03-30T11:09:12+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://oneworx.in/about.html</loc>
-  <lastmod>2026-03-30T11:08:57+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://oneworx.in/offerings.html</loc>
-  <lastmod>2026-03-30T11:09:52+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://oneworx.in/dedicated-workspaces.html</loc>
-  <lastmod>2026-03-30T11:09:12+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://oneworx.in/private-office.html</loc>
-  <lastmod>2026-03-30T11:09:52+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://oneworx.in/private-cabins.html</loc>
-  <lastmod>2026-03-30T11:09:52+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://oneworx.in/meeting-rooms.html</loc>
-  <lastmod>2026-03-30T11:09:12+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://oneworx.in/virtual-office.html</loc>
-  <lastmod>2026-03-30T11:09:52+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://oneworx.in/community.html</loc>
-  <lastmod>2026-03-30T11:09:11+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://oneworx.in/pricing.html</loc>
-  <lastmod>2026-03-30T11:09:52+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://oneworx.in/locations.html</loc>
-  <lastmod>2026-03-30T11:09:12+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://oneworx.in/location-arera.html</loc>
-  <lastmod>2026-03-30T11:09:12+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://oneworx.in/location-hoshangabad.html</loc>
-  <lastmod>2026-03-30T11:09:12+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://oneworx.in/location-10-no.html</loc>
-  <lastmod>2026-03-30T11:09:12+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://oneworx.in/location-fortune.html</loc>
-  <lastmod>2026-03-30T11:09:12+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://oneworx.in/events.html</loc>
-  <lastmod>2026-03-30T11:09:12+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://oneworx.in/amenities-perks.html</loc>
-  <lastmod>2026-03-30T11:08:57+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://oneworx.in/blogs.html</loc>
-  <lastmod>2026-03-30T11:09:11+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://oneworx.in/gallery.html</loc>
-  <lastmod>2026-03-30T11:09:12+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://oneworx.in/faqs.html</loc>
-  <lastmod>2026-03-30T11:09:12+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://oneworx.in/assets/docs/oneworx-brochure.pdf</loc>
-  <lastmod>2026-03-30T11:08:58+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://oneworx.in/terms-of-service.html</loc>
-  <lastmod>2026-03-30T11:09:52+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://oneworx.in/Privacy-policy.html</loc>
-  <lastmod>2026-03-30T11:08:57+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://oneworx.in/blog/member-story-atharva-kulkarni.html</loc>
-  <lastmod>2026-03-30T11:09:11+00:00</lastmod>
-  <priority>0.64</priority>
-</url>
-<url>
-  <loc>https://oneworx.in/blog/virtual-office-bhopal-gst.html</loc>
-  <lastmod>2026-03-30T11:09:11+00:00</lastmod>
-  <priority>0.64</priority>
-</url>
-<url>
-  <loc>https://oneworx.in/blog/best-coworking-bhopal-2026.html</loc>
-  <lastmod>2026-03-30T11:09:10+00:00</lastmod>
-  <priority>0.64</priority>
-</url>
-<url>
-  <loc>https://oneworx.in/blog/owbk-opening-puja.html</loc>
-  <lastmod>2026-03-30T11:09:11+00:00</lastmod>
-  <priority>0.64</priority>
-</url>
-<url>
-  <loc>https://oneworx.in/blog/startups-coworking-bhopal.html</loc>
-  <lastmod>2026-03-30T11:09:11+00:00</lastmod>
-  <priority>0.64</priority>
-</url>
-<url>
-  <loc>https://oneworx.in/blog/coworking-prices-bhopal-2026.html</loc>
-  <lastmod>2026-03-30T11:09:10+00:00</lastmod>
-  <priority>0.64</priority>
-</url>
-<url>
-  <loc>https://oneworx.in/blog/christmas-oneworx-2025.html</loc>
-  <lastmod>2026-03-30T11:09:10+00:00</lastmod>
-  <priority>0.64</priority>
-</url>
-<url>
-  <loc>https://oneworx.in/blog/coworking-arera-colony-bhopal.html</loc>
-  <lastmod>2026-03-30T11:09:10+00:00</lastmod>
-  <priority>0.64</priority>
-</url>
-<url>
-  <loc>https://oneworx.in/blog/ow99-opening-puja.html</loc>
-  <lastmod>2026-03-30T11:09:11+00:00</lastmod>
-  <priority>0.64</priority>
-</url>
-<url>
-  <loc>https://oneworx.in/blog/ganesh-chaturthi-2025.html</loc>
-  <lastmod>2026-03-30T11:09:11+00:00</lastmod>
-  <priority>0.64</priority>
-</url>
-<url>
-  <loc>https://oneworx.in/blog/independence-day-oneworx.html</loc>
-  <lastmod>2026-03-30T11:09:11+00:00</lastmod>
-  <priority>0.64</priority>
-</url>
-
-
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url><loc>https://oneworx.in/</loc><lastmod>2026-04-24</lastmod><priority>1.0</priority></url>
+  <url><loc>https://oneworx.in/about.html</loc><lastmod>2026-04-24</lastmod><priority>0.8</priority></url>
+  <url><loc>https://oneworx.in/amenities-perks.html</loc><lastmod>2026-04-24</lastmod><priority>0.8</priority></url>
+  <url><loc>https://oneworx.in/blogs.html</loc><lastmod>2026-04-24</lastmod><priority>0.8</priority></url>
+  <url><loc>https://oneworx.in/community.html</loc><lastmod>2026-04-24</lastmod><priority>0.8</priority></url>
+  <url><loc>https://oneworx.in/dedicated-workspaces.html</loc><lastmod>2026-04-24</lastmod><priority>0.8</priority></url>
+  <url><loc>https://oneworx.in/events.html</loc><lastmod>2026-04-24</lastmod><priority>0.8</priority></url>
+  <url><loc>https://oneworx.in/faqs.html</loc><lastmod>2026-04-24</lastmod><priority>0.8</priority></url>
+  <url><loc>https://oneworx.in/gallery.html</loc><lastmod>2026-04-24</lastmod><priority>0.8</priority></url>
+  <url><loc>https://oneworx.in/location-10-no.html</loc><lastmod>2026-04-24</lastmod><priority>0.8</priority></url>
+  <url><loc>https://oneworx.in/location-arera.html</loc><lastmod>2026-04-24</lastmod><priority>0.8</priority></url>
+  <url><loc>https://oneworx.in/location-fortune.html</loc><lastmod>2026-04-24</lastmod><priority>0.8</priority></url>
+  <url><loc>https://oneworx.in/location-hoshangabad.html</loc><lastmod>2026-04-24</lastmod><priority>0.8</priority></url>
+  <url><loc>https://oneworx.in/locations.html</loc><lastmod>2026-04-24</lastmod><priority>0.8</priority></url>
+  <url><loc>https://oneworx.in/meeting-rooms.html</loc><lastmod>2026-04-24</lastmod><priority>0.8</priority></url>
+  <url><loc>https://oneworx.in/offerings.html</loc><lastmod>2026-04-24</lastmod><priority>0.8</priority></url>
+  <url><loc>https://oneworx.in/pricing.html</loc><lastmod>2026-04-24</lastmod><priority>0.8</priority></url>
+  <url><loc>https://oneworx.in/privacy-policy.html</loc><lastmod>2026-04-24</lastmod><priority>0.8</priority></url>
+  <url><loc>https://oneworx.in/private-cabins.html</loc><lastmod>2026-04-24</lastmod><priority>0.8</priority></url>
+  <url><loc>https://oneworx.in/private-office.html</loc><lastmod>2026-04-24</lastmod><priority>0.8</priority></url>
+  <url><loc>https://oneworx.in/terms-of-service.html</loc><lastmod>2026-04-24</lastmod><priority>0.8</priority></url>
+  <url><loc>https://oneworx.in/virtual-office.html</loc><lastmod>2026-04-24</lastmod><priority>0.8</priority></url>
 </urlset>

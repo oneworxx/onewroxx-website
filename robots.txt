@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+Disallow: /assets/docs/
+Disallow: /cdn-cgi/
+
+Sitemap: https://oneworx.in/sitemap.xml
