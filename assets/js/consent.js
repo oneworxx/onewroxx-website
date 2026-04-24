@@ -23,7 +23,7 @@
       '<div style="flex:1;min-width:200px;line-height:1.5">',
       'We use cookies and tracking technologies to improve your experience and for analytics. ',
       'By clicking \u201cAccept All\u201d, you consent to our ',
-      '<a href="/Privacy-policy.html" style="color:#a0c4ff">Privacy Policy</a>.',
+      '<a href="/privacy-policy.html" style="color:#a0c4ff">Privacy Policy</a>.',
       ' Under India\u2019s DPDP Act 2023, you may decline non-essential tracking.',
       '</div>',
       '<div style="display:flex;gap:10px;flex-shrink:0">',

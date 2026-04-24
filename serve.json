@@ -1,4 +1,5 @@
 {
+    "cleanUrls": false,
     "rewrites": [
           { "source": "/about", "destination": "/about.html" },
           { "source": "/offerings", "destination": "/offerings.html" },
@@ -18,7 +19,8 @@
           { "source": "/location-arera", "destination": "/location-arera.html" },
           { "source": "/location-fortune", "destination": "/location-fortune.html" },
           { "source": "/location-hoshangabad", "destination": "/location-hoshangabad.html" },
-          { "source": "/Privacy-policy", "destination": "/Privacy-policy.html" },
-          { "source": "/terms-of-service", "destination": "/terms-of-service.html" }
+          { "source": "/privacy-policy", "destination": "/privacy-policy.html" },
+          { "source": "/terms-of-service", "destination": "/terms-of-service.html" },
+          { "source": "/pricing", "destination": "/pricing.html" }
     ]
 }
