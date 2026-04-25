@@ -19,9 +19,11 @@ http://www.oneworx.in/* https://oneworx.in/:splat     301
 /location-arera     /location-arera.html     200
 /location-fortune   /location-fortune.html   200
 /location-hoshangabad /location-hoshangabad.html 200
+/pricing            /pricing.html            200
 /privacy-policy     /privacy-policy.html     200
 /terms-of-service   /terms-of-service.html   200
 
+/About.html         /about.html              301
 /Privacy-policy.html  /privacy-policy.html  301
 /privacy-Policy.html  /privacy-policy.html  301
 /Privacy-Policy.html  /privacy-policy.html  301
